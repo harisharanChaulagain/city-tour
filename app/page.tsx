@@ -7,6 +7,7 @@ import accomodationImage from "../assets/accomodation.jpg";
 import coorkingImage from "../assets/coorking-place.jpg";
 import communityImage from "../assets/community.jpg";
 import localImage from "../assets/local-experience.jpg";
+import Testimonial from "@/components/Testimonial";
 
 const includeItems = [
   {
@@ -95,6 +96,7 @@ export default function Page() {
           </div>
         </div>
       </section>
+      <Testimonial />
     </main>
   );
 }

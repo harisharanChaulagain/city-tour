@@ -8,6 +8,7 @@ import coorkingImage from "../assets/coorking-place.jpg";
 import communityImage from "../assets/community.jpg";
 import localImage from "../assets/local-experience.jpg";
 import Testimonial from "@/components/Testimonial";
+import DestinationSection from "@/components/DestinationSection";
 
 const includeItems = [
   {
@@ -96,6 +97,7 @@ export default function Page() {
           </div>
         </div>
       </section>
+      <DestinationSection />
       <Testimonial />
     </main>
   );

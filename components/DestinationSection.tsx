@@ -16,9 +16,12 @@ export default function DestinationSection() {
           View all destinations
         </div>
       </section>
-      <section>
+      <section className="px-4 md:px-8 flex flex-col gap-4 pt-10">
         {destinationDetails.map((item, index) => (
-          <div key={index}>{item?.title}</div>
+          <div key={index} className="text-6xl font-bold text-[#1D1D1b]">
+            {item?.title}
+            <hr className="mt-4" />
+          </div>
         ))}
       </section>
     </div>

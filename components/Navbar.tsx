@@ -28,8 +28,14 @@ export default function Navbar() {
             )}
           </div>
         </header>
-        <section className={`transition-all duration-500 ${showNavItem ? 'max-h-full opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
-          <div className="flex flex-col gap-4">
+        <section
+          className={`transition-all duration-500 ${
+            showNavItem
+              ? "h-screen opacity-100 "
+              : "max-h-0 opacity-0 overflow-hidden"
+          }`}
+        >
+          <div className="flex flex-col gap-4 justify-center items-center">
             {navItems.map((item, index) => (
               <Link
                 key={index}
@@ -40,7 +46,17 @@ export default function Navbar() {
               </Link>
             ))}
           </div>
-          <div>social media</div>
+          <div className="flex justify-center items-center gap-8">
+            {socialIcon.map((item, index) => (
+              <Link
+                href={item?.link}
+                key={index}
+                className="border border-gray-500 rounded-full h-12 w-12 justify-center items-center flex hover:border-[#1D1D1B] transition-all duration-300"
+              >
+                {item?.title}
+              </Link>
+            ))}
+          </div>
         </section>
       </div>
     </>
@@ -63,5 +79,17 @@ const navItems = [
   {
     title: "Contact",
     href: "/contact",
+  },
+];
+
+const socialIcon = [
+  { title: "IG", link: "https://www.instagram.com/" },
+  {
+    title: "TW",
+    link: "https://x.com/home",
+  },
+  {
+    title: "YB",
+    link: "https://www.youtube.com/",
   },
 ];

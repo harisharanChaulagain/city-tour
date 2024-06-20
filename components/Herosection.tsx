@@ -39,12 +39,12 @@ export default function Herosection() {
 
   return (
     <main className=" md:px-4 py-20">
-      <div className="relative w-full h-80 rounded-2xl">
+      <div className="relative w-full h-96 rounded-2xl">
         <Slider ref={setSlider} {...settings}>
           {images.map((src, index) => (
             <div
               key={index}
-              className="h-80 px-4 rounded-2xl overflow-hidden transition-all duration-300"
+              className="h-96 px-4 rounded-2xl overflow-hidden transition-all duration-300"
             >
               <Image
                 src={src}
@@ -54,7 +54,7 @@ export default function Herosection() {
             </div>
           ))}
         </Slider>
-        <div className="absolute top-32 left-20 text-white flex flex-col gap-4">
+        <div className="absolute top-52 left-20 text-white flex flex-col gap-4">
           <h1 className="font-bold text-5xl">Work from anywhere.</h1>
           <p className="text-xl">
             Work remotely, explore various destinations, <br /> and make lasting

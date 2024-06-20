@@ -10,7 +10,7 @@ export default function Page() {
         <h1 className="text-7xl font-bold flex justify-center items-center py-4">
           What Is Nomad?
         </h1>
-        <div className="w-full h-80 rounded-2xl overflow-hidden">
+        <div className="w-full h-96 rounded-2xl overflow-hidden">
           <Image
             src={pokheraImage}
             alt="pokheraImage"

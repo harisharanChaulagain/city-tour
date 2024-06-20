@@ -57,7 +57,7 @@ function TeamCard({ image, name, location, description }: any) {
 
 export default function OurTeamSection() {
   return (
-    <main className="h-full bg-[#DFDDD8] py-20">
+    <main className="h-full bg-[#DFDDD8] py-20 sm:px-4 md:px-12">
       <div className="grid grid-cols-3 gap-4 h-full">
         <div className="col-span-1 p-4 ">
           <div className="sticky top-20">

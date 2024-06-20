@@ -5,7 +5,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="text-gray-100 bg-[#101418] px-4 md:px-8 py-20">
+    <footer className="text-gray-100 bg-[#101418] px-4 sm:px-8 md:px-16 py-20">
       <div className="gap-6 justify-between md:flex">
         <div className="flex-1">
           <div className="max-w-md">

@@ -51,7 +51,7 @@ export default function DestinationSection() {
 
   return (
     <div className="relative">
-      <section className="px-4 md:px-8 flex flex-col gap-4">
+      <section className="px-4 sm:px-8 md:px-16 flex flex-col gap-4">
         <h1 className="text-sm">Destinations</h1>
         <h2 className="text-5xl font-bold">Our most popular destinations</h2>
         <Link href="/destination" className="flex items-center gap-2 w-fit text-sm hover:cursor-pointer text-[#1D1D1b] hover:underline transition-all duration-300">
@@ -61,7 +61,7 @@ export default function DestinationSection() {
           View all destinations
         </Link>
       </section>
-      <section className="px-4 md:px-8 flex flex-col gap-4 pt-10">
+      <section className="px-4 sm:px-8 md:px-16 flex flex-col gap-4 pt-10">
         {destinationDetails.map((item, index) => (
           <div
             key={index}

@@ -12,7 +12,7 @@ export default function Page() {
   };
 
   return (
-    <main className="py-20 px-4 md:px-8">
+    <main className="py-20 px-4 sm:px-8 md:px-16">
       <section className="bg-[#DEDDD7] rounded-2xl flex flex-col gap-4 p-8 mb-10">
         <h1 className="text-[#1D1D1B] font-bold text-5xl pt-10">
           Frequently Asked Questions

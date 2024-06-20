@@ -38,7 +38,7 @@ export default function Herosection() {
   };
 
   return (
-    <main className=" md:px-4 py-20">
+    <main className=" px-4 sm:px-4 md:px-12 py-20">
       <div className="relative w-full h-96 rounded-2xl">
         <Slider ref={setSlider} {...settings}>
           {images.map((src, index) => (

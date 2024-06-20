@@ -6,7 +6,7 @@ import pokheraImage from "../../assets/pokhera.jpg";
 export default function Page() {
   return (
     <div className=" py-20">
-      <div className="px-4 md:px-8">
+      <div className="px-4 sm:px-8 md:px-16">
         <h1 className="text-7xl font-bold flex justify-center items-center py-4">
           What Is Nomad?
         </h1>

@@ -55,7 +55,7 @@ export default function Page() {
   return (
     <main>
       <Herosection />
-      <section className="px-4 md:px-8 flex flex-col gap-4 ">
+      <section className="px-4 sm:px-8 md:px-16 flex flex-col gap-4 ">
         <h2 className="text-5xl font-bold">Work remotely. Travel the world.</h2>
         <div className="flex items-center gap-2 w-fit text-sm hover:cursor-pointer text-[#1D1D1b] hover:underline transition-all duration-300">
           <button className="text-white bg-[#1D1D1B] p-2 rounded-full">
@@ -64,7 +64,7 @@ export default function Page() {
           Learn how it works
         </div>
       </section>
-      <section className="py-20 px-4 md:px-8">
+      <section className="py-20 px-4 sm:px-8 md:px-16">
         <div className="relative">
           <div className="h-96 rounded-2xl overflow-hidden transition-all duration-300">
             <Image

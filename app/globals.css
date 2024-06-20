@@ -12,7 +12,7 @@ body {
   overflow: -moz-scrollbars-none; /* For Firefox */
   -ms-overflow-style: none; /* For Internet Explorer and Edge */
   scrollbar-width: none; /* For Firefox */
-  background-color: #E9E8E4;
+  background-color: #e9e8e4;
 }
 
 /* Hide scrollbars for WebKit-based browsers (Chrome, Safari) */
@@ -33,4 +33,10 @@ body::-webkit-scrollbar {
   transform: translateX(0);
 }
 
-/* react slick css */
+/* swipper */
+.swiper-pagination-bullet {
+  background-color: #686867 !important;
+}
+.swiper-pagination-bullet-active {
+  background-color: #1d1d1b !important;
+}

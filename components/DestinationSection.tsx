@@ -4,6 +4,7 @@ import bhaktapurImage from "../assets/bhaktapur.jpg";
 import pokharaImage from "../assets/pokhera.jpg";
 import { gsap } from "gsap";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function DestinationSection() {
   const imageRefs = useRef<(HTMLImageElement | null)[]>([]);
@@ -53,12 +54,12 @@ export default function DestinationSection() {
       <section className="px-4 md:px-8 flex flex-col gap-4">
         <h1 className="text-sm">Destinations</h1>
         <h2 className="text-5xl font-bold">Our most popular destinations</h2>
-        <div className="flex items-center gap-2 w-fit text-sm hover:cursor-pointer text-[#1D1D1b] hover:underline transition-all duration-300">
+        <Link href="/destination" className="flex items-center gap-2 w-fit text-sm hover:cursor-pointer text-[#1D1D1b] hover:underline transition-all duration-300">
           <button className="text-white bg-[#1D1D1B] p-2 rounded-full">
             <Icon icon="grommet-icons:form-next-link" className="text-2xl" />
           </button>
           View all destinations
-        </div>
+        </Link>
       </section>
       <section className="px-4 md:px-8 flex flex-col gap-4 pt-10">
         {destinationDetails.map((item, index) => (
@@ -73,7 +74,7 @@ export default function DestinationSection() {
             <Image
               src={item.image}
               alt={item.title}
-              className="absolute left-60 top-0 w-64 h-64 object-cover rounded-lg shadow-lg pointer-events-none z-50"
+              className="absolute left-60 bottom-0 w-64 h-64 object-cover rounded-lg shadow-lg pointer-events-none z-50"
               style={{
                 opacity: 0,
                 transform: "scale(0.8) rotate(-10deg) translateZ(0px)",

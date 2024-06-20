@@ -11,7 +11,7 @@ import { Pagination } from "swiper/modules";
 
 export default function Testimonial() {
   return (
-    <section className="py-14">
+      <section className="py-14 bg-[#DFDDD8]">
       <div className="max-w-screen-xl mx-auto px-4 md:px-8">
         <Swiper
           dir="rtl"

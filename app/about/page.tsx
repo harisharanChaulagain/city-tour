@@ -29,28 +29,28 @@ export default function Page() {
           What to expect after <br /> booking...
         </div>
         <div className="py-10 ">
-          <div className="grid grid-cols-2">
+          <div className="grid grid-cols-2 gap-20">
             <div></div>
             <AboutCard />
           </div>
-          <div className="grid grid-cols-2">
+          <div className="grid grid-cols-2 gap-20">
             <AboutCard />
             <div></div>
           </div>
 
-          <div className="grid grid-cols-2">
+          <div className="grid grid-cols-2 gap-20">
             <div></div>
             <AboutCard />
           </div>
-          <div className="grid grid-cols-2">
+          <div className="grid grid-cols-2 gap-20">
             <AboutCard />
             <div></div>
           </div>
-          <div className="grid grid-cols-2">
+          <div className="grid grid-cols-2 gap-20">
             <div></div>
             <AboutCard />
           </div>
-          <div className="grid grid-cols-2">
+          <div className="grid grid-cols-2 gap-20">
             <AboutCard />
             <div></div>
           </div>
@@ -64,14 +64,14 @@ export default function Page() {
 
 const AboutCard = () => {
   return (
-    <div className="p-4 rounded-2xl bg-[#DFDDD8] w-fit shadow-sm flex flex-col gap-4">
+    <div className="p-4 rounded-2xl bg-[#DFDDD8] shadow-sm flex flex-col gap-4">
       <h1 className="text-xl font-bold">Co-working Space</h1>
       <h2>Work remotely in your designated workspace.</h2>
-      <div className="h-60 w-full">
+      <div className="h-80 w-full rounded-2xl overflow-hidden ">
         <Image
           src={pokheraImage}
           alt="pokhara image"
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover hover:scale-105 transition-all duration-300"
         />
       </div>
     </div>

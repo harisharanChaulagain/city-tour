@@ -43,7 +43,7 @@ export default function Page() {
           <details>
             Tokyo, the bustling capital of Japan, is a captivating metropolis
             that seamlessly blends ancient traditions with futuristic
-            innovation. As one of the world's most populous cities, Tokyo is a
+            innovation. As one of the world&apos;s most populous cities, Tokyo is a
             bustling hub of technology, business, fashion, and culture.
           </details>
           <span>Recommended Activities</span>

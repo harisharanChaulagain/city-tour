@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import bhaktapurImage from "../../assets/bhaktapur.jpg";
 import { Icon } from "@iconify/react";
+import Link from "next/link";
 
 // Define arrays of trip details
 const OneWeekTrip = [
@@ -108,7 +109,10 @@ export default function Page() {
 }
 
 const TripCard = ({ trip }: any) => (
-  <div className="h-80 relative overflow-hidden rounded-2xl shadow-xl">
+  <Link
+    href="/destination/id"
+    className="h-80 relative overflow-hidden rounded-2xl shadow-xl"
+  >
     <Image
       src={trip.image}
       alt={trip.city}
@@ -124,5 +128,5 @@ const TripCard = ({ trip }: any) => (
         <span>{trip.price}</span>
       </div>
     </div>
-  </div>
+  </Link>
 );

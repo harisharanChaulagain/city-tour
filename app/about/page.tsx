@@ -61,7 +61,7 @@ export default function Page() {
             Nomad is a travel startup providing travel programs and group work
             for digital nomads. Traveling solo can be daunting, so why not work
             remotely and explore the world with other like-minded members. Bring
-            your self and your work. We'll take care of everything else.
+            your self and your work. We&apos;ll take care of everything else.
           </p>
         </div>
         <div className="text-xl sm:text-2xl font-bold">

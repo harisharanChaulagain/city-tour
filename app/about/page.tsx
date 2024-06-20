@@ -1,9 +1,30 @@
+"use client";
 import OurTeamSection from "@/components/OurTeamSection";
 import Image from "next/image";
-import React from "react";
+import React, { useRef } from "react";
 import pokheraImage from "../../assets/pokhera.jpg";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Page() {
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".progress1",
+        start: "top bottom",
+        end: "bottom center",
+        scrub: 1,
+        markers: true,
+      },
+    });
+    tl.from(".progress", {
+      height: "100%",
+    });
+  });
+
   return (
     <div className=" py-20">
       <div className="px-4 sm:px-8 md:px-16">
@@ -30,29 +51,29 @@ export default function Page() {
         </div>
         <div className="py-10 ">
           <div className="grid grid-cols-2 gap-20">
-            <div></div>
+            <div className="w-0.5 bg-black h-0 progress1"></div>
             <AboutCard />
           </div>
           <div className="grid grid-cols-2 gap-20">
             <AboutCard />
-            <div></div>
+            <div className="w-0.5 bg-black h-0 progress2"></div>
           </div>
-
+          
           <div className="grid grid-cols-2 gap-20">
-            <div></div>
+          <div className="w-0.5 bg-black h-0 progress3"></div>
             <AboutCard />
           </div>
           <div className="grid grid-cols-2 gap-20">
             <AboutCard />
-            <div></div>
+          <div className="w-0.5 bg-black h-0 progress4"></div>
           </div>
           <div className="grid grid-cols-2 gap-20">
-            <div></div>
+          <div className="w-0.5 bg-black h-0 progress5"></div>
             <AboutCard />
           </div>
           <div className="grid grid-cols-2 gap-20">
             <AboutCard />
-            <div></div>
+          <div className="w-0.5 bg-black h-0 progress6"></div>
           </div>
         </div>
       </div>
@@ -63,11 +84,37 @@ export default function Page() {
 }
 
 const AboutCard = () => {
+  const cardRef = useRef(null);
+  useGSAP(
+    () => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: cardRef.current,
+          start: "top bottom",
+          end: "bottom center",
+          scrub: 1,
+          // markers: true,
+        },
+      });
+
+      tl.from(cardRef.current, {
+        y: 100,
+        opacity: 0,
+        duration: 0.5,
+        ease: "power2.out",
+      });
+    },
+    { scope: cardRef }
+  );
+
   return (
-    <div className="p-4 rounded-2xl bg-[#DFDDD8] shadow-sm flex flex-col gap-4">
+    <div
+      ref={cardRef}
+      className="about-card p-4 rounded-2xl bg-[#DFDDD8] shadow-sm flex flex-col gap-4"
+    >
       <h1 className="text-xl font-bold">Co-working Space</h1>
       <h2>Work remotely in your designated workspace.</h2>
-      <div className="h-80 w-full rounded-2xl overflow-hidden ">
+      <div className="h-80 w-full rounded-2xl overflow-hidden">
         <Image
           src={pokheraImage}
           alt="pokhara image"

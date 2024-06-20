@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import bhaktapurImage from "../../assets/bhaktapur.jpg";
 import { Icon } from "@iconify/react";
+import Link from "next/link";
 
 // Define arrays of trip details
 const OneWeekTrip = [
@@ -63,38 +64,40 @@ const OneMonthTrip = [
 
 export default function Page() {
   return (
-    <main className="px-4 sm:px-8 md:px-16 py-20">
+    <main className="px-4 sm:px-8 md:px-16 py-20 text-[#1D1D1B] ">
       <section className="bg-[#DEDDD7] rounded-2xl flex flex-col gap-4 p-8 mb-10">
-        <h1 className="text-[#1D1D1B] font-bold text-5xl pt-10">
+        <h1 className="text-[#1D1D1B] font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl pt-10">
           Destinations
         </h1>
-        <p>Work and travel the world with a community of like-minded people.</p>
+        <p className="text-sm sm:text-base">
+          Work and travel the world with a community of like-minded people.
+        </p>
       </section>
-      <div className="flex items-center whitespace-nowrap gap-4 py-4">
-        <span className="text-xl font-bold"> 1-week trips</span>
+      <div className="flex items-center whitespace-nowrap gap-4 py-4 ">
+        <span className="text-base sm:text-xl font-bold"> 1-week trips</span>
         <span className="bg-[#DEDDD7] h-0.5 w-full"></span>
       </div>
-      <section className="grid grid-cols-3 gap-8 mb-10 ">
+      <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-10 ">
         {/*  OneWeekTrip */}
         {OneWeekTrip.map((trip, index) => (
           <TripCard key={index} trip={trip} />
         ))}
       </section>
       <div className="flex items-center whitespace-nowrap gap-4 py-4">
-        <span className="text-xl font-bold">2-week trips</span>
+        <span className="text-base sm:text-xl font-bold">2-week trips</span>
         <span className="bg-[#DEDDD7] h-0.5 w-full"></span>
       </div>
-      <section className="grid grid-cols-2 gap-8 mb-10">
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
         {/*  TwoWeekTrip */}
         {TwoWeekTrip.map((trip, index) => (
           <TripCard key={index} trip={trip} />
         ))}
       </section>
       <div className="flex items-center whitespace-nowrap gap-4 py-4">
-        <span className="text-xl font-bold">1-month trips</span>
+        <span className="text-base sm:text-xl font-bold">1-month trips</span>
         <span className="bg-[#DEDDD7] h-0.5 w-full"></span>
       </div>
-      <section className="grid grid-cols-3 gap-8 mb-10">
+      <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-10">
         {/* 
          OneMonthTrip */}
         {OneMonthTrip.map((trip, index) => (
@@ -106,7 +109,10 @@ export default function Page() {
 }
 
 const TripCard = ({ trip }: any) => (
-  <div className="h-80 relative overflow-hidden rounded-2xl shadow-xl">
+  <Link
+    href="/destination/id"
+    className="h-80 relative overflow-hidden rounded-2xl shadow-xl"
+  >
     <Image
       src={trip.image}
       alt={trip.city}
@@ -122,5 +128,5 @@ const TripCard = ({ trip }: any) => (
         <span>{trip.price}</span>
       </div>
     </div>
-  </div>
+  </Link>
 );

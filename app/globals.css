@@ -40,3 +40,25 @@ body::-webkit-scrollbar {
 .swiper-pagination-bullet-active {
   background-color: #1d1d1b !important;
 }
+
+/* Add this CSS to your stylesheet */
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  border-radius: 50%;
+  opacity: 0;
+  margin-bottom: 5px; /* Adjust as needed to position the dot correctly */
+}
+
+.progress {
+  transition: height 0.3s ease;
+}
+
+
+/* react slick */
+.slick-prev,
+.slick-next {
+  display: none !important;
+}

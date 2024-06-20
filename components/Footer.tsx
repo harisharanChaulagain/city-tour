@@ -1,9 +1,11 @@
 "use client";
-
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import webxLogo from "../assets/webxLogo.png";
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
   return (
     <footer className="text-gray-100 bg-[#101418] px-4 sm:px-8 md:px-16 py-20">
       <div className="gap-6 justify-between md:flex">
@@ -35,11 +37,24 @@ export default function Footer() {
           ))}
         </div>
       </div>
-      <div className="mt-8 py-6 border-t border-gray-500 items-center justify-between sm:flex">
+      <div className="mt-8 pt-10 border-t border-gray-500 items-center justify-between sm:flex">
         <div className="mt-4 sm:mt-0">
-          Copyright &copy; 2024 Designrsupply LLC.
+          © Copyright {currentYear} All rights reserved.
         </div>
-        <div className="mt-4 sm:mt-0">Desighed & Developed by Webx</div>
+        <div className="mt-4 sm:mt-0">
+          <a
+            href="https://webxnep.com/"
+            target="_blank"
+            className=" text-gray-300 hover:text-white transition-all duration-300 flex items-center gap-1"
+          >
+            Designed & Developed by{" "}
+            <Image
+              src={webxLogo}
+              alt="webx logo"
+              className="h-5 w-fit object-contain  p-1"
+            />
+          </a>
+        </div>
       </div>
       <style jsx>{`
         .svg-icon path,

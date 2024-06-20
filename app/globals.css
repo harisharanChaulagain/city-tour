@@ -12,6 +12,7 @@ body {
   overflow: -moz-scrollbars-none; /* For Firefox */
   -ms-overflow-style: none; /* For Internet Explorer and Edge */
   scrollbar-width: none; /* For Firefox */
+  background-color: #E9E8E4;
 }
 
 /* Hide scrollbars for WebKit-based browsers (Chrome, Safari) */
@@ -31,3 +32,5 @@ body::-webkit-scrollbar {
   opacity: 1;
   transform: translateX(0);
 }
+
+/* react slick css */

@@ -9,6 +9,8 @@ import communityImage from "../assets/community.jpg";
 import localImage from "../assets/local-experience.jpg";
 import Testimonial from "@/components/Testimonial";
 import DestinationSection from "@/components/DestinationSection";
+import { Swiper, SwiperSlide } from "swiper/react";
+import Link from "next/link";
 
 const includeItems = [
   {
@@ -55,16 +57,19 @@ export default function Page() {
   return (
     <main className="overflow-x-hidden">
       <Herosection />
-      <section className="px-4 sm:px-8 md:px-16 flex flex-col gap-4 ">
+      <section className="px-4 sm:px-8 md:px-16 flex flex-col gap-4">
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
           Work remotely. Travel the world.
         </h2>
-        <div className="flex items-center gap-2 w-fit text-sm hover:cursor-pointer text-[#1D1D1b] hover:underline transition-all duration-300">
+        <Link
+          href="/about"
+          className="flex items-center gap-2 w-fit text-sm hover:cursor-pointer text-[#1D1D1b] hover:underline transition-all duration-300"
+        >
           <button className="text-white bg-[#1D1D1B] p-2 rounded-full">
             <Icon icon="grommet-icons:form-next-link" className="text-2xl" />
           </button>
           Learn how it works
-        </div>
+        </Link>
       </section>
       <section className="py-20 px-4 sm:px-8 md:px-16">
         <div className="relative">
@@ -75,26 +80,54 @@ export default function Page() {
               className="h-full w-full object-cover object-center"
             />
           </div>
-          <div className="absolute bottom-8 left-8 right-8 grid grid-cols-4 place-items-center gap-8 px-8">
-            {includeItems.map((item, index) => (
-              <div
-                key={index}
-                onClick={() => handleTabClick(index)}
-                className={`flex flex-col justify-between rounded-2xl p-4 h-52 cursor-pointer transition-all duration-300 ${
-                  activeIndex === index
-                    ? "bg-[#1D1D1B] text-white"
-                    : "bg-gray-200 text-black"
-                }`}
-              >
-                <div>
-                  <Icon icon={item.icon} className="text-2xl" />
-                </div>
-                <div className="flex flex-col gap-2">
-                  <h1 className="text-2xl font-bold">{item.title}</h1>
-                  <p className="text-xl">{item.description}</p>
-                </div>
-              </div>
-            ))}
+          <div className="absolute bottom-8 left-8 right-8 px-8">
+            <Swiper
+              spaceBetween={20}
+              slidesPerView={1}
+              loop
+              breakpoints={{
+                640: {
+                  slidesPerView: 1,
+                  spaceBetween: 20,
+                },
+                768: {
+                  slidesPerView: 2,
+                  spaceBetween: 40,
+                },
+                1024: {
+                  slidesPerView: 3,
+                  spaceBetween: 50,
+                },
+              }}
+              onSlideChange={(swiper: any) =>
+                handleTabClick(swiper.activeIndex)
+              }
+            >
+              {includeItems.map((item, index) => (
+                <SwiperSlide key={index}>
+                  <div
+                    onClick={() => handleTabClick(index)}
+                    className={`flex flex-col justify-between rounded-2xl p-4 h-52 cursor-pointer transition-all duration-300 ${
+                      activeIndex === index
+                        ? "bg-[#1D1D1B] text-white"
+                        : "bg-gray-200 text-black"
+                    }`}
+                  >
+                    <div>
+                      <Icon icon={item.icon} className="text-2xl" />
+                    </div>
+                    <div className="flex flex-col gap-2">
+                      <h1 className="text-base sm:text-lg md:text-2xl font-bold">
+                        {item.title}
+                      </h1>
+                      <p className="text-sm sm:text-base md:text-xl">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
         </div>
       </section>

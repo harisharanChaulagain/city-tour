@@ -13,14 +13,14 @@ export default function Page() {
   useGSAP(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: ".progress1",
-        start: "top bottom",
-        end: "bottom center",
+        trigger: ".progress",
+        start: "top 70%",
+        end: "top top",
         scrub: 1,
         markers: true,
       },
     });
-    tl.from(".progress", {
+    tl.to(".progress", {
       height: "100%",
     });
   });
@@ -50,31 +50,34 @@ export default function Page() {
           What to expect after <br /> booking...
         </div>
         <div className="py-10 ">
+          <div className="grid grid-cols-7">
+            <div className="col-span-3"></div>
+            <div className="col-span-1 w-0.5 bg-black h-0 progress"></div>
+            <div className="col-span-3">
+              <AboutCard />
+            </div>
+          </div>
+          {/* <div className="grid grid-cols-2 gap-20">
+            <AboutCard />
+            <div></div>
+          </div>
+
           <div className="grid grid-cols-2 gap-20">
-            <div className="w-0.5 bg-black h-0 progress1"></div>
+            <div></div>
             <AboutCard />
           </div>
           <div className="grid grid-cols-2 gap-20">
             <AboutCard />
-            <div className="w-0.5 bg-black h-0 progress2"></div>
+            <div></div>
           </div>
-          
           <div className="grid grid-cols-2 gap-20">
-          <div className="w-0.5 bg-black h-0 progress3"></div>
+            <div></div>
             <AboutCard />
           </div>
           <div className="grid grid-cols-2 gap-20">
             <AboutCard />
-          <div className="w-0.5 bg-black h-0 progress4"></div>
-          </div>
-          <div className="grid grid-cols-2 gap-20">
-          <div className="w-0.5 bg-black h-0 progress5"></div>
-            <AboutCard />
-          </div>
-          <div className="grid grid-cols-2 gap-20">
-            <AboutCard />
-          <div className="w-0.5 bg-black h-0 progress6"></div>
-          </div>
+            <div></div>
+          </div> */}
         </div>
       </div>
 

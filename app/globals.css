@@ -3,6 +3,31 @@
 @tailwind utilities;
 
 .ReactCollapse--collapse {
-    transition: height 500ms;
-  }
-  
+  transition: height 500ms;
+}
+
+/* Hide scrollbars for all browsers */
+html,
+body {
+  overflow: -moz-scrollbars-none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+  scrollbar-width: none; /* For Firefox */
+}
+
+/* Hide scrollbars for WebKit-based browsers (Chrome, Safari) */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
+
+/* navitems */
+.arrow-icon {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.nav-link:hover .arrow-icon {
+  opacity: 1;
+  transform: translateX(0);
+}

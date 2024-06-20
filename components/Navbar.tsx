@@ -43,7 +43,9 @@ export default function Navbar() {
     <>
       <div className="bg-[#E9E8E4] w-screen">
         <header className="w-full flex justify-between items-center bg-[#E9E8E4] fixed h-20 px-4 md:px-8 z-50">
-          <div className="text-xl font-bold">nomad.</div>
+          <Link href="/" className="text-xl font-bold">
+            nomad.
+          </Link>
           <div onClick={toggleNavItem}>
             {showNavItem ? (
               <Icon
@@ -66,14 +68,14 @@ export default function Navbar() {
               transition: "height 0.5s, width 0.5s, opacity 0.5s",
             }}
           >
-            <div className="flex flex-col items-center gap-20 ">
-              <div className="flex flex-col gap-4 p-4 justify-center items-center">
+            <div className="flex flex-col items-center  ">
+              <div className="flex flex-col gap-2 p-4 justify-center items-center">
                 {navItems.map((item, index) => (
                   <Link
                     key={index}
                     href={item?.href}
                     onClick={toggleNavItem}
-                    className="nav-link text-7xl font-bold text-[#1D1D1B] flex items-center"
+                    className="nav-link text-6xl font-bold text-[#1D1D1B] flex items-center"
                   >
                     <div className="arrow-wrapper">
                       <Icon

@@ -7,7 +7,9 @@ export default function NewsLetter() {
       <section className=" bg-[#DEDDD7] py-20 rounded-2xl mx-auto px-4 md:px-8 text-[#1D1D1B]">
         <div className="flex flex-col gap-4 text-center max-w-2xl mx-auto">
           <h1 className="text-sm">Community</h1>
-          <h3 className="text-5xl font-bold">Subscribe to our newsletter.</h3>
+          <h3 className="ttext-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
+            Subscribe to our newsletter.
+          </h3>
           <p className="text-sm">
             Join a group of like-minded digital nomads working and traveling the
             world together. Get updates on new deals and discounts for every

@@ -46,7 +46,7 @@ export default function Page() {
   return (
     <div className=" py-20">
       <div className="px-4 sm:px-8 md:px-16">
-        <h1 className="text-7xl font-bold flex justify-center items-center py-4">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:tex-5xl xl:text-6xl font-bold flex justify-center items-center py-4">
           What Is Nomad?
         </h1>
         <div className="w-full h-96 rounded-2xl overflow-hidden">
@@ -57,14 +57,14 @@ export default function Page() {
           />
         </div>
         <div className="flex justify-end">
-          <p className="max-w-xl py-4 text-xl font-normal">
+          <p className="max-w-xl py-4 text-sm sm:text-lg md:text-xl font-normal">
             Nomad is a travel startup providing travel programs and group work
             for digital nomads. Traveling solo can be daunting, so why not work
             remotely and explore the world with other like-minded members. Bring
             your self and your work. We'll take care of everything else.
           </p>
         </div>
-        <div className="text-2xl font-bold">
+        <div className="text-xl sm:text-2xl font-bold">
           What to expect after <br /> booking...
         </div>
         <div className="py-10">

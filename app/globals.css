@@ -53,5 +53,12 @@ body::-webkit-scrollbar {
 }
 
 .progress {
-  transition: height 0.5s ease;
+  transition: height 0.3s ease;
+}
+
+
+/* react slick */
+.slick-prev,
+.slick-next {
+  display: none !important;
 }

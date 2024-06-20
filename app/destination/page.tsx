@@ -63,38 +63,40 @@ const OneMonthTrip = [
 
 export default function Page() {
   return (
-    <main className="px-4 sm:px-8 md:px-16 py-20">
+    <main className="px-4 sm:px-8 md:px-16 py-20 text-[#1D1D1B] ">
       <section className="bg-[#DEDDD7] rounded-2xl flex flex-col gap-4 p-8 mb-10">
-        <h1 className="text-[#1D1D1B] font-bold text-5xl pt-10">
+        <h1 className="text-[#1D1D1B] font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl pt-10">
           Destinations
         </h1>
-        <p>Work and travel the world with a community of like-minded people.</p>
+        <p className="text-sm sm:text-base">
+          Work and travel the world with a community of like-minded people.
+        </p>
       </section>
-      <div className="flex items-center whitespace-nowrap gap-4 py-4">
-        <span className="text-xl font-bold"> 1-week trips</span>
+      <div className="flex items-center whitespace-nowrap gap-4 py-4 ">
+        <span className="text-base sm:text-xl font-bold"> 1-week trips</span>
         <span className="bg-[#DEDDD7] h-0.5 w-full"></span>
       </div>
-      <section className="grid grid-cols-3 gap-8 mb-10 ">
+      <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-10 ">
         {/*  OneWeekTrip */}
         {OneWeekTrip.map((trip, index) => (
           <TripCard key={index} trip={trip} />
         ))}
       </section>
       <div className="flex items-center whitespace-nowrap gap-4 py-4">
-        <span className="text-xl font-bold">2-week trips</span>
+        <span className="text-base sm:text-xl font-bold">2-week trips</span>
         <span className="bg-[#DEDDD7] h-0.5 w-full"></span>
       </div>
-      <section className="grid grid-cols-2 gap-8 mb-10">
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
         {/*  TwoWeekTrip */}
         {TwoWeekTrip.map((trip, index) => (
           <TripCard key={index} trip={trip} />
         ))}
       </section>
       <div className="flex items-center whitespace-nowrap gap-4 py-4">
-        <span className="text-xl font-bold">1-month trips</span>
+        <span className="text-base sm:text-xl font-bold">1-month trips</span>
         <span className="bg-[#DEDDD7] h-0.5 w-full"></span>
       </div>
-      <section className="grid grid-cols-3 gap-8 mb-10">
+      <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-10">
         {/* 
          OneMonthTrip */}
         {OneMonthTrip.map((trip, index) => (

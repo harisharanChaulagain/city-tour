@@ -55,8 +55,10 @@ export default function Herosection() {
           ))}
         </Slider>
         <div className="absolute top-52 left-20 text-white flex flex-col gap-4">
-          <h1 className="font-bold text-5xl">Work from anywhere.</h1>
-          <p className="text-xl">
+          <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
+            Work from anywhere.
+          </h1>
+          <p className="text-sm sm:text-lg md:text-xl">
             Work remotely, explore various destinations, <br /> and make lasting
             memories with a community of digital nomads.
           </p>

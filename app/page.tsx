@@ -53,10 +53,12 @@ export default function Page() {
   };
 
   return (
-    <main>
+    <main className="overflow-x-hidden">
       <Herosection />
       <section className="px-4 sm:px-8 md:px-16 flex flex-col gap-4 ">
-        <h2 className="text-5xl font-bold">Work remotely. Travel the world.</h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
+          Work remotely. Travel the world.
+        </h2>
         <div className="flex items-center gap-2 w-fit text-sm hover:cursor-pointer text-[#1D1D1b] hover:underline transition-all duration-300">
           <button className="text-white bg-[#1D1D1B] p-2 rounded-full">
             <Icon icon="grommet-icons:form-next-link" className="text-2xl" />

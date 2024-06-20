@@ -34,16 +34,16 @@ export default function Testimonial() {
                 </div>
                 <figure>
                   <blockquote>
-                    <p className="text-gray-800 text-xl font-semibold sm:text-2xl">
+                    <p className="text-[#1d1d1b] text-xl font-semibold sm:text-2xl">
                       {item?.descriptioin}
                     </p>
                   </blockquote>
                   <div className=" flex gap-2 justify-center items-center w-full py-4">
                     <div>
-                      <span className="block text-gray-800 font-semibold">
+                      <span className="block text-[#1d1d1b] font-semibold">
                         {item?.name}
                       </span>
-                      <span className="block text-gray-600 text-sm mt-0.5">
+                      <span className="block text-[#1d1d1b]/90 text-sm mt-0.5">
                         {item?.position}
                       </span>
                     </div>

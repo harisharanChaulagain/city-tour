@@ -11,17 +11,35 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Page() {
   useGSAP(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".progress",
-        start: "top 70%",
-        end: "top top",
-        scrub: 1,
-        markers: true,
-      },
-    });
-    tl.to(".progress", {
-      height: "100%",
+    // Select all elements with the class "progress"
+    const progressElements = document.querySelectorAll(".progress");
+
+    // Loop through each progress element
+    progressElements.forEach((progressElement) => {
+      // Find the dot within the current progress element's parent
+      const dot = progressElement.previousElementSibling;
+
+      // Create a separate timeline for each progress element
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: progressElement.parentElement,
+          start: "top 70%",
+          end: "top top",
+          scrub: 1,
+          // markers: true,
+        },
+      });
+
+      // Animate the dot's opacity
+      tl.to(dot, {
+        opacity: 1,
+        duration: 0.5,
+      });
+
+      // Animate the progress bar's height
+      tl.to(progressElement, {
+        height: "100%",
+      });
     });
   });
 
@@ -49,35 +67,47 @@ export default function Page() {
         <div className="text-2xl font-bold">
           What to expect after <br /> booking...
         </div>
-        <div className="py-10 ">
+        <div className="py-10">
           <div className="grid grid-cols-7">
             <div className="col-span-3"></div>
-            <div className="col-span-1 w-0.5 bg-black h-0 progress"></div>
+            <div className="col-span-1 flex flex-col items-center">
+              <div className="dot"></div>
+              <div className="w-0.5 bg-black h-0 progress"></div>
+            </div>
             <div className="col-span-3">
               <AboutCard />
             </div>
           </div>
-          {/* <div className="grid grid-cols-2 gap-20">
-            <AboutCard />
-            <div></div>
+          <div className="grid grid-cols-7">
+            <div className="col-span-3">
+              <AboutCard />
+            </div>
+            <div className="col-span-1 flex flex-col items-center">
+              <div className="dot"></div>
+              <div className="w-0.5 bg-black h-0 progress"></div>
+            </div>
+            <div className="col-span-3"></div>
           </div>
-
-          <div className="grid grid-cols-2 gap-20">
-            <div></div>
-            <AboutCard />
+          <div className="grid grid-cols-7">
+            <div className="col-span-3"></div>
+            <div className="col-span-1 flex flex-col items-center">
+              <div className="dot"></div>
+              <div className="w-0.5 bg-black h-0 progress"></div>
+            </div>
+            <div className="col-span-3">
+              <AboutCard />
+            </div>
           </div>
-          <div className="grid grid-cols-2 gap-20">
-            <AboutCard />
-            <div></div>
+          <div className="grid grid-cols-7">
+            <div className="col-span-3">
+              <AboutCard />
+            </div>
+            <div className="col-span-1 flex flex-col items-center">
+              <div className="dot"></div>
+              <div className="w-0.5 bg-black h-0 progress"></div>
+            </div>
+            <div className="col-span-3"></div>
           </div>
-          <div className="grid grid-cols-2 gap-20">
-            <div></div>
-            <AboutCard />
-          </div>
-          <div className="grid grid-cols-2 gap-20">
-            <AboutCard />
-            <div></div>
-          </div> */}
         </div>
       </div>
 

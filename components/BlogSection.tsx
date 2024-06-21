@@ -2,7 +2,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useRef } from "react";
-import bhaktapurCity from "../assets/bhaktapur.jpg";
+import kathmanduCity from "../assets/blog/kathmandu.png";
+import bhaktapurCity from "../assets/blog/bhaktapur.png";
+import pohkeraCity from "../assets/blog/pokhara.png";
+import chitwanCity from "../assets/blog/chitwan.png";
+import lumbiniCity from "../assets/blog/lumbini.png";
 import { Icon } from "@iconify/react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -13,31 +17,38 @@ gsap.registerPlugin(ScrollTrigger);
 export const blogPosts = [
   {
     id: 1,
-    title: "Kathmandu Valley",
+    title: "Kathmandu",
     description:
-      "Explore the rich cultural heritage and vibrant life of Kathmandu Valley, nestled in the heart of Nepal. Wander through ancient temples and palaces, witness traditional rituals, and savor the flavors of Newari cuisine. Experience the bustling streets of Thamel, where artisans and traders converge from all corners of Nepal. Discover the spiritual tranquility of Swayambhunath and the architectural marvels of Patan Durbar Square. Kathmandu Valley offers a unique blend of history, culture, and spirituality that captivates travelers from around the globe.",
-    image: bhaktapurCity,
+      "Kathmandu, where Ancient Temples and Modern Wonders Meet! Step into a city where history and culture blend seamlessly.",
+    image: kathmanduCity,
   },
   {
     id: 2,
     title: "Pokhara",
     description:
-      "Discover the serene beauty and adventure activities in Pokhara, the gateway to the majestic Annapurna range. Embark on a boat ride across the tranquil Phewa Lake, with the towering Machhapuchhre reflected in its waters. Trek through lush forests to cascading waterfalls and enjoy paragliding amidst breathtaking mountain views. Explore the Tibetan refugee camps and witness traditional handicrafts being made. Whether you seek relaxation or adrenaline-pumping adventures, Pokhara offers an unforgettable escape into nature's embrace.",
-    image: bhaktapurCity,
+      "Discover Pokhara – The Gateway to the Himalayas! Enjoy Phewa Lake, paragliding over Sarangkot, and hidden caves.",
+    image: pohkeraCity,
   },
   {
     id: 3,
     title: "Bhaktapur",
     description:
-      "Experience the historic charm and architectural splendor of Bhaktapur, an ancient city steeped in Newari tradition. Wander through narrow brick-paved streets lined with intricately carved wooden windows and doors. Explore Durbar Square, a UNESCO World Heritage site adorned with temples, palaces, and statues dating back to the medieval Malla dynasty. Immerse yourself in local culture with a pottery-making workshop or indulge in traditional Newari cuisine. Bhaktapur is a living museum where history comes alive amidst timeless beauty.",
+      "Experience the Charm of Bhaktapur: History, Art, and Culture! From the 55-Window Palace to the bustling Taumadhi Square, immerse yourself in heritage.",
     image: bhaktapurCity,
   },
   {
     id: 4,
+    title: "Lumbini",
+    description:
+      "Dive into the Spiritual Heart of Nepal – Discover Lumbini's Peace! Experience sacred sites, meditation spots, and cultural richness.",
+    image: lumbiniCity,
+  },
+  {
+    id: 5,
     title: "Chitwan",
     description:
-      "Witness the rich wildlife and natural beauty of Chitwan, Nepal's first national park and a UNESCO World Heritage site. Embark on an exhilarating safari through dense jungles teeming with rhinos, tigers, and exotic bird species. Glide down the Rapti River on a traditional dugout canoe and encounter crocodiles sunbathing on the banks. Immerse yourself in Tharu culture with traditional dance performances and homestays. Whether you're exploring the wilderness or relaxing amidst nature's tranquility, Chitwan promises an unforgettable adventure.",
-    image: bhaktapurCity,
+      "From Dense Forests to Cultural Delights – Chitwan Has It All! Unveil the charm of a region teeming with natural beauty and cultural vibrancy.",
+    image: chitwanCity,
   },
 ];
 
@@ -84,9 +95,12 @@ export default function BlogSection() {
       </section>
       <div>
         <div className=" mt-6 overflow-hidden">
-          <div ref={blogRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" >
+          <div
+            ref={blogRef}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+          >
             {blogPosts.slice(0, 3).map((post, index) => (
-              <Link key={index} href={`/blog/${index}`}>
+              <Link key={index} href={`/blog/${post?.id}`}>
                 <div className="max-w-sm bg-[#DEDDD7] border border-gray-200 rounded-lg shadow hover:shadow-md group">
                   <div className="overflow-hidden rounded-t-lg">
                     <Image

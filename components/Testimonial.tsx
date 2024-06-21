@@ -11,7 +11,7 @@ import { Pagination } from "swiper/modules";
 
 export default function Testimonial() {
   return (
-    <section className="py-14 bg-[#DFDDD8]">
+    <section className="py-24 bg-[#DFDDD8]">
       <div className="max-w-screen-xl mx-auto px-4 md:px-8">
         <Swiper
           dir="rtl"
@@ -26,21 +26,34 @@ export default function Testimonial() {
             <SwiperSlide key={index} className="pb-20">
               <div className="max-w-3xl mx-auto text-center">
                 <div className="pb-6 flex gap-1 items-center justify-center">
-                  <Icon icon="material-symbols:star" className="text-2xl" />
-                  <Icon icon="material-symbols:star" className="text-2xl" />
-                  <Icon icon="material-symbols:star" className="text-2xl" />
-                  <Icon icon="material-symbols:star" className="text-2xl" />
-                  <Icon icon="material-symbols:star" className="text-2xl" />
+                  <Icon
+                    icon="material-symbols:star"
+                    className="text-2xl text-yellow-500"
+                  />
+                  <Icon
+                    icon="material-symbols:star"
+                    className="text-2xl text-yellow-500"
+                  />
+                  <Icon
+                    icon="material-symbols:star"
+                    className="text-2xl text-yellow-500"
+                  />
+                  <Icon
+                    icon="material-symbols:star"
+                    className="text-2xl text-yellow-500"
+                  />
+                  <Icon
+                    icon="material-symbols:star"
+                    className="text-2xl text-yellow-500"
+                  />
                 </div>
                 <figure>
-                  <blockquote>
-                    <p className="text-[#1d1d1b] text-xl font-semibold sm:text-2xl">
-                      {item?.descriptioin}
-                    </p>
-                  </blockquote>
+                  <p className="text-[#1d1d1b] text-xl font-semibold sm:text-2xl">
+                    {item?.descriptioin}
+                  </p>
                   <div className=" flex gap-2 justify-center items-center w-full py-4">
-                    <div>
-                      <span className="block text-[#1d1d1b] font-semibold">
+                    <div className="flex flex-col justify-start">
+                      <span className=" text-[#1d1d1b] font-semibold flex justify-end">
                         {item?.name}
                       </span>
                       <span className="block text-[#1d1d1b]/90 text-sm mt-0.5">
@@ -69,19 +82,19 @@ const testimonialDetails = [
   {
     name: "Hari",
     descriptioin:
-      "  “As a freelancer, finding the right work-life balance can be  challenging. CityWander has made it so much easier for me to explore new places while staying productive.”",
+      "  As a freelancer, finding the right work-life balance can be  challenging. Ghumfir Nepal has made it so much easier for me to explore new places while staying productive.”",
     position: "founder ",
   },
   {
     name: "Hari",
     descriptioin:
-      "  “As a freelancer, finding the right work-life balance can be  challenging. CityWander has made it so much easier for me to explore new places while staying productive.”",
+      "  As a freelancer, finding the right work-life balance can be  challenging. Ghumfir Nepal has made it so much easier for me to explore new places while staying productive.”",
     position: "founder ",
   },
   {
     name: "Hari",
     descriptioin:
-      "  “As a freelancer, finding the right work-life balance can be  challenging. CityWander has made it so much easier for me to explore new places while staying productive.”",
+      "  As a freelancer, finding the right work-life balance can be  challenging. Ghumfir Nepal has made it so much easier for me to explore new places while staying productive.”",
     position: "founder ",
   },
 ];

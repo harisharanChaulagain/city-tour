@@ -44,9 +44,9 @@ body::-webkit-scrollbar {
 /* Add this CSS to your stylesheet */
 
 .dot {
-  width: 10px;
-  height: 10px;
-  background-color: black;
+  width: 15px;
+  height: 15px;
+  background-color: #1d1d1b;
   border-radius: 50%;
   opacity: 0;
   margin-bottom: 5px; /* Adjust as needed to position the dot correctly */
@@ -55,7 +55,6 @@ body::-webkit-scrollbar {
 .progress {
   transition: height 0.3s ease;
 }
-
 
 /* react slick */
 .slick-prev,

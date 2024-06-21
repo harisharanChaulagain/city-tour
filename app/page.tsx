@@ -3,10 +3,9 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { Icon } from "@iconify/react";
 import Herosection from "@/components/Herosection";
-import accomodationImage from "../assets/accomodation.jpg";
-import coorkingImage from "../assets/coorking-place.jpg";
-import communityImage from "../assets/community.jpg";
 import localImage from "../assets/local-experience.jpg";
+import smallGroup from "../assets/small-group.png"
+import customised from "../assets/customised.png";
 import Testimonial from "@/components/Testimonial";
 import DestinationSection from "@/components/DestinationSection";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -15,29 +14,29 @@ import BlogSection from "@/components/BlogSection";
 
 const includeItems = [
   {
-    title: "Accommodations",
-    description: "Centrally located, apartment or condo accomodations.",
+    title: "Customized Packages",
+    description: "Tailored city and food tours that cater to individual preferences and interests.",
     icon: "mi:home",
-    image: accomodationImage,
+    image: customised,
   },
   {
-    title: "Co-working spaces",
-    description: "24/7 access to co-working space with strong WiFi.",
+    title: "Small Group Atmosphere",
+    description: "Intimate tours that allow for personalized attention and a more immersive experience.",
     icon: "ri:computer-line",
-    image: coorkingImage,
+    image: smallGroup,
   },
   {
-    title: "Community",
-    description: "Like-minded CityWanders working and traveling the world.",
+    title: "Multi-lingual Guides",
+    description: "Guides fluent in multiple languages to accommodate diverse travelers.",
     icon: "lucide:users",
-    image: communityImage,
-  },
-  {
-    title: "Local Experiences",
-    description: "Make memories with inclusive local experiences.",
-    icon: "icon-park-outline:local-two",
     image: localImage,
   },
+  // {
+  //   title: "Local Experiences",
+  //   description: "Make memories with inclusive local experiences.",
+  //   icon: "icon-park-outline:local-two",
+  //   image: localImage,
+  // },
 ];
 
 export default function Page() {
@@ -58,9 +57,9 @@ export default function Page() {
   return (
     <main className="overflow-x-hidden">
       <Herosection />
-      <section className="px-4 sm:px-8 md:px-16 flex flex-col gap-4">
+      <section className="px-4 sm:px-8 md:px-16 flex flex-col gap-4 py-10">
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
-          Work remotely. Travel the world.
+        What Sets Up Apart
         </h2>
         <Link
           href="/about"
@@ -72,7 +71,7 @@ export default function Page() {
           Learn how it works
         </Link>
       </section>
-      <section className="py-20 px-4 sm:px-8 md:px-16">
+      <section className="pb-20 px-4 sm:px-8 md:px-16">
         <div className="relative">
           <div className="h-96 rounded-2xl overflow-hidden transition-all duration-300">
             <Image
@@ -114,14 +113,14 @@ export default function Page() {
                         : "bg-gray-200 text-black"
                     }`}
                   >
-                    <div>
+                    {/* <div>
                       <Icon icon={item.icon} className="text-2xl" />
-                    </div>
-                    <div className="flex flex-col gap-2">
+                    </div> */}
+                    <div className="flex flex-col gap-2 pr-8">
                       <h1 className="text-base sm:text-lg md:text-2xl font-bold">
                         {item.title}
                       </h1>
-                      <p className="text-sm sm:text-base md:text-xl">
+                      <p className="text-sm sm:text-base ">
                         {item.description}
                       </p>
                     </div>

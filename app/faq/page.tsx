@@ -13,9 +13,9 @@ export default function Page() {
 
   return (
     <main className="py-20 px-4 sm:px-8 md:px-16">
-      <section className="bg-[#DEDDD7] rounded-2xl flex flex-col gap-4 p-8 mb-10">
-        <h1 className="text-[#1D1D1B] font-bold  text-2xl sm:text-3xl md:text-4xl lg:text-5xl pt-10">
-          Frequently Asked Questions
+      <section className="bg-[#DEDDD7] rounded-2xl flex flex-col gap-6 p-8 my-10">
+        <h1 className="text-[#1D1D1B] font-bold  text-2xl sm:text-3xl md:text-4xl lg:text-5xl pt-20">
+          Frequently Asked <br /> Questions
         </h1>
         <p>Got questions? Find your answers here.</p>
       </section>
@@ -33,11 +33,17 @@ export default function Page() {
                 <div className="text-primary-350 ">
                   {openItemIndex === index ? (
                     <div className="bg-[#1d1d1b] text-white p-2 rounded-full  transition-all duration-300">
-                      <Icon icon="mingcute:up-fill" className="text-base sm:text-xl" />
+                      <Icon
+                        icon="mingcute:up-fill"
+                        className="text-base sm:text-xl"
+                      />
                     </div>
                   ) : (
                     <div className="bg-[#1d1d1b] text-white p-2 rounded-full transform rotate-180 transition-all duration-300">
-                      <Icon icon="mingcute:up-fill" className="text-base sm:text-xl" />
+                      <Icon
+                        icon="mingcute:up-fill"
+                        className="text-base sm:text-xl"
+                      />
                     </div>
                   )}
                 </div>
@@ -47,7 +53,7 @@ export default function Page() {
                   {item.answer}
                 </div>
               </Collapse>
-              <hr className="border-[#DEDDD7] my-2" />
+              <div className="bg-gray-300 h-0.5 w-full my-8"></div>
             </div>
           ))}
         </div>

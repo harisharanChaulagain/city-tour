@@ -11,10 +11,10 @@ export default function Footer() {
       <div className="gap-6 justify-between md:flex">
         <div className="flex-1">
           <div className="max-w-md">
-            <h1 className="py-4 text-2xl font-semibold">CityWander.</h1>
+            <h1 className="py-4 text-2xl font-semibold">Ghumfir Nepal.</h1>
             <p className="leading-relaxed mt-2 text-[15px]">
               Work remotely, explore various destinations, and make lasting
-              memories with a community of digital CityWanders.
+              memories with a community of digital Ghumfir Nepals.
             </p>
           </div>
         </div>

@@ -6,7 +6,7 @@ import React from "react";
 
 export default function page() {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4  px-4 sm:px-8 md:px-16 py-20">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4  px-4 sm:px-8 md:px-16 pb-20 pt-28">
       {blogPosts.map((post, index) => (
         <Link key={index} href={`/blog/${index}`}>
           <div className="max-w-sm bg-[#DEDDD7] border border-gray-200 rounded-lg shadow hover:shadow-md group">

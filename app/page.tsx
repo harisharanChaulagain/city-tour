@@ -11,6 +11,7 @@ import Testimonial from "@/components/Testimonial";
 import DestinationSection from "@/components/DestinationSection";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Link from "next/link";
+import BlogSection from "@/components/BlogSection";
 
 const includeItems = [
   {
@@ -27,7 +28,7 @@ const includeItems = [
   },
   {
     title: "Community",
-    description: "Like-minded nomads working and traveling the world.",
+    description: "Like-minded CityWanders working and traveling the world.",
     icon: "lucide:users",
     image: communityImage,
   },
@@ -133,6 +134,7 @@ export default function Page() {
       </section>
       <DestinationSection />
       <Testimonial />
+      <BlogSection />
     </main>
   );
 }

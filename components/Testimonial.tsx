@@ -11,7 +11,7 @@ import { Pagination } from "swiper/modules";
 
 export default function Testimonial() {
   return (
-      <section className="py-14 bg-[#DFDDD8]">
+    <section className="py-14 bg-[#DFDDD8]">
       <div className="max-w-screen-xl mx-auto px-4 md:px-8">
         <Swiper
           dir="rtl"
@@ -69,19 +69,19 @@ const testimonialDetails = [
   {
     name: "Hari",
     descriptioin:
-      "  “As a freelancer, finding the right work-life balance can be  challenging. Nomad has made it so much easier for me to explore new places while staying productive.”",
+      "  “As a freelancer, finding the right work-life balance can be  challenging. CityWander has made it so much easier for me to explore new places while staying productive.”",
     position: "founder ",
   },
   {
     name: "Hari",
     descriptioin:
-      "  “As a freelancer, finding the right work-life balance can be  challenging. Nomad has made it so much easier for me to explore new places while staying productive.”",
+      "  “As a freelancer, finding the right work-life balance can be  challenging. CityWander has made it so much easier for me to explore new places while staying productive.”",
     position: "founder ",
   },
   {
     name: "Hari",
     descriptioin:
-      "  “As a freelancer, finding the right work-life balance can be  challenging. Nomad has made it so much easier for me to explore new places while staying productive.”",
+      "  “As a freelancer, finding the right work-life balance can be  challenging. CityWander has made it so much easier for me to explore new places while staying productive.”",
     position: "founder ",
   },
 ];

@@ -44,7 +44,7 @@ export default function Navbar() {
       <div className="bg-[#E9E8E4] w-screen">
         <header className="w-full flex justify-between items-center bg-[#E9E8E4] fixed h-20 px-4 sm:px-8 md:px-16 z-50">
           <Link href="/" className="text-xl font-bold">
-            nomad.
+            CityWander.
           </Link>
           <div onClick={toggleNavItem}>
             {showNavItem ? (

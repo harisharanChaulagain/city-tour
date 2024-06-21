@@ -11,7 +11,7 @@ export default function NewsLetter() {
             Subscribe to our newsletter.
           </h3>
           <p className="text-sm sm:text-lg ">
-            Join a group of like-minded digital CityWanders working and
+            Join a group of like-minded digital Ghumfir Nepals working and
             traveling the world together. Get updates on new deals and discounts
             for every destination.
           </p>

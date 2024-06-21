@@ -2,10 +2,14 @@
 import OurTeamSection from "@/components/OurTeamSection";
 import Image from "next/image";
 import React, { useRef } from "react";
-import pokheraImage from "../../assets/pokhera.jpg";
+import aboutImage from "../../assets/aboutImage.png";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import privateTransfer from "../../assets/about/privateTransfer.png";
+import personalizedItineraries from "../../assets/about/personalizedItineraries.png";
+import expertlocalGuide from "../../assets/about/expertlocalGuide.png";
+import accomodation from "../../assets/about/accomodation.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -47,22 +51,22 @@ export default function Page() {
     <div className=" py-20 text-[#1d1d1b]">
       <div className="px-4 sm:px-8 md:px-16">
         <h1 className="text-3xl sm:text-5xl md:text-6xl lg:tex-7xl xl:text-8xl font-bold flex justify-center items-center py-8">
-          What Is CityWander?
+          What Is Ghumfir Nepal?
         </h1>
         <div className="w-full h-96 rounded-2xl overflow-hidden">
           <Image
-            src={pokheraImage}
+            src={aboutImage}
             alt="pokheraImage"
             className="h-full w-full object-cover"
           />
         </div>
         <div className="flex justify-end">
           <p className="max-w-2xl py-10 text-base sm:text-xl md:text-2xl font-normal ">
-            CityWander is a travel startup providing travel programs and group
-            work for digital CityWanders. Traveling solo can be daunting, so why
-            not work remotely and explore the world with other like-minded
-            members. Bring your self and your work. We&apos;ll take care of
-            everything else.
+            City Wander is a travel company dedicated to providing personalized
+            urban exploration experiences. Whether you are a solo traveler, a
+            couple, a family, or a group of friends, we tailor our tours to suit
+            your interests, ensuring that you see the city through a
+            local&apos;s eyes.
           </p>
         </div>
         <div className="text-2xl sm:text-4xl md:text-5xl font-bold py-16 mt-8">
@@ -70,76 +74,48 @@ export default function Page() {
         </div>
         <div className="py-10">
           <div className="hidden md:block">
-            <div className="grid grid-cols-7">
-              <div className="col-span-3"></div>
-              <div className="col-span-1 flex flex-col items-center">
-                <div className="dot"></div>
-                <div className="w-[4px] bg-[#1d1d1b] h-0 progress"></div>
+            {aboutDetails.map((item, index) => (
+              <div key={index} className="grid grid-cols-7">
+                <div
+                  className={`col-span-3 ${
+                    index % 2 === 0 ? "order-1" : "order-3"
+                  }`}
+                ></div>
+                <div className="col-span-1 flex flex-col items-center order-2">
+                  <div className="dot"></div>
+                  <div className="w-[4px] bg-[#1d1d1b] h-0 progress"></div>
+                </div>
+                <div
+                  className={`col-span-3 ${
+                    index % 2 === 0 ? "order-3" : "order-1"
+                  }`}
+                >
+                  <AboutCard
+                    title={item?.title}
+                    details={item?.details}
+                    image={item?.image}
+                  />
+                </div>
               </div>
-              <div className="col-span-3">
-                <AboutCard />
-              </div>
-            </div>
-            <div className="grid grid-cols-7">
-              <div className="col-span-3">
-                <AboutCard />
-              </div>
-              <div className="col-span-1 flex flex-col items-center">
-                <div className="dot"></div>
-                <div className="w-[4px] bg-[#1d1d1b] h-0 progress"></div>
-              </div>
-              <div className="col-span-3"></div>
-            </div>
-            <div className="grid grid-cols-7">
-              <div className="col-span-3"></div>
-              <div className="col-span-1 flex flex-col items-center">
-                <div className="dot"></div>
-                <div className="w-[4px] bg-[#1d1d1b] h-0 progress"></div>
-              </div>
-              <div className="col-span-3">
-                <AboutCard />
-              </div>
-            </div>
-            <div className="grid grid-cols-7">
-              <div className="col-span-3">
-                <AboutCard />
-              </div>
-              <div className="col-span-1 flex flex-col items-center">
-                <div className="dot"></div>
-                <div className="w-[4px] bg-[#1d1d1b] h-0 progress"></div>
-              </div>
-              <div className="col-span-3"></div>
-            </div>
+            ))}
           </div>
 
           <div className="md:hidden ">
-            <div className="grid grid-cols-6">
-              <div className="col-span-1 flex flex-col items-center">
-                <div className="dot"></div>
-                <div className="w-[4px] bg-[#1d1d1b] h-0 progress"></div>
+            {aboutDetails.map((item, index) => (
+              <div key={index} className="grid grid-cols-6">
+                <div className="col-span-1 flex flex-col items-center">
+                  <div className="dot"></div>
+                  <div className="w-[4px] bg-[#1d1d1b] h-0 progress"></div>
+                </div>
+                <div className="col-span-5">
+                  <AboutCard
+                    title={item?.title}
+                    details={item?.details}
+                    image={item?.image}
+                  />
+                </div>
               </div>
-              <div className="col-span-5">
-                <AboutCard />
-              </div>
-            </div>
-            <div className="grid grid-cols-6">
-              <div className="col-span-1 flex flex-col items-center">
-                <div className="dot"></div>
-                <div className="w-[4px] bg-[#1d1d1b] h-0 progress"></div>
-              </div>
-              <div className="col-span-5">
-                <AboutCard />
-              </div>
-            </div>{" "}
-            <div className="grid grid-cols-6">
-              <div className="col-span-1 flex flex-col items-center">
-                <div className="dot"></div>
-                <div className="w-[4px] bg-[#1d1d1b] h-0 progress"></div>
-              </div>
-              <div className="col-span-5">
-                <AboutCard />
-              </div>
-            </div>{" "}
+            ))}
           </div>
         </div>
       </div>
@@ -149,7 +125,7 @@ export default function Page() {
   );
 }
 
-const AboutCard = () => {
+const AboutCard = ({ title, image, details }: any) => {
   const cardRef = useRef(null);
   useGSAP(
     () => {
@@ -178,11 +154,11 @@ const AboutCard = () => {
       ref={cardRef}
       className="about-card p-8 rounded-2xl bg-[#DFDDD8] shadow-sm flex flex-col gap-6"
     >
-      <h1 className="text-xl sm:text-2xl font-bold">Co-working Space</h1>
-      <h2 className="text-base sm:text-lg">Work remotely in your designated workspace.</h2>
+      <h1 className="text-xl sm:text-2xl font-bold">{title}</h1>
+      <h2 className="text-base sm:text-lg">{details}</h2>
       <div className="h-80 w-full rounded-2xl overflow-hidden">
         <Image
-          src={pokheraImage}
+          src={image}
           alt="pokhara image"
           className="h-full w-full object-cover hover:scale-105 transition-all duration-300"
         />
@@ -190,3 +166,30 @@ const AboutCard = () => {
     </div>
   );
 };
+
+const aboutDetails = [
+  {
+    title: "Personalized Itineraries",
+    details:
+      " We create customized tour plans based on your interests, whether you’re fascinated by history, culture, nature, or cuisine.",
+    image: personalizedItineraries,
+  },
+  {
+    title: "Private Transfer",
+    details:
+      "We will pick you up from the airport in a private transfer and bring you to your accommodations.",
+    image: privateTransfer,
+  },
+  {
+    title: "Expert Local Guides",
+    descriptionexpertlocalGuide:
+      " Our guides are locals who bring extensive knowledge and personal stories about Nepal’s rich culture and history . They are proficient in multiple languages to ensure clear communication.",
+    image: expertlocalGuide,
+  },
+  {
+    title: "Accommodation",
+    details:
+      "Unpack, relax, and settle into your centrally located accommodation.",
+    image: accomodation,
+  },
+];

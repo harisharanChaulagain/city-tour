@@ -1,14 +1,23 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
-import pokharaCity from "../assets/pokhera.jpg";
-import bhaktapurCity from "../assets/bhaktapur.jpg";
+import kathmanduCity from "../assets/blog/kathmandu.png";
+import bhaktapurCity from "../assets/blog/bhaktapur.png";
+import pohkeraCity from "../assets/blog/pokhara.png";
+import chitwanCity from "../assets/blog/chitwan.png";
+import lumbiniCity from "../assets/blog/lumbini.png";
 import { Icon } from "@iconify/react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const images = [pokharaCity, bhaktapurCity];
+const images = [
+  kathmanduCity,
+  bhaktapurCity,
+  chitwanCity,
+  pohkeraCity,
+  lumbiniCity,
+];
 
 export default function Herosection() {
   const [slider, setSlider] = useState<Slider | null>(null);
@@ -63,7 +72,7 @@ export default function Herosection() {
           </h1>
           <p className="text-xs sm:text-sm md:text-lg text-gray-200">
             Work remotely, explore various destinations, <br /> and make lasting
-            memories with a community of digital CityWanders.
+            memories with a community of digital Ghumfir Nepals.
           </p>
         </div>
         <div

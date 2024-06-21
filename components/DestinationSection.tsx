@@ -1,7 +1,10 @@
 import React, { useRef } from "react";
 import { Icon } from "@iconify/react";
-import bhaktapurImage from "../assets/bhaktapur.jpg";
-import pokharaImage from "../assets/pokhera.jpg";
+import kathmanduCity from "../assets/blog/kathmandu.png";
+import bhaktapurCity from "../assets/blog/bhaktapur.png";
+import pohkeraCity from "../assets/blog/pokhara.png";
+import chitwanCity from "../assets/blog/chitwan.png";
+import lumbiniCity from "../assets/blog/lumbini.png";
 import { gsap } from "gsap";
 import Image from "next/image";
 import Link from "next/link";
@@ -70,16 +73,21 @@ export default function DestinationSection() {
         {destinationDetails.map((item, index) => (
           <div
             key={index}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-8xl font-bold text-[#1D1D1b] relative"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-8xl font-bold text-[#1D1D1b] relative pl-4"
             onMouseEnter={() => handleMouseEnter(index)}
             onMouseLeave={() => handleMouseLeave(index)}
           >
+            <div className="absolute text-sm sm:text-base top-3 -left-2">
+              0{index + 1}
+            </div>
             {item.title}
-            <hr className="mt-4" />
+            <div className="bg-gray-600 my-2 h-0.5 w-full">
+              <hr />
+            </div>
             <Image
               src={item.image}
               alt={item.title}
-              className="absolute left-10 sm:left-60 md:left-80 bottom-0 w-64 h-64 object-cover rounded-lg shadow-lg pointer-events-none z-50"
+              className="absolute left-10 sm:left-60 md:left-96 bottom-0 w-64 h-64 object-cover rounded-lg shadow-lg pointer-events-none z-40"
               style={{
                 opacity: 0,
                 transform: "scale(0.8) rotate(-10deg) translateZ(0px)",
@@ -99,19 +107,19 @@ export default function DestinationSection() {
 
 const destinationDetails = [
   {
-    title: "Bhaktapur, Nepal",
-    image: bhaktapurImage,
-  },
-  {
-    title: "Pokhara, Nepal",
-    image: pokharaImage,
+    title: "Pokhera, Nepal",
+    image: pohkeraCity,
   },
   {
     title: "Bhaktapur, Nepal",
-    image: bhaktapurImage,
+    image: bhaktapurCity,
   },
   {
-    title: "Pokhara, Nepal",
-    image: pokharaImage,
+    title: "Chitwan, Nepal",
+    image: chitwanCity,
+  },
+  {
+    title: "Kathmandu, Nepal",
+    image: kathmanduCity,
   },
 ];

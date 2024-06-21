@@ -21,7 +21,7 @@ export default function Page() {
           </h1>
           <p className="text-sm sm:text-lg md:text-xl">
             Work remotely, explore various destinations, <br /> and make lasting
-            memories with a community of digital CityWanders.
+            memories with a community of digital Ghumfir Nepals.
           </p>
         </div>
       </section>

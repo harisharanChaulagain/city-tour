@@ -1,3 +1,4 @@
+"use client";
 import { blogPosts } from "@/components/BlogSection";
 import Image from "next/image";
 import Link from "next/link";
@@ -20,7 +21,12 @@ export default function page() {
               <h5 className="mb-2 text-2xl font-bold tracking-tight">
                 {post.title}
               </h5>
-              <p className="mb-3 font-normal">{post.description}</p>
+              <p className="mb-3 font-normal">
+                {post.description.length > 100
+                  ? `${post.description.slice(0, 100)}...`
+                  : post.description}
+              </p>
+
               <div className="inline-flex items-center px-3 py-2 text-sm font-medium text-center bg-[#1d1d1b] hover:bg-[#1d1d1b]/90 transition-all duration-300 text-white rounded-lg focus:ring-4 focus:outline-none">
                 Read more
                 <svg

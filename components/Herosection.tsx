@@ -38,7 +38,7 @@ export default function Herosection() {
   };
 
   return (
-    <main className=" px-4 sm:px-4 md:px-12 py-20">
+    <main className=" sm:px-4 md:px-12 py-20">
       <div className="relative w-full h-96 rounded-2xl">
         <Slider ref={setSlider} {...settings}>
           {images.map((src, index) => (
@@ -54,16 +54,19 @@ export default function Herosection() {
             </div>
           ))}
         </Slider>
-        <div className="absolute top-52 left-20 text-white flex flex-col gap-4">
-          <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
+        <div className="absolute top-40 left-10 sm:top-52 sm:left-20 text-white flex flex-col gap-4">
+          <h1 className="font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
             Work from anywhere.
           </h1>
-          <p className="text-sm sm:text-lg md:text-xl">
+          <p className="text-xs sm:text-sm md:text-lg lg:text-xl xl:text-2xl">
             Work remotely, explore various destinations, <br /> and make lasting
             memories with a community of digital nomads.
           </p>
         </div>
-        <div className="absolute -bottom-5 right-10 flex justify-between max-w-xs gap-4">
+        <div
+          className="absolute -bottom-5 left-1/2 transform -translate-x-1/2 flex justify-between
+    max-w-xs gap-4 sm:left-auto sm:right-10 sm:transform-none"
+        >
           <button
             onClick={handlePrev}
             className={`text-white bg-[#1D1D1B] p-4 rounded-full ${

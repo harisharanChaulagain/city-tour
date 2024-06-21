@@ -79,7 +79,7 @@ export default function DestinationSection() {
             <Image
               src={item.image}
               alt={item.title}
-              className="absolute left-60 bottom-0 w-64 h-64 object-cover rounded-lg shadow-lg pointer-events-none z-50"
+              className="absolute left-10 sm:left-60 md:left-80 bottom-0 w-64 h-64 object-cover rounded-lg shadow-lg pointer-events-none z-50"
               style={{
                 opacity: 0,
                 transform: "scale(0.8) rotate(-10deg) translateZ(0px)",

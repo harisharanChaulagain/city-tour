@@ -37,16 +37,20 @@ export default function Page() {
           </div>
         ))}
       </section>
-      <section className="grid grid-cols-2 gap-8">
-        <div>
-          <h1>Information</h1>
-          <details>
+      <section className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="flex flex-col gap-4">
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold">
+            Information
+          </h1>
+          <div className="text-base sm:text-lg">
             Tokyo, the bustling capital of Japan, is a captivating metropolis
             that seamlessly blends ancient traditions with futuristic
-            innovation. As one of the world&apos;s most populous cities, Tokyo is a
-            bustling hub of technology, business, fashion, and culture.
-          </details>
-          <span>Recommended Activities</span>
+            innovation. As one of the world&apos;s most populous cities, Tokyo
+            is a bustling hub of technology, business, fashion, and culture.
+          </div>
+          <span className="text-lg sm:text-xl md:text-2xl">
+            Recommended Activities
+          </span>
 
           <div className="h-96 w-full overflow-hidden rounded-2xl">
             <Image
@@ -55,15 +59,20 @@ export default function Page() {
               className="h-full w-full object-cover"
             />
           </div>
-          <div>
+          <div className="flex flex-col gap-2">
             {activitiesDetails.map((item, index) => (
-              <div key={index}>
-                <div>{item.title}</div>
-                <p>{item?.description}</p>
+              <div key={index} className=" text-sm sm:text-base">
+                <div>
+                  {index + 1}
+                  <span className="font-bold">{item.title}</span>
+                  <p>{item?.description}</p>
+                </div>
               </div>
             ))}
           </div>
-          <span>Must-try food</span>
+          <span className="text-lg sm:text-xl md:text-2xl mt-8">
+            Must-try food
+          </span>
           <div className="h-96 w-full overflow-hidden rounded-2xl">
             <Image
               src={thakalikhana}
@@ -73,28 +82,31 @@ export default function Page() {
           </div>
           <div>
             {foodDetails.map((item, index) => (
-              <div key={index}>
-                <div>{item.title}</div>
-                <p>{item?.description}</p>
+              <div key={index} className="text-sm sm:text-base">
+                <div>
+                  {index + 1}
+                  <span className="font-bold">{item.title}</span>
+                  <p>{item?.description}</p>
+                </div>
               </div>
             ))}
           </div>
         </div>
         <div className="h-full">
-          <div className="sticky top-20 p-8 flex flex-col justify-between rounded-2xl overflow-hidden shadow-lg bg-[#1d1d1b] text-white">
+          <div className="lg:sticky top-20 p-8 flex flex-col justify-between rounded-2xl overflow-hidden shadow-lg bg-[#1d1d1b] text-white">
             <div className="">
               <div className="mb-4 font-medium text-xl">
-                <p>
-                  <strong>Accommodations:</strong> $650
+                <p className="flex justify-between">
+                  <strong>Accommodations:</strong> <span>$650</span>
                 </p>
-                <p>
-                  <strong>Co-working Space:</strong> $100
+                <p className="flex justify-between">
+                  <strong>Co-working Space:</strong> <span>$650</span>
                 </p>
-                <p>
-                  <strong>Private transfer:</strong> $50
+                <p className="flex justify-between">
+                  <strong>Private transfer:</strong> <span>$650</span>
                 </p>
-                <p>
-                  <strong>Community excursions:</strong> $400
+                <p className="flex justify-between">
+                  <strong>Community excursions:</strong> <span>$650</span>
                 </p>
               </div>
             </div>

@@ -24,9 +24,9 @@ export default function NewsLetter() {
             <input
               type="email"
               placeholder="Enter your email"
-              className="text-gray-600 w-full p-3 rounded-md outline-none bg-[#D1CFC7]"
+              className="placeholder-[#1d1d1b] text-sm w-full p-3 rounded-md outline-none bg-[#D1CFC7]"
             />
-            <button className="w-full mt-3 px-5 py-3 rounded-md text-white bg-[#1D1D1B] hover:bg-[#1D1D1B]/90 active:bg-indigo-700 duration-150 outline-none shadow-md focus:shadow-none focus:ring-2 ring-offset-2 sm:mt-0 sm:ml-3 sm:w-auto">
+            <button className="w-full mt-3 px-5 py-3 rounded-md text-white bg-[#1D1D1B] hover:bg-[#1D1D1B]/90 duration-150 outline-none shadow-md focus:shadow-none focus:ring-2 ring-offset-2 sm:mt-0 sm:ml-3 sm:w-auto">
               Subscribe
             </button>
           </form>

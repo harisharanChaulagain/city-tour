@@ -47,7 +47,7 @@ export default function Page() {
     <div className=" py-20">
       <div className="px-4 sm:px-8 md:px-16">
         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:tex-5xl xl:text-6xl font-bold flex justify-center items-center py-4">
-          What Is Nomad?
+          What Is CityWander?
         </h1>
         <div className="w-full h-96 rounded-2xl overflow-hidden">
           <Image
@@ -58,10 +58,11 @@ export default function Page() {
         </div>
         <div className="flex justify-end">
           <p className="max-w-xl py-4 text-sm sm:text-lg md:text-xl font-normal">
-            Nomad is a travel startup providing travel programs and group work
-            for digital nomads. Traveling solo can be daunting, so why not work
-            remotely and explore the world with other like-minded members. Bring
-            your self and your work. We&apos;ll take care of everything else.
+            CityWander is a travel startup providing travel programs and group
+            work for digital CityWanders. Traveling solo can be daunting, so why
+            not work remotely and explore the world with other like-minded
+            members. Bring your self and your work. We&apos;ll take care of
+            everything else.
           </p>
         </div>
         <div className="text-xl sm:text-2xl font-bold">

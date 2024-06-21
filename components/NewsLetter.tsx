@@ -11,9 +11,9 @@ export default function NewsLetter() {
             Subscribe to our newsletter.
           </h3>
           <p className="text-sm">
-            Join a group of like-minded digital nomads working and traveling the
-            world together. Get updates on new deals and discounts for every
-            destination.
+            Join a group of like-minded digital CityWanders working and
+            traveling the world together. Get updates on new deals and discounts
+            for every destination.
           </p>
         </div>
         <div className="mt-6 max-w-2xl mx-auto">

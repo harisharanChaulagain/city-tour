@@ -38,29 +38,32 @@ export default function Herosection() {
   };
 
   return (
-    <main className=" sm:px-4 md:px-12 py-20">
-      <div className="relative w-full h-96 rounded-2xl">
-        <Slider ref={setSlider} {...settings}>
+    <main className="px-4 sm:px-8 md:px-16 py-20">
+      <div className="relative ">
+        <Slider
+          ref={setSlider}
+          {...settings}
+          className="rounded-2xl overflow-hidden "
+        >
           {images.map((src, index) => (
-            <div
-              key={index}
-              className="h-96 px-4 rounded-2xl overflow-hidden transition-all duration-300"
-            >
-              <Image
-                src={src}
-                alt="city"
-                className="h-full w-full object-cover object-center rounded-2xl"
-              />
+            <div key={index} className="pr-4 ">
+              <div className="h-96 transition-all duration-300">
+                <Image
+                  src={src}
+                  alt="city"
+                  className="h-full w-full object-cover object-center rounded-2xl"
+                />
+              </div>
             </div>
           ))}
         </Slider>
-        <div className="absolute top-40 left-10 sm:top-52 sm:left-20 text-white flex flex-col gap-4">
+        <div className="px-4 absolute top-40  sm:top-52 sm:left-20 text-white flex flex-col gap-4">
           <h1 className="font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
             Work from anywhere.
           </h1>
           <p className="text-xs sm:text-sm md:text-lg lg:text-xl xl:text-2xl">
             Work remotely, explore various destinations, <br /> and make lasting
-            memories with a community of digital nomads.
+            memories with a community of digital CityWanders.
           </p>
         </div>
         <div

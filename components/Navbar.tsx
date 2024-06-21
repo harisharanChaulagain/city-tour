@@ -44,7 +44,7 @@ export default function Navbar() {
       <div className="bg-[#E9E8E4] w-screen">
         <header className="w-full flex justify-between items-center bg-[#E9E8E4] fixed h-20 px-4 sm:px-8 md:px-16 z-50">
           <Link href="/" className="text-xl font-bold">
-            nomad.
+            CityWander.
           </Link>
           <div onClick={toggleNavItem}>
             {showNavItem ? (
@@ -69,18 +69,18 @@ export default function Navbar() {
             }}
           >
             <div className="flex flex-col items-center  ">
-              <div className="flex flex-col gap-8 p-4 justify-center items-center">
+              <div className="flex flex-col gap-6 p-4 justify-center items-center">
                 {navItems.map((item, index) => (
                   <Link
                     key={index}
                     href={item?.href}
                     onClick={toggleNavItem}
-                    className="nav-link text-4xl md:text-6xl font-bold text-[#1D1D1B] flex items-center"
+                    className="nav-link text-4xl md:text-5xl font-bold text-[#1D1D1B] flex items-center"
                   >
                     <div className="arrow-wrapper">
                       <Icon
                         icon="ooui:arrow-next-ltr"
-                        className="arrow-icon text-4xl md:text-6xl "
+                        className="arrow-icon text-4xl md:text-5xl "
                       />
                     </div>
                     {item?.title}
@@ -123,6 +123,10 @@ const navItems = [
   {
     title: "Faqs",
     href: "/faq",
+  },
+  {
+    title:"Blog",
+    href:"/blog"
   },
   {
     title: "Contact",

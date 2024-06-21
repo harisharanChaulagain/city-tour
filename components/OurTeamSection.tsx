@@ -60,11 +60,11 @@ export default function OurTeamSection() {
     <main className="h-full bg-[#DFDDD8] py-20 px-4 sm:px-4 md:px-16">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 h-full">
         <div className="md:col-span-1 p-4 ">
-          <div className="md:sticky top-20">
-            <h1 className="text-lg sm:text-xl md:text-2xl font-bold">
-              Our team
-            </h1>
-            <h2 className="text-lg sm:text-xl mt-2">Meet your leaders</h2>
+          <div className="md:sticky top-20 flex flex-col gap-4">
+            <h1 className="text-sm ">Our team</h1>
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold ">
+              Meet your leaders
+            </h2>
             <p className="text-sm sm:text-base mt-2">
               Local, friendly staff members here to support you on your
               adventures.

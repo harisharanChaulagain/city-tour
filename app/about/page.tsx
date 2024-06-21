@@ -68,45 +68,77 @@ export default function Page() {
           What to expect after <br /> booking...
         </div>
         <div className="py-10">
-          <div className="grid grid-cols-7">
-            <div className="col-span-3"></div>
-            <div className="col-span-1 flex flex-col items-center">
-              <div className="dot"></div>
-              <div className="w-0.5 bg-black h-0 progress"></div>
+          <div className="hidden md:block">
+            <div className="grid grid-cols-7">
+              <div className="col-span-3"></div>
+              <div className="col-span-1 flex flex-col items-center">
+                <div className="dot"></div>
+                <div className="w-0.5 bg-black h-0 progress"></div>
+              </div>
+              <div className="col-span-3">
+                <AboutCard />
+              </div>
             </div>
-            <div className="col-span-3">
-              <AboutCard />
+            <div className="grid grid-cols-7">
+              <div className="col-span-3">
+                <AboutCard />
+              </div>
+              <div className="col-span-1 flex flex-col items-center">
+                <div className="dot"></div>
+                <div className="w-0.5 bg-black h-0 progress"></div>
+              </div>
+              <div className="col-span-3"></div>
+            </div>
+            <div className="grid grid-cols-7">
+              <div className="col-span-3"></div>
+              <div className="col-span-1 flex flex-col items-center">
+                <div className="dot"></div>
+                <div className="w-0.5 bg-black h-0 progress"></div>
+              </div>
+              <div className="col-span-3">
+                <AboutCard />
+              </div>
+            </div>
+            <div className="grid grid-cols-7">
+              <div className="col-span-3">
+                <AboutCard />
+              </div>
+              <div className="col-span-1 flex flex-col items-center">
+                <div className="dot"></div>
+                <div className="w-0.5 bg-black h-0 progress"></div>
+              </div>
+              <div className="col-span-3"></div>
             </div>
           </div>
-          <div className="grid grid-cols-7">
-            <div className="col-span-3">
-              <AboutCard />
+
+          <div className="md:hidden ">
+            <div className="grid grid-cols-6">
+              <div className="col-span-1 flex flex-col items-center">
+                <div className="dot"></div>
+                <div className="w-0.5 bg-black h-0 progress"></div>
+              </div>
+              <div className="col-span-5">
+                <AboutCard />
+              </div>
             </div>
-            <div className="col-span-1 flex flex-col items-center">
-              <div className="dot"></div>
-              <div className="w-0.5 bg-black h-0 progress"></div>
-            </div>
-            <div className="col-span-3"></div>
-          </div>
-          <div className="grid grid-cols-7">
-            <div className="col-span-3"></div>
-            <div className="col-span-1 flex flex-col items-center">
-              <div className="dot"></div>
-              <div className="w-0.5 bg-black h-0 progress"></div>
-            </div>
-            <div className="col-span-3">
-              <AboutCard />
-            </div>
-          </div>
-          <div className="grid grid-cols-7">
-            <div className="col-span-3">
-              <AboutCard />
-            </div>
-            <div className="col-span-1 flex flex-col items-center">
-              <div className="dot"></div>
-              <div className="w-0.5 bg-black h-0 progress"></div>
-            </div>
-            <div className="col-span-3"></div>
+            <div className="grid grid-cols-6">
+              <div className="col-span-1 flex flex-col items-center">
+                <div className="dot"></div>
+                <div className="w-0.5 bg-black h-0 progress"></div>
+              </div>
+              <div className="col-span-5">
+                <AboutCard />
+              </div>
+            </div>{" "}
+            <div className="grid grid-cols-6">
+              <div className="col-span-1 flex flex-col items-center">
+                <div className="dot"></div>
+                <div className="w-0.5 bg-black h-0 progress"></div>
+              </div>
+              <div className="col-span-5">
+                <AboutCard />
+              </div>
+            </div>{" "}
           </div>
         </div>
       </div>

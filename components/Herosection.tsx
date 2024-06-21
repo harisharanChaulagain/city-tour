@@ -55,8 +55,8 @@ export default function Herosection() {
           className="rounded-2xl overflow-hidden "
         >
           {images.map((src, index) => (
-            <div key={index} className="pr-4 ">
-              <div className="h-[75vh] transition-all duration-300">
+            <div key={index} className="px-4 ">
+              <div className="h-80 sm:h-[75vh] transition-all duration-300">
                 <Image
                   src={src}
                   alt="city"
@@ -66,7 +66,7 @@ export default function Herosection() {
             </div>
           ))}
         </Slider>
-        <div className="px-4 absolute top-40  sm:top-72 sm:left-10 text-white flex flex-col gap-4">
+        <div className="px-4 absolute top-40 left-4 sm:top-72 sm:left-10 text-white flex flex-col gap-4">
           <h1 className="font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
             Work from anywhere.
           </h1>

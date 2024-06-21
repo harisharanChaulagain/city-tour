@@ -24,7 +24,7 @@ export default function BlogDetails() {
   }
 
   return (
-    <div className="px-4 sm:px-8 md:px-16 py-20">
+    <div className="px-4 sm:px-8 md:px-16 pt-28 pb-20">
       {loading ? (
         <Skeleton height={400} />
       ) : (

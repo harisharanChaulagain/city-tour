@@ -176,10 +176,10 @@ const AboutCard = () => {
   return (
     <div
       ref={cardRef}
-      className="about-card p-4 rounded-2xl bg-[#DFDDD8] shadow-sm flex flex-col gap-4"
+      className="about-card p-8 rounded-2xl bg-[#DFDDD8] shadow-sm flex flex-col gap-6"
     >
-      <h1 className="text-xl font-bold">Co-working Space</h1>
-      <h2>Work remotely in your designated workspace.</h2>
+      <h1 className="text-xl sm:text-2xl font-bold">Co-working Space</h1>
+      <h2 className="text-base sm:text-lg">Work remotely in your designated workspace.</h2>
       <div className="h-80 w-full rounded-2xl overflow-hidden">
         <Image
           src={pokheraImage}

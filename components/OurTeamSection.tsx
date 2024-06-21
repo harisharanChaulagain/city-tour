@@ -42,14 +42,16 @@ const teamDetails = [
 
 function TeamCard({ image, name, location, description }: any) {
   return (
-    <div className="p-4 ">
+    <div className="p-4 flex flex-col gap-2">
       <Image
         src={image}
         alt={name}
-        className="w-full h-60 object-cover rounded"
+        className="w-full h-60 object-cover rounded-2xl"
       />
-      <h3 className="mt-4 text-lg sm:text-xl font-semibold">{name}</h3>
-      <h4 className="text-[#1d1d1b]">{location}</h4>
+      <div>
+        <h3 className="mt-4 text-lg sm:text-xl font-semibold">{name}</h3>
+        <h4 className="text-[#1d1d1b]">{location}</h4>
+      </div>
       <p className="mt-2 text-[#1d1d1b]/90">{description}</p>
     </div>
   );
@@ -61,9 +63,9 @@ export default function OurTeamSection() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 h-full">
         <div className="md:col-span-1 p-4 ">
           <div className="md:sticky top-20 flex flex-col gap-4">
-            <h1 className="text-sm ">Our team</h1>
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold ">
-              Meet your leaders
+            <h1 className="text-sm font-normal">Our team</h1>
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold ">
+              Meet your <br /> leaders
             </h2>
             <p className="text-sm sm:text-base mt-2">
               Local, friendly staff members here to support you on your

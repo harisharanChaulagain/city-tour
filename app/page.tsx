@@ -58,7 +58,7 @@ export default function Page() {
   return (
     <main className="overflow-x-hidden">
       <Herosection />
-      <section className="px-4 sm:px-8 md:px-16 flex flex-col gap-4">
+      <section className="px-4 sm:px-8 md:px-16 flex flex-col gap-4 py-10">
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
           Work remotely. Travel the world.
         </h2>
@@ -72,7 +72,7 @@ export default function Page() {
           Learn how it works
         </Link>
       </section>
-      <section className="py-20 px-4 sm:px-8 md:px-16">
+      <section className="pb-20 px-4 sm:px-8 md:px-16">
         <div className="relative">
           <div className="h-96 rounded-2xl overflow-hidden transition-all duration-300">
             <Image
@@ -117,11 +117,11 @@ export default function Page() {
                     <div>
                       <Icon icon={item.icon} className="text-2xl" />
                     </div>
-                    <div className="flex flex-col gap-2">
+                    <div className="flex flex-col gap-2 pr-8">
                       <h1 className="text-base sm:text-lg md:text-2xl font-bold">
                         {item.title}
                       </h1>
-                      <p className="text-sm sm:text-base md:text-xl">
+                      <p className="text-sm sm:text-base ">
                         {item.description}
                       </p>
                     </div>

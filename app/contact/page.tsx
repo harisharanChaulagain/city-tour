@@ -57,7 +57,7 @@ export default function Page() {
             cols={30}
             rows={10}
           ></textarea>
-          <button className="w-full mt-3 px-5 py-3 text-sm sm:text-base rounded-md text-white bg-[#1D1D1B] hover:bg-[#1D1D1B]/90 duration-150 outline-none shadow-md focus:shadow-none focus:ring-2 ring-offset-2 sm:mt-0 sm:ml-3 sm:w-auto">
+          <button className="w-full mt-3 px-5 py-3 text-sm sm:text-base rounded-md text-white bg-[#1D1D1B] hover:bg-[#1D1D1B]/90 duration-150 outline-none shadow-md sm:mt-0 sm:ml-3 sm:w-auto">
             Send message
           </button>
         </div>

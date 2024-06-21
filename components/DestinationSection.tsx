@@ -70,7 +70,7 @@ export default function DestinationSection() {
         {destinationDetails.map((item, index) => (
           <div
             key={index}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#1D1D1b] relative"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-8xl font-bold text-[#1D1D1b] relative"
             onMouseEnter={() => handleMouseEnter(index)}
             onMouseLeave={() => handleMouseLeave(index)}
           >

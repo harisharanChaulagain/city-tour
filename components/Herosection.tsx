@@ -38,7 +38,7 @@ export default function Herosection() {
   };
 
   return (
-    <main className="px-4 sm:px-8 md:px-16 py-20">
+    <main className="px-4 sm:px-8 md:px-16 py-20 mt-10">
       <div className="relative ">
         <Slider
           ref={setSlider}
@@ -47,7 +47,7 @@ export default function Herosection() {
         >
           {images.map((src, index) => (
             <div key={index} className="pr-4 ">
-              <div className="h-96 transition-all duration-300">
+              <div className="h-[75vh] transition-all duration-300">
                 <Image
                   src={src}
                   alt="city"
@@ -57,18 +57,18 @@ export default function Herosection() {
             </div>
           ))}
         </Slider>
-        <div className="px-4 absolute top-40  sm:top-52 sm:left-20 text-white flex flex-col gap-4">
+        <div className="px-4 absolute top-40  sm:top-72 sm:left-10 text-white flex flex-col gap-4">
           <h1 className="font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
             Work from anywhere.
           </h1>
-          <p className="text-xs sm:text-sm md:text-lg lg:text-xl xl:text-2xl">
+          <p className="text-xs sm:text-sm md:text-lg text-gray-200">
             Work remotely, explore various destinations, <br /> and make lasting
             memories with a community of digital CityWanders.
           </p>
         </div>
         <div
           className="absolute -bottom-5 left-1/2 transform -translate-x-1/2 flex justify-between
-    max-w-xs gap-4 sm:left-auto sm:right-10 sm:transform-none"
+    max-w-xs gap-4 sm:left-auto sm:right-28 sm:transform-none"
         >
           <button
             onClick={handlePrev}

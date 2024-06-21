@@ -44,9 +44,9 @@ export default function Page() {
   });
 
   return (
-    <div className=" py-20">
+    <div className=" py-20 text-[#1d1d1b]">
       <div className="px-4 sm:px-8 md:px-16">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:tex-5xl xl:text-6xl font-bold flex justify-center items-center py-4">
+        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:tex-7xl xl:text-8xl font-bold flex justify-center items-center py-8">
           What Is CityWander?
         </h1>
         <div className="w-full h-96 rounded-2xl overflow-hidden">
@@ -57,7 +57,7 @@ export default function Page() {
           />
         </div>
         <div className="flex justify-end">
-          <p className="max-w-xl py-4 text-sm sm:text-lg md:text-xl font-normal">
+          <p className="max-w-2xl py-10 text-base sm:text-xl md:text-2xl font-normal ">
             CityWander is a travel startup providing travel programs and group
             work for digital CityWanders. Traveling solo can be daunting, so why
             not work remotely and explore the world with other like-minded
@@ -65,7 +65,7 @@ export default function Page() {
             everything else.
           </p>
         </div>
-        <div className="text-xl sm:text-2xl font-bold">
+        <div className="text-2xl sm:text-4xl md:text-5xl font-bold py-16 mt-8">
           What to expect after <br /> booking...
         </div>
         <div className="py-10">
@@ -74,7 +74,7 @@ export default function Page() {
               <div className="col-span-3"></div>
               <div className="col-span-1 flex flex-col items-center">
                 <div className="dot"></div>
-                <div className="w-0.5 bg-black h-0 progress"></div>
+                <div className="w-[4px] bg-[#1d1d1b] h-0 progress"></div>
               </div>
               <div className="col-span-3">
                 <AboutCard />
@@ -86,7 +86,7 @@ export default function Page() {
               </div>
               <div className="col-span-1 flex flex-col items-center">
                 <div className="dot"></div>
-                <div className="w-0.5 bg-black h-0 progress"></div>
+                <div className="w-[4px] bg-[#1d1d1b] h-0 progress"></div>
               </div>
               <div className="col-span-3"></div>
             </div>
@@ -94,7 +94,7 @@ export default function Page() {
               <div className="col-span-3"></div>
               <div className="col-span-1 flex flex-col items-center">
                 <div className="dot"></div>
-                <div className="w-0.5 bg-black h-0 progress"></div>
+                <div className="w-[4px] bg-[#1d1d1b] h-0 progress"></div>
               </div>
               <div className="col-span-3">
                 <AboutCard />
@@ -106,7 +106,7 @@ export default function Page() {
               </div>
               <div className="col-span-1 flex flex-col items-center">
                 <div className="dot"></div>
-                <div className="w-0.5 bg-black h-0 progress"></div>
+                <div className="w-[4px] bg-[#1d1d1b] h-0 progress"></div>
               </div>
               <div className="col-span-3"></div>
             </div>
@@ -116,7 +116,7 @@ export default function Page() {
             <div className="grid grid-cols-6">
               <div className="col-span-1 flex flex-col items-center">
                 <div className="dot"></div>
-                <div className="w-0.5 bg-black h-0 progress"></div>
+                <div className="w-[4px] bg-[#1d1d1b] h-0 progress"></div>
               </div>
               <div className="col-span-5">
                 <AboutCard />
@@ -125,7 +125,7 @@ export default function Page() {
             <div className="grid grid-cols-6">
               <div className="col-span-1 flex flex-col items-center">
                 <div className="dot"></div>
-                <div className="w-0.5 bg-black h-0 progress"></div>
+                <div className="w-[4px] bg-[#1d1d1b] h-0 progress"></div>
               </div>
               <div className="col-span-5">
                 <AboutCard />
@@ -134,7 +134,7 @@ export default function Page() {
             <div className="grid grid-cols-6">
               <div className="col-span-1 flex flex-col items-center">
                 <div className="dot"></div>
-                <div className="w-0.5 bg-black h-0 progress"></div>
+                <div className="w-[4px] bg-[#1d1d1b] h-0 progress"></div>
               </div>
               <div className="col-span-5">
                 <AboutCard />

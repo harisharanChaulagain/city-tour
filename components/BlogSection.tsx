@@ -2,11 +2,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useRef } from "react";
-import kathmanduCity from "../assets/blog/kathmandu.png";
-import bhaktapurCity from "../assets/blog/bhaktapur.png";
-import pohkeraCity from "../assets/blog/pokhara.png";
-import chitwanCity from "../assets/blog/chitwan.png";
-import lumbiniCity from "../assets/blog/lumbini.png";
+import tipsandDestination from "../assets/blog/tipsandDestination.png";
+import completeGuide from "../assets/blog/completeGuide.png";
+import topFood from "../assets/blog/topFood.png";
 import { Icon } from "@iconify/react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -17,38 +15,24 @@ gsap.registerPlugin(ScrollTrigger);
 export const blogPosts = [
   {
     id: 1,
-    title: "Kathmandu",
+    title: "Ultimate Guide to Solo Travel : Tips and Destinations",
     description:
-      "Kathmandu, where Ancient Temples and Modern Wonders Meet! Step into a city where history and culture blend seamlessly.",
-    image: kathmanduCity,
+      "We loved every moment of our city tour with CityWander. The food tour was a highlight, offering a delici...",
+    image: tipsandDestination,
   },
   {
     id: 2,
-    title: "Pokhara",
+    title: "How to Travel on a Budget : Complete Guide",
     description:
-      "Discover Pokhara – The Gateway to the Himalayas! Enjoy Phewa Lake, paragliding over Sarangkot, and hidden caves.",
-    image: pohkeraCity,
+      "Traveling on a budget doesn't mean sacrificing your travel experiences. With careful planning and s...",
+    image: completeGuide,
   },
   {
     id: 3,
-    title: "Bhaktapur",
+    title: "Top 10 Travel Destinations for Food Lovers",
     description:
-      "Experience the Charm of Bhaktapur: History, Art, and Culture! From the 55-Window Palace to the bustling Taumadhi Square, immerse yourself in heritage.",
-    image: bhaktapurCity,
-  },
-  {
-    id: 4,
-    title: "Lumbini",
-    description:
-      "Dive into the Spiritual Heart of Nepal – Discover Lumbini's Peace! Experience sacred sites, meditation spots, and cultural richness.",
-    image: lumbiniCity,
-  },
-  {
-    id: 5,
-    title: "Chitwan",
-    description:
-      "From Dense Forests to Cultural Delights – Chitwan Has It All! Unveil the charm of a region teeming with natural beauty and cultural vibrancy.",
-    image: chitwanCity,
+      "Traveling on a budget doesn't mean sacrificing your travel experiences. With careful planning and s...",
+    image: topFood,
   },
 ];
 
@@ -103,11 +87,13 @@ export default function BlogSection() {
               <Link key={index} href={`/blog/${post?.id}`}>
                 <div className="max-w-sm bg-[#DEDDD7] border border-gray-200 rounded-lg shadow hover:shadow-md group">
                   <div className="overflow-hidden rounded-t-lg">
-                    <Image
-                      className="rounded-t-lg group-hover:scale-110 duration-300 transition-all"
-                      src={post.image}
-                      alt="blog card"
-                    />
+                    <div className="h-60 w-full">
+                      <Image
+                        className="rounded-t-lg group-hover:scale-110 duration-300 transition-all object-cover h-full w-full"
+                        src={post.image}
+                        alt="blog card"
+                      />
+                    </div>
                   </div>
                   <div className="p-5">
                     <h5 className="mb-2 text-2xl font-bold tracking-tight">

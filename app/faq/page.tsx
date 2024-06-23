@@ -79,23 +79,43 @@ export default function Page() {
 
 const faqDatas = [
   {
-    question: "this is question",
-    answer: "this is answer",
+    question: "What cities are included in your city tours?",
+    answer:
+      "Our city tours primarily cover Kathmandu, Bhaktapur, and Patan within the Kathmandu Valley. We also offer tours to Pokhara, Tansen, and other cultural and historical sites across Nepal.",
   },
   {
-    question: "this is question",
-    answer: "this is answer",
+    question: "What can I expect to see on a city tour?",
+    answer:
+      "Depending on the tour, you'll visit iconic landmarks such as temples, palaces, and heritage sites. Our guides provide insights into the history, culture, and architecture of each location.",
   },
   {
-    question: "this is question",
-    answer: "this is answer",
+    question: "How long do the city tours last?",
+    answer:
+      "Tour durations vary depending on the itinerary and locations visited. Typically, our city tours range from half-day to full-day experiences.",
   },
   {
-    question: "this is question",
-    answer: "this is answer",
+    question: "Are entrance fees included in the city tour price?",
+    answer:
+      "Yes, entrance fees to specified attractions mentioned in the tour itinerary are included in the tour price unless otherwise stated.",
   },
   {
-    question: "this is question",
-    answer: "this is answer",
+    question: "What is included in your food tours?",
+    answer:
+      "Our food tours include visits to local eateries, markets, and restaurants where you'll sample authentic Nepali cuisine and traditional dishes. We provide insights into the culinary culture of Nepal.",
+  },
+  {
+    question: "Do your food tours cater to dietary restrictions?",
+    answer:
+      "We strive to accommodate dietary restrictions and preferences as much as possible. Please inform us of any dietary requirements when booking your tour, and we will do our best to tailor the experience accordingly.",
+  },
+  {
+    question: "Are beverages included in the food tour?",
+    answer:
+      "Non-alcoholic beverages such as water and traditional drinks may be included, depending on the tour. Alcoholic beverages are typically not included but can be purchased separately at your expense.",
+  },
+  {
+    question: "Are tips for guides and vendors included in the tour price?",
+    answer:
+      "Tips for guides and vendors are not included in the tour price. Gratuities are at your discretion and greatly appreciated if you enjoyed your experience. ",
   },
 ];

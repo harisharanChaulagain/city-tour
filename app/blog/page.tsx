@@ -11,11 +11,13 @@ export default function page() {
         <Link key={index} href={`/blog/${index}`}>
           <div className="max-w-sm bg-[#DEDDD7] border border-gray-200 rounded-lg shadow hover:shadow-md group">
             <div className="overflow-hidden rounded-t-lg">
-              <Image
-                className="rounded-t-lg group-hover:scale-110 duration-300 transition-all"
-                src={post.image}
-                alt="blog card"
-              />
+              <div className="h-60 w-full">
+                <Image
+                  className="rounded-t-lg group-hover:scale-110 duration-300 transition-all object-cover h-full w-full"
+                  src={post.image}
+                  alt="blog card"
+                />
+              </div>
             </div>
             <div className="p-5">
               <h5 className="mb-2 text-2xl font-bold tracking-tight">

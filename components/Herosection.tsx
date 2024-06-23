@@ -1,11 +1,9 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
-import kathmanduCity from "../assets/blog/kathmandu.png";
-import bhaktapurCity from "../assets/blog/bhaktapur.png";
-import pohkeraCity from "../assets/blog/pokhara.png";
-import chitwanCity from "../assets/blog/chitwan.png";
-import lumbiniCity from "../assets/blog/lumbini.png";
+import kathmanduCity from "../assets/herosection/kathmanduCity.png";
+import pohkeraCity from "../assets/herosection/PokheraCity.png";
+import bhaktapurCity from "../assets/herosection/bhaktapurCity.png"
 import { Icon } from "@iconify/react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -13,10 +11,8 @@ import "slick-carousel/slick/slick-theme.css";
 
 const images = [
   kathmanduCity,
-  bhaktapurCity,
-  chitwanCity,
   pohkeraCity,
-  lumbiniCity,
+  bhaktapurCity,
 ];
 
 export default function Herosection() {

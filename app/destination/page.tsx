@@ -1,64 +1,78 @@
 import Image from "next/image";
 import React from "react";
-import bhaktapurImage from "../../assets/bhaktapur.jpg";
+import bandipur from "../../assets/destination/bandipur.png";
+import chitwan from "../../assets/destination/chitwan.png";
+import kathmandu from "../../assets/destination/kathmandu.png";
+import lumbini from "../../assets/destination/lumbini.png";
+import pokhera from "../../assets/destination/pokhera.png";
+import dhulikhel from "../../assets/destination/dhulikhel.png";
+import nagarkot from "../../assets/destination/nagarkot.png";
+import bhaktapur from "../../assets/destination/bhaktapur.png";
+
 import { Icon } from "@iconify/react";
 import Link from "next/link";
 
 // Define arrays of trip details
-const OneWeekTrip = [
+const popularDestination = [
   {
-    city: "Bhaktapur",
+    city: "Pokhera",
     dates: "6/13/23 - 6/20/23",
     price: "$433",
-    image: bhaktapurImage,
+    image: pokhera,
   },
   {
-    city: "Pokhara",
+    city: "Lumbini",
     dates: "6/20/23 - 6/27/23",
     price: "$520",
-    image: bhaktapurImage,
+    image: lumbini,
   },
   {
-    city: "Bhaktapur",
+    city: "Kathmandu",
     dates: "6/13/23 - 6/20/23",
     price: "$433",
-    image: bhaktapurImage,
+    image: kathmandu,
   },
 ];
 
-const TwoWeekTrip = [
+const trendingDestination = [
   {
-    city: "Kathmandu",
+    city: "Dhulikhel",
     dates: "6/13/23 - 6/27/23",
     price: "$800",
-    image: bhaktapurImage,
+    image: dhulikhel,
   },
   {
-    city: "Kathmandu",
+    city: "Chitwan",
     dates: "6/13/23 - 6/27/23",
     price: "$800",
-    image: bhaktapurImage,
+    image: chitwan,
+  },
+  {
+    city: "Pokhera",
+    dates: "6/13/23 - 6/27/23",
+    price: "$800",
+    image: pokhera,
   },
 ];
 
-const OneMonthTrip = [
+const seasonalDestination = [
   {
-    city: "Lumbini",
+    city: "Bhaktapur",
     dates: "6/13/23 - 7/13/23",
     price: "$1200",
-    image: bhaktapurImage,
+    image: bhaktapur,
   },
   {
-    city: "Lumbini",
+    city: "Nagarkot",
     dates: "6/13/23 - 7/13/23",
     price: "$1200",
-    image: bhaktapurImage,
+    image: nagarkot,
   },
   {
-    city: "Lumbini",
+    city: "Bandipur",
     dates: "6/13/23 - 7/13/23",
     price: "$1200",
-    image: bhaktapurImage,
+    image: bandipur,
   },
 ];
 
@@ -70,37 +84,44 @@ export default function Page() {
           Destinations
         </h1>
         <p className="text-sm sm:text-base">
-          Work and travel the world with a community of like-minded people.
+          Roam Freely and Discover Your Ultimate Destination
         </p>
       </section>
       <div className="flex items-center whitespace-nowrap gap-4 py-4 ">
-        <span className="text-base sm:text-xl font-bold"> 1-week trips</span>
+        <span className="text-base sm:text-xl font-bold">
+          {" "}
+          Popular Destinations
+        </span>
         <span className="bg-[#DEDDD7] h-0.5 w-full"></span>
       </div>
       <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-10 ">
-        {/*  OneWeekTrip */}
-        {OneWeekTrip.map((trip, index) => (
+        {/*  popularDestination */}
+        {popularDestination.map((trip, index) => (
           <TripCard key={index} trip={trip} />
         ))}
       </section>
       <div className="flex items-center whitespace-nowrap gap-4 py-4">
-        <span className="text-base sm:text-xl font-bold">2-week trips</span>
+        <span className="text-base sm:text-xl font-bold">
+          Trending Destinations
+        </span>
         <span className="bg-[#DEDDD7] h-0.5 w-full"></span>
       </div>
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
-        {/*  TwoWeekTrip */}
-        {TwoWeekTrip.map((trip, index) => (
+      <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-10">
+        {/*  trendingDestination */}
+        {trendingDestination.map((trip, index) => (
           <TripCard key={index} trip={trip} />
         ))}
       </section>
       <div className="flex items-center whitespace-nowrap gap-4 py-4">
-        <span className="text-base sm:text-xl font-bold">1-month trips</span>
+        <span className="text-base sm:text-xl font-bold">
+          Seasonal Destinations
+        </span>
         <span className="bg-[#DEDDD7] h-0.5 w-full"></span>
       </div>
       <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-10">
         {/* 
-         OneMonthTrip */}
-        {OneMonthTrip.map((trip, index) => (
+         seasonalDestination */}
+        {seasonalDestination.map((trip, index) => (
           <TripCard key={index} trip={trip} />
         ))}
       </section>

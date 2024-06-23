@@ -73,7 +73,7 @@ export default function Page() {
       </section>
       <section className="pb-20 px-4 sm:px-8 md:px-16">
         <div className="relative">
-          <div className="h-96 rounded-2xl overflow-hidden transition-all duration-300">
+          <div className="h-96 w-full rounded-2xl overflow-hidden transition-all duration-300">
             <Image
               src={includeItems[activeIndex].image}
               alt={includeItems[activeIndex].title}

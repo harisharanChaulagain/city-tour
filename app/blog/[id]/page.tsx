@@ -62,14 +62,13 @@ export default function BlogDetails() {
                     {loading ? (
                       <Skeleton height={200} />
                     ) : (
-                      <Image
-                        className="rounded-t-lg group-hover:scale-110 duration-300 transition-all"
-                        src={relatedBlog.image}
-                        alt={relatedBlog.title}
-                        layout="responsive"
-                        width={400}
-                        height={200}
-                      />
+                      <div className="h-60 w-full">
+                        <Image
+                          className="rounded-t-lg group-hover:scale-110 duration-300 transition-all object-cover h-full w-full"
+                          src={relatedBlog.image}
+                          alt={relatedBlog.title}
+                        />
+                      </div>
                     )}
                   </div>
                   <div className="p-5">

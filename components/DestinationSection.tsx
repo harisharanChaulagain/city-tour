@@ -10,6 +10,9 @@ import Link from "next/link";
 
 export default function DestinationSection() {
   const imageRefs = useRef<(HTMLImageElement | null)[]>([]);
+  const iconRef1 = useRef(null);
+  const iconRef2 = useRef(null);
+
 
   const handleMouseEnter = (index: number) => {
     gsap.fromTo(
@@ -51,6 +54,32 @@ export default function DestinationSection() {
     });
   };
 
+  const handleMouseEnters = () => {
+    gsap.to(iconRef1.current, {
+      x: "32px",
+      duration: 0.5,
+      ease: "power2.out",
+    });
+    gsap.to(iconRef2.current, {
+      x: "32px",
+      duration: 0.5,
+      ease: "power2.out",
+    });
+  };
+
+  const handleMouseLeaves = () => {
+    gsap.to(iconRef1.current, {
+      x: "0px",
+      duration: 0.5,
+      ease: "power2.in",
+    });
+    gsap.to(iconRef2.current, {
+      x: "0px",
+      duration: 0.5,
+      ease: "power2.in",
+    });
+  };
+
   return (
     <div className="relative text-[#1d1d1b]">
       <section className="px-4 sm:px-8 md:px-16 flex flex-col gap-4">
@@ -61,9 +90,16 @@ export default function DestinationSection() {
         <Link
           href="/destination"
           className="flex items-center gap-2 w-fit text-sm hover:cursor-pointer text-[#1D1D1b] hover:underline transition-all duration-300"
-        >
-          <button className="text-white bg-[#1D1D1B] p-2 rounded-full">
-            <Icon icon="grommet-icons:form-next-link" className="text-2xl" />
+          onMouseEnter={handleMouseEnters}
+          onMouseLeave={handleMouseLeaves}
+      >
+          <button className="relative text-white bg-[#1D1D1B] h-10 w-10 rounded-full overflow-hidden">
+            <span className="absolute top-2 -left-6" ref={iconRef1}>
+              <Icon icon="grommet-icons:form-next-link" className="text-2xl" />
+            </span>
+            <span className="absolute top-2 left-2" ref={iconRef2}>
+              <Icon icon="grommet-icons:form-next-link" className="text-2xl" />
+            </span>
           </button>
           View all destinations
         </Link>

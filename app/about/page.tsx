@@ -61,7 +61,7 @@ export default function Page() {
           />
         </div>
         <div className="flex justify-end">
-          <p className="max-w-2xl py-10 text-base sm:text-xl md:text-2xl font-normal ">
+          <p className="max-w-2xl py-10 text-base sm:text-xl md:text-2xl font-normal text-">
            Ghumfir Nepal is a travel company dedicated to providing personalized
             urban exploration experiences. Whether you are a solo traveler, a
             couple, a family, or a group of friends, we tailor our tours to suit

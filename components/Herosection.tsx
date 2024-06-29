@@ -51,13 +51,14 @@ export default function Herosection() {
           className="rounded-2xl overflow-hidden "
         >
           {images.map((src, index) => (
-            <div key={index} className="px-4 ">
-              <div className="h-80 sm:h-[75vh] transition-all duration-300">
+            <div key={index} className="px-4 rela ">
+              <div className="relative h-80 sm:h-[75vh] transition-all duration-300">
                 <Image
                   src={src}
                   alt="city"
                   className="h-full w-full object-cover object-center rounded-2xl"
                 />
+              <div className="w-full h-full absolute top-0 left-0 bg-black opacity-[0.4] rounded-2xl"></div>
               </div>
             </div>
           ))}

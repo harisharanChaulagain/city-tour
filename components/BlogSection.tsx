@@ -38,6 +38,9 @@ export const blogPosts = [
 
 export default function BlogSection() {
   const blogRef = useRef(null);
+  const iconRef1 = useRef(null);
+  const iconRef2 = useRef(null);
+
   useGSAP(
     () => {
       const tl = gsap.timeline({
@@ -60,6 +63,32 @@ export default function BlogSection() {
     { scope: blogRef }
   );
 
+  const handleMouseEnters = () => {
+    gsap.to(iconRef1.current, {
+      x: "32px",
+      duration: 0.5,
+      ease: "power2.out",
+    });
+    gsap.to(iconRef2.current, {
+      x: "32px",
+      duration: 0.5,
+      ease: "power2.out",
+    });
+  };
+
+  const handleMouseLeaves = () => {
+    gsap.to(iconRef1.current, {
+      x: "0px",
+      duration: 0.5,
+      ease: "power2.in",
+    });
+    gsap.to(iconRef2.current, {
+      x: "0px",
+      duration: 0.5,
+      ease: "power2.in",
+    });
+  };
+
   return (
     <div className="py-10 px-4 sm:px-8 md:px-16">
       <section className="flex flex-col gap-4">
@@ -70,9 +99,16 @@ export default function BlogSection() {
         <Link
           href="/blog"
           className="flex items-center gap-2 w-fit text-sm hover:cursor-pointer text-[#1D1D1b] hover:underline transition-all duration-300"
+          onMouseEnter={handleMouseEnters}
+          onMouseLeave={handleMouseLeaves}
         >
-          <button className="text-white bg-[#1D1D1B] p-2 rounded-full">
-            <Icon icon="grommet-icons:form-next-link" className="text-2xl" />
+          <button className="relative text-white bg-[#1D1D1B] h-10 w-10 rounded-full overflow-hidden">
+            <span className="absolute top-2 -left-6" ref={iconRef1}>
+              <Icon icon="grommet-icons:form-next-link" className="text-2xl" />
+            </span>
+            <span className="absolute top-2 left-2" ref={iconRef2}>
+              <Icon icon="grommet-icons:form-next-link" className="text-2xl" />
+            </span>
           </button>
           View all blog posts
         </Link>

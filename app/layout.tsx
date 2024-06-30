@@ -6,6 +6,7 @@ import { Inter } from "next/font/google";
 import { useEffect, useState } from "react";
 import "./globals.css";
 import Lenis from "lenis";
+import Preloader from "@/components/Preloader";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,6 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const [dimension, setDimension] = useState({ width: 0, height: 0 });
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const lenis = new Lenis();
@@ -30,6 +32,10 @@ export default function RootLayout({
     requestAnimationFrame(raf);
     resize();
 
+    setTimeout(() => {
+      setLoading(false);
+    }, 200);
+
     return () => {
       window.removeEventListener("resize", resize);
     };
@@ -38,12 +44,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div >
-          <Navbar />
-          {children}
-          <NewsLetter />
-          <Footer />
-        </div>
+        {loading ? (
+          <Preloader />
+        ) : (
+          <div>
+            <Navbar />
+            {children}
+            <NewsLetter />
+            <Footer />
+          </div>
+        )}
       </body>
     </html>
   );

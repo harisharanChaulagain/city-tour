@@ -3,10 +3,13 @@ import React, { useState, useEffect, useRef } from "react";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
 import gsap from "gsap";
+import { motion } from "framer-motion";
 
 export default function Navbar() {
   const [showNavItem, setShowNavItem] = useState(false);
   const navSectionRef = useRef(null);
+  const getInTouchRef1 = useRef(null);
+  const getInTouchRef2 = useRef(null);
 
   const toggleNavItem = () => {
     setShowNavItem(!showNavItem);
@@ -39,71 +42,158 @@ export default function Navbar() {
     };
   }, [showNavItem]);
 
-  return (
-    <>
-      <div className="bg-white w-screen">
-        <header className="w-full flex justify-between items-center bg-white fixed h-20 px-4 sm:px-8 md:px-16 z-50">
-          <Link href="/" className="text-xl font-bold">
-            Ghumfir Nepal.
-          </Link>
-          <div onClick={toggleNavItem}>
-            {showNavItem ? (
-              <Icon
-                icon="bitcoin-icons:cross-outline"
-                className="text-2xl cursor-pointer"
-              />
-            ) : (
-              <Icon
-                icon="solar:hamburger-menu-linear"
-                className="text-2xl cursor-pointer"
-              />
-            )}
-          </div>
-          {/* Dropdown menu */}
-          <section
-            ref={navSectionRef}
-            className="absolute top-20 left-0 bg-[#E9E8E4] w-full h-0 overflow-hidden z-50"
-            style={{
-              opacity: 0,
-              transition: "height 0.5s, width 0.5s, opacity 0.5s",
-            }}
-          >
-            <div className="flex flex-col items-center  ">
-              <div className="flex flex-col gap-6 p-4 justify-center items-center">
-                {navItems.map((item, index) => (
-                  <Link
-                    key={index}
-                    href={item?.href}
-                    onClick={toggleNavItem}
-                    className="nav-link text-4xl md:text-5xl font-bold text-[#1D1D1B] flex items-center"
-                  >
-                    <div className="arrow-wrapper">
-                      <Icon
-                        icon="ooui:arrow-next-ltr"
-                        className="arrow-icon text-4xl md:text-5xl "
-                      />
-                    </div>
-                    {item?.title}
-                  </Link>
-                ))}
-              </div>
+  const topVariants = {
+    closed: {
+      rotate: 0,
+      y: 0,
+    },
+    opened: {
+      rotate: 45,
+      y: 8,
+    },
+  };
 
-              <div className="flex justify-center items-center gap-8">
-                {socialIcon.map((item, index) => (
-                  <Link
-                    href={item?.link}
-                    key={index}
-                    className="border border-gray-400 rounded-full h-12 w-12 justify-center items-center flex hover:border-[#1D1D1B] transition-all duration-300"
-                  >
-                    {item?.title}
-                  </Link>
-                ))}
-              </div>
+  const centerVariants = {
+    closed: {
+      opacity: 1,
+    },
+    opened: {
+      opacity: 0,
+      x: 8,
+    },
+  };
+
+  const bottomVariants = {
+    closed: {
+      rotate: 0,
+      y: 0,
+    },
+    opened: {
+      rotate: -45,
+      y: -8,
+    },
+  };
+
+  const handleMouseEnter = () => {
+    gsap.to(getInTouchRef1.current, {
+      y: "32px",
+      duration: 0.5,
+      ease: "power2.inOut",
+    });
+    gsap.to(getInTouchRef2.current, {
+      y: "32px",
+      duration: 0.5,
+      ease: "power2.inOut",
+    });
+  };
+
+  const handleMouseLeave = () => {
+    gsap.to(getInTouchRef1.current, {
+      y: "0px",
+      duration: 0.5,
+      ease: "power2.inOut",
+    });
+    gsap.to(getInTouchRef2.current, {
+      y: "0px",
+      duration: 0.5,
+      ease: "power2.inOut",
+    });
+  };
+
+  return (
+    <main className="bg-white w-screen">
+      <header className="w-full flex justify-between items-center bg-white fixed h-20 px-4 sm:px-8 md:px-16 z-50">
+        <Link href="/" className="text-xl font-bold">
+          Ghumfir Nepal.
+        </Link>
+        <div className="flex gap-8 items-center ">
+          <button
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            className="overflow-hidden relative rounded-3xl flex justify-center items-center w-32 h-10 border border-[#1d1d1b]/50 hover:border-[#1d1d1b] transition-all duration-300"
+          >
+            <span
+              ref={getInTouchRef1}
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap"
+            >
+              Get in touch
+            </span>
+            <span
+              ref={getInTouchRef2}
+              className="absolute -top-6 left-1/2 -translate-x-1/2  whitespace-nowrap"
+            >
+              {" "}
+              Get in touch
+            </span>
+          </button>
+          <div
+            className="flex flex-col items-center gap-1 cursor-pointer w-10 h-10 justify-center"
+            onClick={toggleNavItem}
+          >
+            <motion.div
+              variants={topVariants}
+              animate={showNavItem ? "opened" : "closed"}
+              transition={{ duration: 0.5 }}
+              className="w-10 h-1 rounded bg-black"
+            ></motion.div>
+            <motion.div
+              variants={centerVariants}
+              animate={showNavItem ? "opened" : "closed"}
+              className="w-10 h-1 rounded bg-black "
+            ></motion.div>
+            <motion.div
+              variants={bottomVariants}
+              animate={showNavItem ? "opened" : "closed"}
+              transition={{ duration: 0.5 }}
+              className="w-10 h-1 rounded bg-black"
+            ></motion.div>
+          </div>
+        </div>
+
+        {/* Dropdown menu */}
+        <section
+          ref={navSectionRef}
+          className="absolute top-20 left-0 bg-[#E9E8E4] w-full h-0 overflow-hidden z-50"
+          style={{
+            opacity: 0,
+            transition: "height 0.5s, width 0.5s, opacity 0.5s",
+          }}
+        >
+          <div className="flex flex-col items-center  ">
+            <div className="flex flex-col gap-6 p-4 justify-center items-center">
+              {navItems.map((item, index) => (
+                <Link
+                  key={index}
+                  href={item?.href}
+                  onClick={toggleNavItem}
+                  className="nav-link text-4xl md:text-5xl font-bold text-[#1D1D1B] flex items-center"
+                >
+                  <div className="arrow-wrapper">
+                    <Icon
+                      icon="ooui:arrow-next-ltr"
+                      className="arrow-icon text-4xl md:text-5xl "
+                    />
+                  </div>
+                  {item?.title}
+                </Link>
+              ))}
             </div>
-          </section>
-        </header>
-      </div>
-    </>
+
+            <div className="flex justify-center items-center gap-8">
+              {socialIcon.map((item, index) => (
+                <Link
+                  href={item?.link}
+                  key={index}
+                  className="border border-gray-400 rounded-full h-12 w-12 justify-center items-center flex hover:border-[#1D1D1B] transition-all duration-300"
+                >
+                  {item?.title}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      </header>
+    </main>
   );
 }
 

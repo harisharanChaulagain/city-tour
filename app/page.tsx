@@ -2,7 +2,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { Icon } from "@iconify/react";
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import Herosection from "@/components/Herosection";
 import localImage from "../assets/local-experience.jpg";
 import smallGroup from "../assets/small-group.png";
@@ -13,22 +15,27 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Link from "next/link";
 import BlogSection from "@/components/BlogSection";
 
+gsap.registerPlugin(ScrollTrigger);
+
 const includeItems = [
   {
     title: "Customized Packages",
-    description: "Tailored city and food tours that cater to individual preferences and interests.",
+    description:
+      "Tailored city and food tours that cater to individual preferences and interests.",
     icon: "mi:home",
     image: customised,
   },
   {
     title: "Small Group Atmosphere",
-    description: "Intimate tours that allow for personalized attention and a more immersive experience.",
+    description:
+      "Intimate tours that allow for personalized attention and a more immersive experience.",
     icon: "ri:computer-line",
     image: smallGroup,
   },
   {
     title: "Multi-lingual Guides",
-    description: "Guides fluent in multiple languages to accommodate diverse travelers.",
+    description:
+      "Guides fluent in multiple languages to accommodate diverse travelers.",
     icon: "lucide:users",
     image: localImage,
   },
@@ -38,6 +45,8 @@ export default function Page() {
   const [activeIndex, setActiveIndex] = useState(0);
   const iconRef1 = useRef(null);
   const iconRef2 = useRef(null);
+  const titlteRef1 = useRef(null);
+  const subTitleRef1 = useRef(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -47,7 +56,7 @@ export default function Page() {
     return () => clearInterval(interval);
   }, []);
 
-  const handleTabClick = (index:number) => {
+  const handleTabClick = (index: number) => {
     setActiveIndex(index);
   };
 
@@ -77,29 +86,73 @@ export default function Page() {
     });
   };
 
+  useGSAP(() => {
+    // Timeline for title animation
+    const tlTitle = gsap.timeline({
+      scrollTrigger: {
+        trigger: titlteRef1.current,
+        start: "top bottom",
+        end: "top 60%",
+        scrub: 1,
+        // markers: true,
+      },
+    });
+
+    tlTitle.from(titlteRef1.current, {
+      opacity: 0,
+      x: "-50px",
+    });
+
+    // Timeline for subtitle animation
+    const tlSubtitle = gsap.timeline({
+      scrollTrigger: {
+        trigger: subTitleRef1.current,
+        start: "top bottom",
+        end: "top 60%",
+        scrub: 1,
+        // markers: true,
+      },
+    });
+
+    tlSubtitle.from(subTitleRef1.current, {
+      opacity: 0,
+    });
+  });
+
   return (
     <main className="overflow-x-hidden">
       <Herosection />
       <section className="px-4 sm:px-8 md:px-16 flex flex-col gap-4 py-10">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
+        <h2
+          ref={titlteRef1}
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold"
+        >
           What Sets Us Apart
         </h2>
-        <Link
-          href="/about"
-          className="flex items-center gap-2 w-fit text-sm hover:cursor-pointer text-[#1D1D1b] hover:underline transition-all duration-300"
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        >
-          <button className="relative text-white bg-[#1D1D1B] h-10 w-10 rounded-full overflow-hidden">
-            <span className="absolute top-2 -left-6" ref={iconRef1}>
-              <Icon icon="grommet-icons:form-next-link" className="text-2xl" />
-            </span>
-            <span className="absolute top-2 left-2" ref={iconRef2}>
-              <Icon icon="grommet-icons:form-next-link" className="text-2xl" />
-            </span>
-          </button>
-          Learn how it works
-        </Link>
+        <div ref={subTitleRef1}>
+          <Link
+            href="/about"
+            className="flex items-center gap-2 w-fit text-sm hover:cursor-pointer text-[#1D1D1b] hover:underline transition-all duration-300"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            <button className="relative text-white bg-[#1D1D1B] h-10 w-10 rounded-full overflow-hidden">
+              <span className="absolute top-2 -left-6" ref={iconRef1}>
+                <Icon
+                  icon="grommet-icons:form-next-link"
+                  className="text-2xl"
+                />
+              </span>
+              <span className="absolute top-2 left-2" ref={iconRef2}>
+                <Icon
+                  icon="grommet-icons:form-next-link"
+                  className="text-2xl"
+                />
+              </span>
+            </button>
+            Learn how it works
+          </Link>
+        </div>
       </section>
       <section className="pb-20 px-4 sm:px-8 md:px-16">
         <div className="relative">
@@ -129,7 +182,7 @@ export default function Page() {
                   spaceBetween: 50,
                 },
               }}
-              onSlideChange={(swiper:any) =>
+              onSlideChange={(swiper: any) =>
                 handleTabClick(swiper.activeIndex)
               }
             >

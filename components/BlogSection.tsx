@@ -40,28 +40,56 @@ export default function BlogSection() {
   const blogRef = useRef(null);
   const iconRef1 = useRef(null);
   const iconRef2 = useRef(null);
+  const titlteRef1 = useRef(null);
+  const subTitleRef1 = useRef(null);
 
-  useGSAP(
-    () => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: blogRef.current,
-          start: "top bottom",
-          end: "bottom center",
-          scrub: 1,
-          // markers: true, // Disable this line
-        },
-      });
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: blogRef.current,
+        start: "top bottom",
+        end: "bottom center",
+        scrub: 1,
+        // markers: true, // Disable this line
+      },
+    });
 
-      tl.from(blogRef.current, {
-        y: 100,
-        opacity: 0,
-        duration: 0.5,
-        ease: "power2.out",
-      });
-    },
-    { scope: blogRef }
-  );
+    tl.from(blogRef.current, {
+      y: 100,
+      opacity: 0,
+      duration: 0.5,
+      ease: "power2.out",
+    });
+    const tlTitle = gsap.timeline({
+      scrollTrigger: {
+        trigger: titlteRef1.current,
+        start: "top bottom",
+        end: "top 60%",
+        scrub: 1,
+        // markers: true,
+      },
+    });
+
+    tlTitle.from(titlteRef1.current, {
+      opacity: 0,
+      x: "-50px",
+    });
+
+    // Timeline for subtitle animation
+    const tlSubtitle = gsap.timeline({
+      scrollTrigger: {
+        trigger: subTitleRef1.current,
+        start: "top bottom",
+        end: "top 60%",
+        scrub: 1,
+        // markers: true,
+      },
+    });
+
+    tlSubtitle.from(subTitleRef1.current, {
+      opacity: 0,
+    });
+  });
 
   const handleMouseEnters = () => {
     gsap.to(iconRef1.current, {
@@ -93,25 +121,36 @@ export default function BlogSection() {
     <div className="py-10 px-4 sm:px-8 md:px-16">
       <section className="flex flex-col gap-4">
         <h1 className="text-sm">Blog</h1>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
+        <h2
+          ref={titlteRef1}
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold"
+        >
           Our most recent blog posts
         </h2>
-        <Link
-          href="/blog"
-          className="flex items-center gap-2 w-fit text-sm hover:cursor-pointer text-[#1D1D1b] hover:underline transition-all duration-300"
-          onMouseEnter={handleMouseEnters}
-          onMouseLeave={handleMouseLeaves}
-        >
-          <button className="relative text-white bg-[#1D1D1B] h-10 w-10 rounded-full overflow-hidden">
-            <span className="absolute top-2 -left-6" ref={iconRef1}>
-              <Icon icon="grommet-icons:form-next-link" className="text-2xl" />
-            </span>
-            <span className="absolute top-2 left-2" ref={iconRef2}>
-              <Icon icon="grommet-icons:form-next-link" className="text-2xl" />
-            </span>
-          </button>
-          View all blog posts
-        </Link>
+        <div ref={subTitleRef1}>
+          <Link
+            href="/blog"
+            className="flex items-center gap-2 w-fit text-sm hover:cursor-pointer text-[#1D1D1b] hover:underline transition-all duration-300"
+            onMouseEnter={handleMouseEnters}
+            onMouseLeave={handleMouseLeaves}
+          >
+            <button className="relative text-white bg-[#1D1D1B] h-10 w-10 rounded-full overflow-hidden">
+              <span className="absolute top-2 -left-6" ref={iconRef1}>
+                <Icon
+                  icon="grommet-icons:form-next-link"
+                  className="text-2xl"
+                />
+              </span>
+              <span className="absolute top-2 left-2" ref={iconRef2}>
+                <Icon
+                  icon="grommet-icons:form-next-link"
+                  className="text-2xl"
+                />
+              </span>
+            </button>
+            View all blog posts
+          </Link>
+        </div>
       </section>
       <div>
         <div className=" mt-6 overflow-hidden">

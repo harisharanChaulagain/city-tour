@@ -159,7 +159,7 @@ export default function Navbar() {
             transition: "height 0.5s, width 0.5s, opacity 0.5s",
           }}
         >
-          <div className="flex flex-col items-center  ">
+          <div className="flex flex-col items-center justify-center h-[90vh]">
             <div className="flex flex-col gap-6 p-4 justify-center items-center">
               {navItems.map((item, index) => (
                 <Link

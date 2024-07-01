@@ -2,7 +2,7 @@
 import Image from "next/image";
 import React, { useState, useRef } from "react";
 import kathmanduCity from "../assets/herosection/kathmanduCity.png";
-import pohkeraCity from "../assets/herosection/PokheraCity.png";
+import pohkeraCity from "../assets/herosection/pokheraCity.png";
 import bhaktapurCity from "../assets/herosection/bhaktapurCity.png";
 import { Icon } from "@iconify/react";
 import Slider from "react-slick";
@@ -51,7 +51,6 @@ export default function Herosection() {
         .from(
           ".hero-buttons button",
           {
-            scale: 0,
             opacity: 0,
             duration: 0.5,
             ease: "power4.out",
@@ -99,7 +98,7 @@ export default function Herosection() {
         >
           {images.map((src, index) => (
             <div key={index} className="px-4 heroImage ">
-              <div className=" relative h-80 sm:h-[75vh] transition-all duration-300 hero-image">
+              <div className="relative h-80 sm:h-[75vh] transition-all duration-300 hero-image">
                 <Image
                   src={src}
                   alt="city"
@@ -110,13 +109,14 @@ export default function Herosection() {
             </div>
           ))}
         </Slider>
-        <div className="pointer-events-none px-4 absolute bottom-10 left-4 sm:top-[40vh] sm:left-10 text-white flex flex-col gap-4 ">
+        <div className="pointer-events-none px-4 absolute bottom-10 left-4 sm:top-[40vh] sm:left-10 text-white flex flex-col gap-4">
           <h1 className="font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl hero-text">
-            Work from anywhere.
+            Discover the World with Us.
           </h1>
           <p className="text-xs sm:text-sm md:text-lg text-gray-200 hero-subtext">
-            Work remotely, explore various destinations, <br /> and make lasting
-            memories with a community of digital Ghumfir Nepals.
+            Travel to breathtaking destinations, immerse yourself in diverse
+            cultures, <br /> and create unforgettable experiences with Ghumfir
+            Nepal.
           </p>
         </div>
         <div
@@ -125,8 +125,8 @@ export default function Herosection() {
         >
           <button
             onClick={handlePrev}
-            className={`text-white bg-[#1D1D1B] p-4 rounded-full ${
-              prevButtonClicked ? "scale-95" : "scale-100"
+            className={`text-white bg-[#1D1D1B] p-4 rounded-full transition-transform duration-200 ${
+              prevButtonClicked ? "scale-90" : "scale-100"
             }`}
           >
             <Icon
@@ -136,8 +136,8 @@ export default function Herosection() {
           </button>
           <button
             onClick={handleNext}
-            className={`text-white bg-[#1D1D1B] p-4 rounded-full ${
-              nextButtonClicked ? "scale-95" : "scale-100"
+            className={`text-white bg-[#1D1D1B] p-4 rounded-full transition-transform duration-200 ${
+              nextButtonClicked ? "scale-90" : "scale-100"
             }`}
           >
             <Icon icon="grommet-icons:form-next-link" className="text-2xl" />

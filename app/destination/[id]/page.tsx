@@ -101,44 +101,22 @@ export default function Page() {
               <h2 className="text-lg sm:text-xl md:text-2xl mt-8">
                 Itinerary for Kathmandu Package
               </h2>
-              <div className="text-base sm:text-lg">
-                <p>
-                  <strong>Day 1:</strong> Upon arrival in Kathmandu, settle into
-                  your hotel before visiting Kathmandu Durbar Square. Explore
-                  ancient palaces and temples, such as Hanuman Dhoka and Taleju
-                  Temple, showcasing Nepal’s architectural heritage. Enjoy a
-                  traditional Nepali dinner to cap off your day.
-                </p>
-                <p>
-                  <strong>Day 2:</strong> Begin with Swayambhunath, the Monkey
-                  Temple, offering panoramic views and Buddhist stupas. Then,
-                  visit Patan Durbar Square for Newar art and architecture.
-                  Conclude with shopping and dining in Thamel.
-                </p>
-                <p>
-                  <strong>Day 3:</strong> Start at Pashupatinath Temple for
-                  Hindu rituals along the Bagmati River. Continue to Boudhanath
-                  Stupa for Tibetan Buddhist culture. Attend a Nepali cultural
-                  show in the evening.
-                </p>
-                <p>
-                  <strong>Day 4:</strong> Explore Bhaktapur Durbar Square's
-                  medieval temples and pottery workshops. Optionally, visit
-                  Nagarkot for Himalayan views. End with a farewell dinner
-                  featuring Nepali cuisine and cultural performances.
-                </p>
-              </div>
-
+              {item?.itinerary?.map((itenary, index) => (
+                <div key={index} className="text-base sm:text-lg">
+                  <p>
+                    <strong>{itenary?.title} : </strong>
+                    {itenary?.description}
+                  </p>
+                </div>
+              ))}
               <h2 className="text-lg sm:text-xl md:text-2xl mt-8">
                 Costs Included
               </h2>
               <div className="text-base sm:text-lg">
                 <ul className="list-disc pl-4">
-                  <li>Transportation within Kathmandu city</li>
-                  <li>Guide services</li>
-                  <li>Entrance fees to sites</li>
-                  <li>Meals (if specified in the tour package)</li>
-                  <li>Taxes and service charges</li>
+                  {item?.constIncluded?.map((costIncluded) => (
+                    <li>{costIncluded}</li>
+                  ))}
                 </ul>
               </div>
 
@@ -147,14 +125,9 @@ export default function Page() {
               </h2>
               <div className="text-base sm:text-lg">
                 <ul className="list-disc pl-4">
-                  <li>
-                    Personal expenses (souvenirs, additional snacks, etc.)
-                  </li>
-                  <li>Optional activities</li>
-                  <li>Tips</li>
-                  <li>Travel insurance</li>
-                  <li>Airport transfers (if not included)</li>
-                  <li>Accommodation (if not included)</li>
+                  {item?.constExcluded?.map((constExcluded) => (
+                    <li>{constExcluded}</li>
+                  ))}
                 </ul>
               </div>
             </div>

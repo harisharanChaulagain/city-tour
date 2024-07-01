@@ -70,8 +70,15 @@ export const allDestinations = [
           "Begin with a visit to the Nyatapola Temple in Taumadhi Square, followed by a stroll to the Pottery Square to see local artisans at work. In the afternoon, explore Dattatreya Square and its surrounding attractions, including the Peacock Window. Enjoy an evening cultural performance and Newari feast. ",
       },
       {
-        
-      }
+        title: "Day 3",
+        description:
+          " Visit the Bhaktapur National Art Gallery in the morning, then head to Taumadhi Square to immerse yourself in local life and festivities. Spend the afternoon at your leisure, shopping for local crafts or enjoying more of Bhaktapur's culinary delights.",
+      },
+      {
+        title: "Day 4",
+        description:
+          "Take a morning trip to Nagarkot for panoramic views of the Himalayas and a peaceful retreat. Return to Bhaktapur for a farewell lunch featuring Juju Dhau and other local specialties before departing. ",
+      },
     ],
   },
   {
@@ -156,6 +163,43 @@ export const allDestinations = [
         description:
           "Known as 'King Curd,' this creamy and rich yogurt from Bhaktapur is a must-try dessert, often served with honey or sugar.",
       },
+    ],
+    itinerary: [
+      {
+        title: "Day 1",
+        description:
+          "Upon arrival in Kathmandu, settle into your hotel before visiting Kathmandu Durbar Square. Explore ancient palaces and temples, such as Hanuman Dhoka and Taleju Temple, showcasing Nepal’s architectural heritage. Enjoy a traditional Nepali dinner to cap off your day. ",
+      },
+      {
+        title: "Day 2",
+        description:
+          "Begin with Swayambhunath, the Monkey Temple, offering panoramic views and Buddhist stupas. Then, visit Patan Durbar Square for Newar art and architecture. Conclude with shopping and dining in Thamel. ",
+      },
+      {
+        title: "Day 3",
+        description:
+          "Start at Pashupatinath Temple for Hindu rituals along the Bagmati River. Continue to Boudhanath Stupa for Tibetan Buddhist culture. Attend a Nepali cultural show in the evening.",
+      },
+      {
+        title: "Day 4",
+        description:
+          "Explore Bhaktapur Durbar Square's medieval temples and pottery workshops. Optionally, visit Nagarkot for Himalayan views. End with a farewell dinner featuring Nepali cuisine and cultural performances.",
+      },
+    ],
+    constIncluded: [
+      " Transportation within Kathmandu city",
+      "Guide services",
+      "Entrance fees to sites",
+      "Meals (if specified in the tour package)",
+      "Taxes and service charges",
+    ],
+    constExcluded: [
+      "Personal expenses (souvenirs, additional snacks, etc.) ",
+      " Optional activities",
+      "Tips",
+      "Travel insurance",
+      " Airport transfers (if not included)",
+      " Accommodation (if not included)",
     ],
   },
   // Trending Destinations
@@ -323,6 +367,28 @@ export const allDestinations = [
         title: "Sukuti",
         description:
           "Dried meat, usually buffalo, spiced and served as a popular snack or appetizer.",
+      },
+    ],
+    itinerary: [
+      {
+        title: "Day 1",
+        description:
+          "Arrive in Bhaktapur and settle into your hotel. Start your exploration at Bhaktapur Durbar Square, admiring the architectural beauty of the 55-Window Palace and the Vatsala Temple. End the day with a traditional Newari dinner.",
+      },
+      {
+        title: "Day 2",
+        description:
+          "Begin with a visit to the Nyatapola Temple in Taumadhi Square, followed by a stroll to the Pottery Square to see local artisans at work. In the afternoon, explore Dattatreya Square and its surrounding attractions, including the Peacock Window. Enjoy an evening cultural performance and Newari feast. ",
+      },
+      {
+        title: "Day 3",
+        description:
+          " Visit the Bhaktapur National Art Gallery in the morning, then head to Taumadhi Square to immerse yourself in local life and festivities. Spend the afternoon at your leisure, shopping for local crafts or enjoying more of Bhaktapur's culinary delights.",
+      },
+      {
+        title: "Day 4",
+        description:
+          "Take a morning trip to Nagarkot for panoramic views of the Himalayas and a peaceful retreat. Return to Bhaktapur for a farewell lunch featuring Juju Dhau and other local specialties before departing. ",
       },
     ],
   },

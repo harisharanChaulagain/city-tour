@@ -80,6 +80,21 @@ export const allDestinations = [
           "Take a morning trip to Nagarkot for panoramic views of the Himalayas and a peaceful retreat. Return to Bhaktapur for a farewell lunch featuring Juju Dhau and other local specialties before departing. ",
       },
     ],
+    constIncluded: [
+      "Transportation within Pokhara city",
+      "Guide services",
+      "Entrance fees to ",
+      " Meals (if specified in the tour package)",
+      "Taxes and service charges ",
+    ],
+    constExcluded: [
+      "Personal expenses (souvenirs, additional snacks, etc.)",
+      "Optional activities (e.g., paragliding)",
+      "Tips",
+      "Travel insurance",
+      "Airport transfers (if not included)",
+      "Accommodation (if not included)",
+    ],
   },
   {
     id: "p2",
@@ -121,6 +136,43 @@ export const allDestinations = [
         description:
           "Known as 'King Curd,' this creamy and rich yogurt from Bhaktapur is a must-try dessert, often served with honey or sugar.",
       },
+    ],
+    itinerary: [
+      {
+        title: "Day 1",
+        description:
+          "Arrive in Lumbini and check into your hotel. Begin your visit at the Maya Devi Temple, the exact birthplace of Buddha, and explore the surrounding sacred garden. End the day with a visit to the Ashoka Pillar, erected by Emperor Ashoka in 249 BC.",
+      },
+      {
+        title: "Day 2",
+        description:
+          "Start the day with a visit to the World Peace Pagoda. Spend the afternoon exploring the various monasteries built by Buddhist communities from around the world, including the Thai, Chinese, and Korean temples. Enjoy an evening meditation session.",
+      },
+      {
+        title: "Day 3",
+        description:
+          "Visit the Lumbini Museum and the Lumbini International Research Institute in the morning. In the afternoon, take a short trip to the nearby Tilaurakot, the ancient palace of King Suddhodana, Siddhartha Gautama's father. Return to Lumbini for an evening cultural performance.",
+      },
+      {
+        title: "Day 4",
+        description:
+          "Take a morning walk through the Sacred Garden, reflecting on the serene surroundings. Afterward, visit the Eternal Flame, which symbolizes world peace. Enjoy a farewell lunch featuring local delicacies before departing.",
+      },
+    ],
+    costIncluded: [
+      "Transportation within Lumbini",
+      "Guide services",
+      "Entrance fees to all listed sites",
+      "Meals (if specified in the tour package)",
+      "Taxes and service charges",
+    ],
+    costExcluded: [
+      "Personal expenses (souvenirs, additional snacks, etc.)",
+      "Optional activities (e.g., bike rentals)",
+      "Tips",
+      "Travel insurance",
+      "Airport transfers (if not included)",
+      "Accommodation (if not included)",
     ],
   },
   {
@@ -214,35 +266,77 @@ export const allDestinations = [
       "Dhulikhel, a charming town near Kathmandu, is renowned for its stunning Himalayan views and traditional Newari culture. Visitors can enjoy scenic hikes, cultural tours, and serene retreats.",
     food: [
       {
-        title: "Momos",
+        title: "Gundruk",
         description:
-          "These are Nepali-style dumplings filled with either meat or vegetables, often served steamed or fried, accompanied by a spicy dipping sauce. Momos are ubiquitous and beloved throughout Nepal.",
+          "A traditional fermented leafy green vegetable, Gundruk is a popular dish in Dhulikhel. It is often served as a side dish or added to soups and curries, providing a unique and tangy flavor.",
       },
       {
-        title: "Dal Bhat",
+        title: "Aalu Tama",
         description:
-          "Known as the staple dish of Nepal, Dal Bhat consists of steamed rice (bhat) served with lentil soup (dal), various curries (vegetarian or non-vegetarian), and pickles. It’s a hearty and satisfying meal enjoyed by locals and tourists alike.",
+          "This dish combines potatoes (aalu) and bamboo shoots (tama) in a flavorful curry. It's a beloved local delicacy that showcases the unique culinary traditions of the region.",
       },
       {
-        title: "Newari Cuisine",
+        title: "Chatamari",
         description:
-          "Explore Newari dishes such as Chatamari (a Nepali pizza-like dish), Samay Baji (a traditional Newari platter with beaten rice, meat curry, buffalo jerky, and more), and Yomari (a sweet dumpling filled with molasses or sesame seeds).",
+          "Often referred to as 'Nepali pizza,' Chatamari is a traditional Newari dish made from rice flour batter topped with minced meat, eggs, and various spices. It’s a must-try for anyone visiting Dhulikhel.",
       },
       {
-        title: "Sel Roti",
+        title: "Samay Baji",
         description:
-          "This traditional Nepali rice doughnut is crispy on the outside and soft on the inside, often enjoyed as a snack or during festivals.",
-      },
-      {
-        title: "Thukpa",
-        description:
-          "A comforting Tibetan noodle soup that has become popular in Kathmandu, featuring wheat noodles, vegetables, and sometimes meat in a flavorful broth.",
+          "A traditional Newari platter, Samay Baji includes beaten rice, marinated meat, boiled egg, black soybeans, and various pickles. It's a festive dish often served during special occasions and festivals.",
       },
       {
         title: "Juju Dhau",
         description:
-          "Known as 'King Curd,' this creamy and rich yogurt from Bhaktapur is a must-try dessert, often served with honey or sugar.",
+          "Known as 'King Curd,' this creamy and rich yogurt from nearby Bhaktapur is a popular dessert in Dhulikhel. It's often enjoyed plain or with a touch of honey.",
       },
+      {
+        title: "Kwati",
+        description:
+          "A hearty soup made from a mix of nine different types of sprouted beans, Kwati is especially popular during the festival of Janai Purnima. It's a nutritious and flavorful dish that is both warming and satisfying.",
+      },
+      {
+        title: "Thwon",
+        description:
+          "A traditional Newari rice beer, Thwon is a popular beverage in Dhulikhel. It's often enjoyed during festivals and special occasions, offering a unique taste of local culture.",
+      },
+    ],
+    itinerary: [
+      {
+        title: "Day 1",
+        description:
+          "Arrive in Dhulikhel and check into your hotel. Start your visit with a walk through the old town, exploring traditional Newari houses and temples like the Bhagwati Temple and Kali Temple. End the day with a panoramic sunset view of the Himalayas.",
+      },
+      {
+        title: "Day 2",
+        description:
+          "Begin your day with a sunrise hike to the Kali Temple for stunning views of the surrounding mountains. Spend the afternoon visiting nearby villages like Panauti, known for its ancient architecture and cultural heritage. Enjoy an evening of local Newari cuisine.",
+      },
+      {
+        title: "Day 3",
+        description:
+          "Take a morning trip to Namo Buddha, one of the most important Buddhist pilgrimage sites in Nepal. Explore the monasteries and learn about the legend of Buddha's self-sacrifice. Return to Dhulikhel for a relaxing afternoon at your leisure.",
+      },
+      {
+        title: "Day 4",
+        description:
+          "Enjoy a leisurely breakfast and a final walk through Dhulikhel before departing. Optionally, you can visit the Dhulikhel Hospital to learn about its community health programs.",
+      },
+    ],
+    costIncluded: [
+      "Transportation within Dhulikhel",
+      "Guide services",
+      "Entrance fees to all listed sites",
+      "Meals (if specified in the tour package)",
+      "Taxes and service charges",
+    ],
+    constExcluded: [
+      "Personal expenses (souvenirs, additional snacks, etc.)",
+      "Optional activities (e.g., yoga sessions)",
+      "Tips",
+      "Travel insurance",
+      "Airport transfers (if not included)",
+      "Accommodation (if not included)",
     ],
   },
   {
@@ -256,35 +350,77 @@ export const allDestinations = [
       "Chitwan, home to the famous Chitwan National Park, offers a unique blend of wildlife adventures and cultural experiences. Visitors can enjoy jungle safaris, elephant rides, and cultural performances by the Tharu community.",
     food: [
       {
-        title: "Momos",
+        title: "Bara",
         description:
-          "These are Nepali-style dumplings filled with either meat or vegetables, often served steamed or fried, accompanied by a spicy dipping sauce. Momos are ubiquitous and beloved throughout Nepal.",
+          "A popular Newari snack, Bara is a savory lentil pancake often topped with eggs or minced meat. It's a delicious and protein-packed treat that's perfect for any time of day.",
       },
       {
-        title: "Dal Bhat",
+        title: "Tharu Cuisine",
         description:
-          "Known as the staple dish of Nepal, Dal Bhat consists of steamed rice (bhat) served with lentil soup (dal), various curries (vegetarian or non-vegetarian), and pickles. It’s a hearty and satisfying meal enjoyed by locals and tourists alike.",
+          "Experience the traditional flavors of the Tharu community with dishes like fish curry, snails, and rice cooked in banana leaves. Tharu cuisine is unique to the region and offers a taste of local culture.",
       },
       {
-        title: "Newari Cuisine",
+        title: "Dhido",
         description:
-          "Explore Newari dishes such as Chatamari (a Nepali pizza-like dish), Samay Baji (a traditional Newari platter with beaten rice, meat curry, buffalo jerky, and more), and Yomari (a sweet dumpling filled with molasses or sesame seeds).",
+          "A staple food made from buckwheat or millet flour, Dhido is typically served with gundruk (fermented leafy greens) and meat or vegetable curry. It's a hearty and nutritious dish that's central to Nepali cuisine.",
+      },
+      {
+        title: "Bhakka",
+        description:
+          "A steamed rice flour cake popular among the Tharu people, Bhakka is often served as a breakfast item or snack. It is light, fluffy, and pairs well with spicy pickles.",
+      },
+      {
+        title: "Sekuwa",
+        description:
+          "A popular street food, Sekuwa is grilled meat marinated with a blend of local spices. It's usually served with puffed rice and spicy chutney, making it a flavorful and satisfying snack.",
       },
       {
         title: "Sel Roti",
         description:
-          "This traditional Nepali rice doughnut is crispy on the outside and soft on the inside, often enjoyed as a snack or during festivals.",
+          "A traditional homemade, sweet, ring-shaped rice bread/doughnut that is essential during festivals and special occasions. It’s crispy on the outside and soft on the inside.",
       },
       {
-        title: "Thukpa",
+        title: "Yomari",
         description:
-          "A comforting Tibetan noodle soup that has become popular in Kathmandu, featuring wheat noodles, vegetables, and sometimes meat in a flavorful broth.",
+          "A sweet dumpling made from rice flour and filled with a mixture of coconut, sesame seeds, and molasses. It's a festive dish often prepared during the Yomari Punhi festival.",
+      },
+    ],
+    itinerary: [
+      {
+        title: "Day 1",
+        description:
+          "Arrive in Chitwan and check into your lodge. Start your adventure with a visit to a Tharu village to learn about the local culture and traditions. In the evening, enjoy a traditional Tharu dance performance.",
       },
       {
-        title: "Juju Dhau",
+        title: "Day 2",
         description:
-          "Known as 'King Curd,' this creamy and rich yogurt from Bhaktapur is a must-try dessert, often served with honey or sugar.",
+          "Embark on a full-day jungle safari in Chitwan National Park. Experience a thrilling jeep safari and a guided nature walk to spot wildlife like rhinos, tigers, and elephants. End the day with a serene canoe ride along the Rapti River.",
       },
+      {
+        title: "Day 3",
+        description:
+          "Begin your day with a bird-watching tour, followed by a visit to the Elephant Breeding Center. In the afternoon, enjoy a relaxing ox cart ride through the village. Wrap up the day with a delicious dinner featuring local cuisine.",
+      },
+      {
+        title: "Day 4",
+        description:
+          "Take a morning walk through the park’s buffer zone to observe the rich biodiversity. After breakfast, explore the local markets for souvenirs before departing Chitwan.",
+      },
+    ],
+    costIncluded: [
+      "Transportation within Chitwan",
+      "Guide services",
+      "Entrance fees to all listed sites",
+      "Meals (if specified in the tour package)",
+      "Taxes and service charges",
+    ],
+    constExcluded: [
+      "Personal expenses (souvenirs, additional snacks, etc.)",
+      "Optional activities (e.g., yoga sessions)",
+      "Tips",
+      "Travel insurance",
+      "Airport transfers (if not included)",
+      "Accommodation (if not included)",
     ],
   },
   {
@@ -391,6 +527,21 @@ export const allDestinations = [
           "Take a morning trip to Nagarkot for panoramic views of the Himalayas and a peaceful retreat. Return to Bhaktapur for a farewell lunch featuring Juju Dhau and other local specialties before departing. ",
       },
     ],
+    costIncluded: [
+      "Transportation within Bhaktapur city",
+      "Guide services",
+      "Entrance fees to sites",
+      "Meals (if specified in the tour package)",
+      "Taxes and service charges",
+    ],
+    constExcluded: [
+      "Personal expenses (souvenirs, additional snacks, etc.)",
+      "Optional activities",
+      "Tips",
+      "Travel insurance",
+      "Airport transfers (if not included)",
+      "Accommodation (if not included)",
+    ],
   },
   {
     id: "s2",
@@ -403,35 +554,57 @@ export const allDestinations = [
       "Nagarkot is renowned for its panoramic views of the Himalayas, including Mount Everest. It’s a popular spot for sunrise and sunset views, hiking, and experiencing traditional village life.",
     food: [
       {
-        title: "Momos",
+        title: "Gundruk",
         description:
-          "These are Nepali-style dumplings filled with either meat or vegetables, often served steamed or fried, accompanied by a spicy dipping sauce. Momos are ubiquitous and beloved throughout Nepal.",
-      },
-      {
-        title: "Dal Bhat",
-        description:
-          "Known as the staple dish of Nepal, Dal Bhat consists of steamed rice (bhat) served with lentil soup (dal), various curries (vegetarian or non-vegetarian), and pickles. It’s a hearty and satisfying meal enjoyed by locals and tourists alike.",
-      },
-      {
-        title: "Newari Cuisine",
-        description:
-          "Explore Newari dishes such as Chatamari (a Nepali pizza-like dish), Samay Baji (a traditional Newari platter with beaten rice, meat curry, buffalo jerky, and more), and Yomari (a sweet dumpling filled with molasses or sesame seeds).",
+          "A traditional fermented leafy green vegetable, Gundruk is often served as a side dish or added to soups and curries, providing a unique and tangy flavor.",
       },
       {
         title: "Sel Roti",
         description:
-          "This traditional Nepali rice doughnut is crispy on the outside and soft on the inside, often enjoyed as a snack or during festivals.",
+          "A traditional homemade, sweet, ring-shaped rice bread/doughnut that is essential during festivals and special occasions. It’s crispy on the outside and soft on the inside.",
       },
       {
-        title: "Thukpa",
+        title: "Aalu Tama",
         description:
-          "A comforting Tibetan noodle soup that has become popular in Kathmandu, featuring wheat noodles, vegetables, and sometimes meat in a flavorful broth.",
+          "This dish combines potatoes (aalu) and bamboo shoots (tama) in a flavorful curry. It's a beloved local delicacy that showcases the unique culinary traditions of the region.",
+      },
+    ],
+    itinerary: [
+      {
+        title: "Day 1",
+        description:
+          "Arrive in Nagarkot and check into your hotel. Take a leisurely walk around the village and enjoy the panoramic views of the Himalayas. In the evening, watch the sunset over the mountains.",
       },
       {
-        title: "Juju Dhau",
+        title: "Day 2",
         description:
-          "Known as 'King Curd,' this creamy and rich yogurt from Bhaktapur is a must-try dessert, often served with honey or sugar.",
+          "Wake up early for a sunrise view of the Himalayas. After breakfast, go for a hike to the Nagarkot View Tower, which offers a 360-degree view of the surrounding landscape. Spend the afternoon exploring nearby villages and interacting with locals.",
       },
+      {
+        title: "Day 3",
+        description:
+          "Take a day trip to the nearby Changu Narayan Temple, a UNESCO World Heritage Site, and explore its ancient architecture and rich history. Return to Nagarkot for a relaxing evening.",
+      },
+      {
+        title: "Day 4",
+        description:
+          "Enjoy a final morning in Nagarkot with a relaxed breakfast and some free time for last-minute exploration or souvenir shopping before departing.",
+      },
+    ],
+    costIncluded: [
+      "Transportation within Nagarkot",
+      "Guide services",
+      "Entrance fees to all listed sites",
+      "Meals (if specified in the tour package)",
+      "Taxes and service charges",
+    ],
+    costExcluded: [
+      "Personal expenses (souvenirs, additional snacks, etc.)",
+      "Optional activities (e.g., yoga sessions)",
+      "Tips",
+      "Travel insurance",
+      "Airport transfers (if not included)",
+      "Accommodation (if not included)",
     ],
   },
   {
@@ -445,35 +618,77 @@ export const allDestinations = [
       "Bandipur, a hilltop settlement in central Nepal, offers well-preserved cultural heritage, panoramic Himalayan views, and charming pedestrian-friendly streets with traditional Newari architecture.",
     food: [
       {
-        title: "Momos",
+        title: "Newari Khaja Set",
         description:
-          "These are Nepali-style dumplings filled with either meat or vegetables, often served steamed or fried, accompanied by a spicy dipping sauce. Momos are ubiquitous and beloved throughout Nepal.",
+          "A traditional Newari meal that includes a variety of items like beaten rice, barbecued buffalo meat, spicy potato salad, and different types of pickles. It’s a complete meal that gives a taste of local flavors.",
       },
       {
-        title: "Dal Bhat",
+        title: "Yomari",
         description:
-          "Known as the staple dish of Nepal, Dal Bhat consists of steamed rice (bhat) served with lentil soup (dal), various curries (vegetarian or non-vegetarian), and pickles. It’s a hearty and satisfying meal enjoyed by locals and tourists alike.",
+          "A sweet dumpling made from rice flour and filled with a mixture of coconut, sesame seeds, and molasses. It's a festive dish often prepared during the Yomari Punhi festival.",
       },
       {
-        title: "Newari Cuisine",
+        title: "Samay Baji",
         description:
-          "Explore Newari dishes such as Chatamari (a Nepali pizza-like dish), Samay Baji (a traditional Newari platter with beaten rice, meat curry, buffalo jerky, and more), and Yomari (a sweet dumpling filled with molasses or sesame seeds).",
+          "A traditional Newari platter that includes beaten rice, marinated meat, boiled egg, black soybeans, and various pickles. It's often served during special occasions and festivals.",
       },
       {
         title: "Sel Roti",
         description:
-          "This traditional Nepali rice doughnut is crispy on the outside and soft on the inside, often enjoyed as a snack or during festivals.",
+          "A traditional homemade, sweet, ring-shaped rice bread/doughnut that is essential during festivals and special occasions. It’s crispy on the outside and soft on the inside.",
       },
       {
-        title: "Thukpa",
+        title: "Gundruk",
         description:
-          "A comforting Tibetan noodle soup that has become popular in Kathmandu, featuring wheat noodles, vegetables, and sometimes meat in a flavorful broth.",
+          "A traditional fermented leafy green vegetable, Gundruk is often served as a side dish or added to soups and curries, providing a unique and tangy flavor.",
       },
       {
-        title: "Juju Dhau",
+        title: "Kwati",
         description:
-          "Known as 'King Curd,' this creamy and rich yogurt from Bhaktapur is a must-try dessert, often served with honey or sugar.",
+          "A hearty soup made from a mix of nine different types of sprouted beans, Kwati is especially popular during the festival of Janai Purnima. It's a nutritious and flavorful dish that is both warming and satisfying.",
       },
+      {
+        title: "Aalu Tama",
+        description:
+          "This dish combines potatoes (aalu) and bamboo shoots (tama) in a flavorful curry. It's a beloved local delicacy that showcases the unique culinary traditions of the region.",
+      },
+    ],
+    itinerary: [
+      {
+        title: "Day 1",
+        description:
+          "Arrive in Bandipur and check into your hotel. Explore the charming streets lined with traditional Newari houses and visit the Tundikhel, a large open field offering panoramic views of the Himalayas.",
+      },
+      {
+        title: "Day 2",
+        description:
+          "Start your day with a hike to the Siddha Gufa (Siddha Cave), one of the largest caves in Nepal. Spend the afternoon visiting the Thani Mai Temple and enjoy the sunset view from the hilltop.",
+      },
+      {
+        title: "Day 3",
+        description:
+          "Visit the Khadga Devi Temple, a significant religious site in Bandipur. Afterward, take a leisurely walk through the village and interact with the locals to learn about their culture and traditions.",
+      },
+      {
+        title: "Day 4",
+        description:
+          "Take a morning walk to the nearby villages of Ramkot and experience the rural lifestyle. Return to Bandipur for a relaxed afternoon and enjoy the local cuisine before departing.",
+      },
+    ],
+    costIncluded: [
+      "Transportation within Bandipur",
+      "Guide services",
+      "Entrance fees to all listed sites",
+      "Meals (if specified in the tour package)",
+      "Taxes and service charges",
+    ],
+    costExcluded: [
+      "Personal expenses (souvenirs, additional snacks, etc.)",
+      "Optional activities (e.g., yoga sessions)",
+      "Tips",
+      "Travel insurance",
+      "Airport transfers (if not included)",
+      "Accommodation (if not included)",
     ],
   },
 ];

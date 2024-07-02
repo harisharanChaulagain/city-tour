@@ -80,21 +80,33 @@ export default function Testimonial() {
 
 const testimonialDetails = [
   {
-    name: "Hari",
+    name: "Hari Sharan Chaulagain",
     descriptioin:
-      "  As a freelancer, finding the right work-life balance can be  challenging. Ghumfir Nepal has made it so much easier for me to explore new places while staying productive.”",
+      " CityWander's city tour was a perfect blend of history and culture. The food tour was equally delightful, with authentic local dishes that left us craving more!",
     position: "founder ",
   },
   {
-    name: "Hari",
+    name: "Kiran Nepali",
     descriptioin:
-      "  As a freelancer, finding the right work-life balance can be  challenging. Ghumfir Nepal has made it so much easier for me to explore new places while staying productive.”",
+      "  Our guide from CityWander made our city tour both informative and entertaining. The food tour was a highlight, introducing us to flavors we never would have found on our own.",
     position: "founder ",
   },
   {
-    name: "Hari",
+    name: "Loki Chaulagain",
     descriptioin:
-      "  As a freelancer, finding the right work-life balance can be  challenging. Ghumfir Nepal has made it so much easier for me to explore new places while staying productive.”",
+      " Highly recommend CityWander for their expertly guided city tour and delectable food tour. They made our visit memorable with their local insights and delicious recommendations.",
     position: "founder ",
+  },
+  {
+    name: "Dawa Sherpa",
+    description:
+      "We had an amazing time with CityWander exploring the city's landmarks and enjoying the food tour. Their attention to detail and passion for local culture truly stood out.",
+    position: "abc",
+  },
+  {
+    name: "Yogi Roy",
+    description:
+      "We loved every moment of our city tour with CityWander. The food tour was a highlight, offering a delicious introduction to the city's culinary scene.",
+    position: "abc",
   },
 ];

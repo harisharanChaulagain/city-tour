@@ -3,50 +3,71 @@ import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Draggable } from "gsap/Draggable";
+import { useGSAP } from "@gsap/react";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, Draggable);
 
 const circles = [
-  { id: 1, content: "Experience 1" },
-  { id: 2, content: "Experience 2" },
-  { id: 3, content: "Experience 3" },
-  { id: 4, content: "Experience 4" },
-  { id: 5, content: "Experience 5" },
+  { id: 1, content: " 1", size: 90 },
+  { id: 2, content: " 2", size: 70 },
+  { id: 3, content: " 3", size: 90 },
+  { id: 4, content: " 4", size: 120 },
+  { id: 5, content: " 5", size: 80 },
 ];
 
 export default function NewsLetter() {
-  const sectionRef = useRef<any>(null);
-  const circleRefs = useRef<any>([]);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const circleRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  useEffect(() => {
-    const section = sectionRef.current;
-    gsap.fromTo(
-      section,
-      { opacity: 0, y: 50 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        scrollTrigger: {
-          trigger: section,
-          start: "top 80%",
-        },
+  useGSAP(() => {
+    let ctx = gsap.context(() => {
+      const section = sectionRef.current;
+      if (section) {
+        gsap.fromTo(
+          section,
+          { opacity: 0, y: 50 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            scrollTrigger: {
+              trigger: section,
+              start: "top 80%",
+            },
+          }
+        );
       }
-    );
 
-    circleRefs.current.forEach((circle: any, index: number) => {
-      gsap.fromTo(
-        circle,
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          delay: index * 0.2,
+      circleRefs.current.forEach((circle, index) => {
+        if (circle) {
+          gsap.fromTo(
+            circle,
+            { opacity: 0, scale: 0.9 },
+            {
+              opacity: 1,
+              scale: 1,
+              duration: 1,
+              delay: index * 0.2,
+              scrollTrigger: {
+                trigger: circle,
+                start: "top 90%",
+              },
+              onStart: () => {
+                circle.classList.remove("hidden");
+              },
+              onComplete: () => {
+                Draggable.create(circle, {
+                  bounds: section,
+                  inertia: true,
+                });
+              },
+            }
+          );
         }
-      );
+      });
     });
-  }, []);
+  });
 
   return (
     <main className="px-4 sm:px-8 md:px-16 py-10">
@@ -56,7 +77,7 @@ export default function NewsLetter() {
       >
         <div className="flex flex-col gap-4 text-center max-w-2xl mx-auto">
           <h1 className="text-sm font-semibold">Community</h1>
-          <h3 className="ttext-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
             Subscribe to our newsletter.
           </h3>
           <p className="text-sm sm:text-lg">
@@ -80,40 +101,26 @@ export default function NewsLetter() {
             </button>
           </form>
         </div>
-        {circles.slice(0, 3).map((circle, index) => (
-          <motion.div
-            key={circle.id}
-            ref={(el: any) => (circleRefs.current[index] = el)}
-            drag
-            dragConstraints={{
-              top: -100,
-              bottom: 100,
-              left: -100,
-              right: 100,
-            }}
-            className="hidden absolute w-24 h-24 bg-[#1D1D1B] text-white lg:flex items-center justify-center rounded-full shadow-md"
-            style={{ top: 0, left: `${index * 30 + 10}%` }}
-          >
-            {circle.content}
-          </motion.div>
-        ))}
-        {circles.slice(3).map((circle, index) => (
-          <motion.div
-            key={circle.id}
-            ref={(el: any) => (circleRefs.current[index + 3] = el)}
-            drag
-            dragConstraints={{
-              top: -100,
-              bottom: 100,
-              left: -100,
-              right: 100,
-            }}
-            className="hidden absolute w-24 h-24 bg-[#1D1D1B] text-white lg:flex items-center justify-center rounded-full shadow-md"
-            style={{ top: "80%", left: `${index * 50 + 20}%` }}
-          >
-            {circle.content}
-          </motion.div>
-        ))}
+        <div className="hidden sm:block">
+          {circles.map((circle, index) => (
+            <motion.div
+              key={circle.id}
+              ref={(el: any) => (circleRefs.current[index] = el)}
+              className=" absolute bg-[#1D1D1B] text-white flex items-center justify-center rounded-full shadow-md"
+              style={{
+                top: index < 3 ? 0 : "80%",
+                left:
+                  index < 3
+                    ? `${index * 30 + 10}%`
+                    : `${(index - 3) * 50 + 20}%`,
+                width: circle.size,
+                height: circle.size,
+              }}
+            >
+              {circle.content}
+            </motion.div>
+          ))}
+        </div>
       </section>
     </main>
   );

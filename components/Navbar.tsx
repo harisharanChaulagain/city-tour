@@ -20,7 +20,7 @@ export default function Navbar() {
     if (showNavItem) {
       gsap.to(navSectionRef.current, {
         height: "100vh",
-        opacity: 1,
+        // opacity: 1,
         duration: 0.5,
         ease: "power3.inOut",
         pointerEvents: "auto",
@@ -30,7 +30,7 @@ export default function Navbar() {
     } else {
       gsap.to(navSectionRef.current, {
         height: 0,
-        opacity: 0,
+        // opacity: 0,
         duration: 0.5,
         ease: "power3.inOut",
         pointerEvents: "none",
@@ -101,8 +101,8 @@ export default function Navbar() {
   };
 
   return (
-    <main className="bg-white w-screen">
-      <header className="w-full flex justify-between items-center bg-white fixed h-20 px-4 sm:px-8 md:px-16 z-50">
+    <div className="w-screen bg-[#f0efe9] fixed z-50">
+      <div className="flex justify-between items-center h-20  px-4 sm:px-8 w-11/12 mx-auto">
         <Link href="/" className="text-xl font-bold">
           Ghumfir Nepal.
         </Link>
@@ -149,51 +149,50 @@ export default function Navbar() {
             ></motion.div>
           </div>
         </div>
+      </div>
 
-        {/* Dropdown menu */}
-        <section
-          ref={navSectionRef}
-          className="absolute top-20 left-0 bg-[#E9E8E4] w-full h-0 overflow-hidden z-50"
-          style={{
-            opacity: 0,
-            transition: "height 0.5s, width 0.5s, opacity 0.5s",
-          }}
-        >
-          <div className="flex flex-col items-center justify-center h-[90vh]">
-            <div className="flex flex-col gap-6 p-4 justify-center items-center">
-              {navItems.map((item, index) => (
-                <Link
-                  key={index}
-                  href={item?.href}
-                  onClick={toggleNavItem}
-                  className="nav-link text-4xl md:text-5xl font-bold text-[#1D1D1B] flex items-center"
-                >
-                  <div className="arrow-wrapper">
-                    <Icon
-                      icon="ooui:arrow-next-ltr"
-                      className="arrow-icon text-4xl md:text-5xl "
-                    />
-                  </div>
-                  {item?.title}
-                </Link>
-              ))}
-            </div>
-
-            <div className="flex justify-center items-center gap-8">
-              {socialIcon.map((item, index) => (
-                <Link
-                  href={item?.link}
-                  key={index}
-                  className="border border-gray-400 rounded-full h-12 w-12 justify-center items-center flex hover:border-[#1D1D1B] transition-all duration-300"
-                >
-                  {item?.title}
-                </Link>
-              ))}
-            </div>
+      {/* Dropdown menu */}
+      <section
+        ref={navSectionRef}
+        className="absolute top-20 left-0 right-0 bg-[#f0efe9] w-screen h-0 overflow-hidden z-50"
+        style={{
+          transition: "height 0.5s, width 0.5s, opacity 0.5s",
+        }}
+      >
+        <div className="flex flex-col items-center justify-center h-[90vh]">
+          <div className="flex flex-col gap-6 p-4 justify-center items-center">
+            {navItems.map((item, index) => (
+              <Link
+                key={index}
+                href={item?.href}
+                onClick={toggleNavItem}
+                className="nav-link text-4xl md:text-5xl font-bold text-[#1D1D1B] flex items-center"
+              >
+                <div className="arrow-wrapper">
+                  <Icon
+                    icon="ooui:arrow-next-ltr"
+                    className="arrow-icon text-4xl md:text-5xl "
+                  />
+                </div>
+                {item?.title}
+              </Link>
+            ))}
           </div>
-        </section>
-      </header>
-    </main>
+
+          <div className="flex justify-center items-center gap-8">
+            {socialIcon.map((item, index) => (
+              <Link
+                href={item?.link}
+                key={index}
+                className="border border-gray-400 rounded-full h-12 w-12 justify-center items-center flex hover:border-[#1D1D1B] transition-all duration-300"
+              >
+                {item?.title}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
   );
 }
 

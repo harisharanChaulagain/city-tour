@@ -120,7 +120,7 @@ export default function DestinationSection() {
 
   return (
     <div className="relative text-[#1d1d1b]">
-      <section className="px-4 sm:px-8 md:px-16 flex flex-col gap-4">
+      <section className="px-4 sm:px-8 w-full md:w-11/12 mx-auto flex flex-col gap-4">
         <h1 className="text-sm">Destinations</h1>
         <h2
           ref={titlteRef1}
@@ -153,7 +153,7 @@ export default function DestinationSection() {
           </Link>
         </div>
       </section>
-      <section className="px-4 sm:px-8 md:px-16 flex flex-col gap-4 pt-10">
+      <section className="px-4 sm:px-8 w-full md:w-11/12 mx-auto flex flex-col gap-4 pt-10">
         {destinationDetails.map((item, index) => (
           <div
             key={index}

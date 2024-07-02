@@ -122,7 +122,7 @@ export default function Page() {
   return (
     <main className="overflow-x-hidden">
       <Herosection />
-      <section className="px-4 sm:px-8 md:px-16 flex flex-col gap-4 py-10">
+      <section className="px-4 sm:px-8 w-full md:w-11/12 mx-auto flex flex-col gap-4 py-10">
         <h2
           ref={titlteRef1}
           className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold"
@@ -154,7 +154,7 @@ export default function Page() {
           </Link>
         </div>
       </section>
-      <section className="pb-20 px-4 sm:px-8 md:px-16">
+      <section className="pb-20 px-4 sm:px-8 w-full md:w-11/12 mx-auto ">
         <div className="relative">
           <div className="h-96 w-full rounded-2xl overflow-hidden transition-all duration-300">
             <Image

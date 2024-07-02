@@ -118,7 +118,7 @@ export default function BlogSection() {
   };
 
   return (
-    <div className="py-10 px-4 sm:px-8 md:px-16">
+    <div className="py-10 px-4 sm:px-8 w-full md:w-11/12 mx-auto">
       <section className="flex flex-col gap-4">
         <h1 className="text-sm">Blog</h1>
         <h2

@@ -24,7 +24,7 @@ export default function BlogDetails() {
   }
 
   return (
-    <div className="px-4 sm:px-8 md:px-16 pt-28 pb-20">
+    <div className="px-4 sm:px-8 w-full md:w-11/12 mx-auto pt-28 pb-20">
       {loading ? (
         <Skeleton height={400} />
       ) : (
@@ -37,7 +37,7 @@ export default function BlogDetails() {
           />
         </div>
       )}
-      <div className=" py-8 max-w-5xl mx-auto">
+      <div className=" py-8 mx-auto">
         {loading ? (
           <Skeleton count={1} height={40} />
         ) : (
@@ -49,7 +49,7 @@ export default function BlogDetails() {
           <p className="text-lg">{blog.description}</p>
         )}
       </div>
-      <div className="py-8  max-w-5xl mx-auto">
+      <div className="py-8  mx-auto">
         <h2 className="text-2xl font-bold mb-4">Related Blogs</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {blogPosts

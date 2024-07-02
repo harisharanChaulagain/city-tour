@@ -1,6 +1,5 @@
 "use client";
-import React, { useEffect, useRef } from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Draggable } from "gsap/Draggable";
@@ -9,11 +8,46 @@ import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(ScrollTrigger, Draggable);
 
 const circles = [
-  { id: 1, content: " 1", size: 90 },
-  { id: 2, content: " 2", size: 70 },
-  { id: 3, content: " 3", size: 90 },
-  { id: 4, content: " 4", size: 120 },
-  { id: 5, content: " 5", size: 80 },
+  {
+    id: 1,
+    title: "92%",
+    top: "2%",
+    left: "10%",
+    content: " 21-52 years old",
+    size: 140,
+  },
+  {
+    id: 2,
+    title: "100+",
+    top: "0%",
+    left: "55%",
+    content: " Nationalities",
+    size: 110,
+  },
+  {
+    id: 3,
+    title: "88%",
+    top: "10%",
+    left: "80%",
+    content: " Traveling alone",
+    size: 120,
+  },
+  {
+    id: 4,
+    title: "9%",
+    top: "60%",
+    left: "8%",
+    content: " Founders and CEOs",
+    size: 150,
+  },
+  {
+    id: 5,
+    title: "72%",
+    top: "70%",
+    left: "80%",
+    content: " Work in tech",
+    size: 100,
+  },
 ];
 
 export default function NewsLetter() {
@@ -70,7 +104,7 @@ export default function NewsLetter() {
   });
 
   return (
-    <main className="px-4 sm:px-8 md:px-16 py-10">
+    <main className="px-4 sm:px-8 w-full md:w-11/12 mx-auto py-10">
       <section
         ref={sectionRef}
         className="relative bg-[#DEDDD7] py-20 rounded-2xl mx-auto px-4 md:px-8 text-[#1D1D1B]"
@@ -103,22 +137,20 @@ export default function NewsLetter() {
         </div>
         <div className="hidden sm:block">
           {circles.map((circle, index) => (
-            <motion.div
+            <div
               key={circle.id}
               ref={(el: any) => (circleRefs.current[index] = el)}
-              className=" absolute bg-[#1D1D1B] text-white flex items-center justify-center rounded-full shadow-md"
+              className=" absolute bg-[#202428] text-white flex flex-col gap-2 items-center justify-center rounded-full shadow-[rgba(0,_0,_0,_0.7)_0px_30px_90px]"
               style={{
-                top: index < 3 ? 0 : "80%",
-                left:
-                  index < 3
-                    ? `${index * 30 + 10}%`
-                    : `${(index - 3) * 50 + 20}%`,
+                top: circle.top,
+                left: circle.left,
                 width: circle.size,
                 height: circle.size,
               }}
             >
-              {circle.content}
-            </motion.div>
+              <span className="text-3xl font-semibold">{circle.title}</span>
+              <span className="text-sm">{circle.content}</span>
+            </div>
           ))}
         </div>
       </section>

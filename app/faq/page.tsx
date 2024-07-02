@@ -5,6 +5,7 @@ import { Collapse } from "react-collapse";
 import Link from "next/link";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -12,6 +13,8 @@ export default function Page() {
   const [openItemIndex, setOpenItemIndex] = useState<number | null>(null);
   const iconRef1 = useRef(null);
   const iconRef2 = useRef(null);
+  const titlteRef1 = useRef(null);
+  const subTitleRef1 = useRef(null);
 
   const handleItemClick = (index: number) => {
     setOpenItemIndex((prevIndex) => (prevIndex === index ? null : index));
@@ -43,8 +46,39 @@ export default function Page() {
     });
   };
 
+  useGSAP(() => {
+    const tlTitle = gsap.timeline({
+      scrollTrigger: {
+        trigger: titlteRef1.current,
+        start: "top bottom",
+        end: "top 60%",
+        scrub: 1,
+        // markers: true,
+      },
+    });
+
+    tlTitle.from(titlteRef1.current, {
+      opacity: 0,
+      x: "-50px",
+    });
+
+    const tlSubtitle = gsap.timeline({
+      scrollTrigger: {
+        trigger: subTitleRef1.current,
+        start: "top bottom",
+        end: "top 60%",
+        scrub: 1,
+        // markers: true,
+      },
+    });
+
+    tlSubtitle.from(subTitleRef1.current, {
+      opacity: 0,
+    });
+  });
+
   return (
-    <main className="py-20 px-4 sm:px-8 md:px-16">
+    <main className="py-20 px-4 sm:px-8 w-full md:w-11/12 mx-auto">
       <section className="bg-[#DEDDD7] rounded-2xl flex flex-col gap-6 p-8 my-10">
         <h1 className="text-[#1D1D1B] font-bold  text-2xl sm:text-3xl md:text-4xl lg:text-5xl pt-20">
           Frequently Asked <br /> Questions
@@ -52,13 +86,10 @@ export default function Page() {
         <p>Got questions? Find your answers here.</p>
       </section>
       <section>
-        <div className=" ">
-          {faqDatas.map((item: any, index: number) => (
-            <div key={index}>
-              <div
-                onClick={() => handleItemClick(index)}
-                className="cursor-pointer flex justify-between items-center"
-              >
+        {faqDatas.map((item: any, index: number) => (
+          <div key={index}>
+            <div  onClick={() => handleItemClick(index)} className="py-4">
+              <div className="cursor-pointer flex justify-between items-center">
                 <p className="text-xl xl:text-2xl text-secondary-500/90 font-medium ">
                   {item.question}
                 </p>
@@ -85,32 +116,42 @@ export default function Page() {
                   {item.answer}
                 </div>
               </Collapse>
-              <div className="bg-gray-300 h-0.5 w-full my-8"></div>
             </div>
-          ))}
-        </div>
+            <div className="bg-gray-300 h-0.5 w-full "></div>
+          </div>
+        ))}
       </section>
       <section className="flex flex-col gap-4 pt-10">
-        <h1 className="text-2xl font-bold">Have more questions?</h1>
-        <h2 className="text-xl ">
-          Feel free to contact us or leave us a message.
-        </h2>
-        <Link
-          href="/contact"
-          className="flex items-center gap-2 w-fit text-sm hover:cursor-pointer text-[#1D1D1b] hover:underline transition-all duration-300"
-          onMouseEnter={handleMouseEnters}
-          onMouseLeave={handleMouseLeaves}
-        >
-          <button className="relative text-white bg-[#1D1D1B] h-10 w-10 rounded-full overflow-hidden">
-            <span className="absolute top-2 -left-6" ref={iconRef1}>
-              <Icon icon="grommet-icons:form-next-link" className="text-2xl" />
-            </span>
-            <span className="absolute top-2 left-2" ref={iconRef2}>
-              <Icon icon="grommet-icons:form-next-link" className="text-2xl" />
-            </span>
-          </button>
-          Contact us
-        </Link>
+        <h1 ref={titlteRef1} className="text-2xl font-bold">
+          Have more questions?
+        </h1>
+        <div className="flex flex-col gap-4" ref={subTitleRef1}>
+          <h2 className="text-xl ">
+            Feel free to contact us or leave us a message.
+          </h2>
+          <Link
+            href="/contact"
+            className="flex items-center gap-2 w-fit text-sm hover:cursor-pointer text-[#1D1D1b] hover:underline transition-all duration-300"
+            onMouseEnter={handleMouseEnters}
+            onMouseLeave={handleMouseLeaves}
+          >
+            <button className="relative text-white bg-[#1D1D1B] h-10 w-10 rounded-full overflow-hidden">
+              <span className="absolute top-2 -left-6" ref={iconRef1}>
+                <Icon
+                  icon="grommet-icons:form-next-link"
+                  className="text-2xl"
+                />
+              </span>
+              <span className="absolute top-2 left-2" ref={iconRef2}>
+                <Icon
+                  icon="grommet-icons:form-next-link"
+                  className="text-2xl"
+                />
+              </span>
+            </button>
+            Contact us
+          </Link>
+        </div>
       </section>
     </main>
   );

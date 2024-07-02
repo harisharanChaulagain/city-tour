@@ -12,7 +12,7 @@ import { Pagination } from "swiper/modules";
 export default function Testimonial() {
   return (
     <section className="py-24 bg-[#DFDDD8]">
-      <div className="max-w-screen-xl mx-auto px-4 md:px-8">
+      <div className=" mx-auto px-4 w-full md:w-11/12 ">
         <Swiper
           dir="rtl"
           pagination={{
@@ -105,8 +105,7 @@ const testimonialDetails = [
   },
   {
     name: "Yogi Roy",
-    description:
-      "We loved every moment of our city tour with CityWander. The food tour was a highlight, offering a delicious introduction to the city's culinary scene.",
+    description:"We loved every moment of our city tour with CityWander. The food tour was a highlight, offering a delicious introduction to the city's culinary scene.",
     position: "abc",
   },
 ];

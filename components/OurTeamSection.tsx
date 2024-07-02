@@ -1,42 +1,47 @@
 import Image from "next/image";
-import React from "react";
+import React, { useRef } from "react";
 import profile from "../assets/profile.jpg";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const teamDetails = [
   {
     image: profile,
-    name: "Emi Yamamoto",
-    location: "Tokyo, Japan",
+    name: "Ramesh Adhikari",
+    location: "Kathmandu, Nepal",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Cras nam arcu nunc volutpat sit fringilla sed lorem. Vestibulum morbi elementum.",
+      "Ramesh is a seasoned professional with over 10 years of experience in software development. He specializes in backend technologies and has a keen interest in open-source projects.",
   },
   {
     image: profile,
-    name: "John Doe",
-    location: "New York, USA",
+    name: "Sita Sharma",
+    location: "Pokhara, Nepal",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Cras nam arcu nunc volutpat sit fringilla sed lorem. Vestibulum morbi elementum.",
+      "Sita is a creative graphic designer with a passion for creating visually appealing and user-friendly designs. She has worked with several top companies and loves exploring new design trends.",
   },
   {
     image: profile,
-    name: "Jane Smith",
-    location: "London, UK",
+    name: "Hari Prasad",
+    location: "Lalitpur, Nepal",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Cras nam arcu nunc volutpat sit fringilla sed lorem. Vestibulum morbi elementum.",
+      "Hari is an expert in data analytics and machine learning. With a background in mathematics and statistics, he brings a unique perspective to data-driven projects.",
   },
   {
     image: profile,
-    name: "Carlos Martinez",
-    location: "Mexico City, Mexico",
+    name: "Mina Rai",
+    location: "Bhaktapur, Nepal",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Cras nam arcu nunc volutpat sit fringilla sed lorem. Vestibulum morbi elementum.",
+      "Mina is a front-end developer with a strong eye for detail. She enjoys creating interactive and dynamic web applications and is always up-to-date with the latest in web technologies.",
   },
   {
     image: profile,
-    name: "Li Wei",
-    location: "Beijing, China",
+    name: "Kiran Thapa",
+    location: "Biratnagar, Nepal",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Cras nam arcu nunc volutpat sit fringilla sed lorem. Vestibulum morbi elementum.",
+      "Kiran is a project manager with extensive experience in managing large-scale projects. He is known for his excellent organizational skills and ability to lead teams to success.",
   },
 ];
 
@@ -58,16 +63,53 @@ function TeamCard({ image, name, location, description }: any) {
 }
 
 export default function OurTeamSection() {
+  const titlteRef1 = useRef(null);
+  const subTitleRef1 = useRef(null);
+
+  useGSAP(() => {
+    const tlTitle = gsap.timeline({
+      scrollTrigger: {
+        trigger: titlteRef1.current,
+        start: "top bottom",
+        end: "top 60%",
+        scrub: 1,
+        // markers: true,
+      },
+    });
+
+    tlTitle.from(titlteRef1.current, {
+      opacity: 0,
+      x: "-50px",
+    });
+
+    const tlSubtitle = gsap.timeline({
+      scrollTrigger: {
+        trigger: subTitleRef1.current,
+        start: "top bottom",
+        end: "top 60%",
+        scrub: 1,
+        // markers: true,
+      },
+    });
+
+    tlSubtitle.from(subTitleRef1.current, {
+      opacity: 0,
+    });
+  });
+
   return (
     <main className="h-full bg-[#DFDDD8] py-20 px-4 sm:px-4 md:px-16">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 h-full">
         <div className="md:col-span-1 p-4 ">
           <div className="md:sticky top-20 flex flex-col gap-4">
             <h1 className="text-sm font-normal">Our team</h1>
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold ">
+            <h2
+              ref={titlteRef1}
+              className="text-2xl sm:text-3xl md:text-5xl font-bold "
+            >
               Meet your <br /> leaders
             </h2>
-            <p className="text-sm sm:text-base mt-2">
+            <p ref={subTitleRef1} className="text-sm sm:text-base mt-2">
               Local, friendly staff members here to support you on your
               adventures.
             </p>

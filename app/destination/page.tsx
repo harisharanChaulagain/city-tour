@@ -699,51 +699,53 @@ export default function Page() {
   };
 
   return (
-    <main className="px-4 sm:px-8 md:px-16 py-20 text-[#1D1D1B] ">
-      <section className="bg-[#DEDDD7] rounded-2xl flex flex-col gap-4 p-8 my-10">
-        <h1 className="text-[#1D1D1B] font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl pt-20">
-          Destinations
-        </h1>
-        <p className="text-sm sm:text-base">
-          Roam Freely and Discover Your Ultimate Destination
-        </p>
-      </section>
-      <div className="flex items-center whitespace-nowrap gap-4 py-4 ">
-        <span className="text-base sm:text-xl font-bold">
-          Popular Destinations
-        </span>
-        <span className="bg-[#DEDDD7] h-0.5 w-full"></span>
+    <main className="py-20 text-[#1D1D1B] ">
+      <div className="px-4 sm:px-8 w-full md:w-11/12 mx-auto">
+        <section className="bg-[#DEDDD7] rounded-2xl flex flex-col gap-4 p-8 my-10">
+          <h1 className="text-[#1D1D1B] font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl pt-20">
+            Destinations
+          </h1>
+          <p className="text-sm sm:text-base">
+            Roam Freely and Discover Your Ultimate Destination
+          </p>
+        </section>
+        <div className="flex items-center whitespace-nowrap gap-4 py-4 ">
+          <span className="text-base sm:text-xl font-bold">
+            Popular Destinations
+          </span>
+          <span className="bg-[#DEDDD7] h-0.5 w-full"></span>
+        </div>
+        <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-10 ">
+          {/* Popular Destinations */}
+          {getDestinationsByType("popular").map((trip) => (
+            <TripCard key={trip.id} trip={trip} />
+          ))}
+        </section>
+        <div className="flex items-center whitespace-nowrap gap-4 py-4">
+          <span className="text-base sm:text-xl font-bold">
+            Trending Destinations
+          </span>
+          <span className="bg-[#DEDDD7] h-0.5 w-full"></span>
+        </div>
+        <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-10">
+          {/* Trending Destinations */}
+          {getDestinationsByType("trending").map((trip) => (
+            <TripCard key={trip.id} trip={trip} />
+          ))}
+        </section>
+        <div className="flex items-center whitespace-nowrap gap-4 py-4">
+          <span className="text-base sm:text-xl font-bold">
+            Seasonal Destinations
+          </span>
+          <span className="bg-[#DEDDD7] h-0.5 w-full"></span>
+        </div>
+        <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-10">
+          {/* Seasonal Destinations */}
+          {getDestinationsByType("seasonal").map((trip) => (
+            <TripCard key={trip.id} trip={trip} />
+          ))}
+        </section>
       </div>
-      <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-10 ">
-        {/* Popular Destinations */}
-        {getDestinationsByType("popular").map((trip) => (
-          <TripCard key={trip.id} trip={trip} />
-        ))}
-      </section>
-      <div className="flex items-center whitespace-nowrap gap-4 py-4">
-        <span className="text-base sm:text-xl font-bold">
-          Trending Destinations
-        </span>
-        <span className="bg-[#DEDDD7] h-0.5 w-full"></span>
-      </div>
-      <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-10">
-        {/* Trending Destinations */}
-        {getDestinationsByType("trending").map((trip) => (
-          <TripCard key={trip.id} trip={trip} />
-        ))}
-      </section>
-      <div className="flex items-center whitespace-nowrap gap-4 py-4">
-        <span className="text-base sm:text-xl font-bold">
-          Seasonal Destinations
-        </span>
-        <span className="bg-[#DEDDD7] h-0.5 w-full"></span>
-      </div>
-      <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-10">
-        {/* Seasonal Destinations */}
-        {getDestinationsByType("seasonal").map((trip) => (
-          <TripCard key={trip.id} trip={trip} />
-        ))}
-      </section>
     </main>
   );
 }

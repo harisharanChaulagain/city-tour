@@ -49,7 +49,7 @@ export default function Page() {
 
   return (
     <div className=" py-20 text-[#1d1d1b]">
-      <div className="px-4 sm:px-8 md:px-16">
+      <div className="px-4 sm:px-8 w-full md:w-11/12 mx-auto">
         <h1 className="text-3xl sm:text-5xl md:text-6xl lg:tex-7xl xl:text-8xl font-bold flex justify-center items-center py-8">
           What Is Ghumfir Nepal?
         </h1>

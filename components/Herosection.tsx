@@ -2,7 +2,7 @@
 import Image from "next/image";
 import React, { useState, useRef } from "react";
 import kathmanduCity from "../assets/herosection/kathmanduCity.png";
-import pohkeraCity from "../assets/herosection/pokheraCity.png";
+import pohkeraCity from "../assets/herosection/PokheraCity.png";
 import bhaktapurCity from "../assets/herosection/bhaktapurCity.png";
 import { Icon } from "@iconify/react";
 import Slider from "react-slick";

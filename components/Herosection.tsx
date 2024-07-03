@@ -69,7 +69,7 @@ export default function Herosection() {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 3000,
   };
 
   const handleNext = () => {
@@ -86,7 +86,7 @@ export default function Herosection() {
 
   return (
     <main
-      className="px-4 sm:px-8 w-full md:w-11/12 mx-auto py-20 mt-10"
+      className=" w-full md:w-11/12 mx-auto py-20"
       style={{ overflowX: "hidden" }}
       ref={container}
     >
@@ -97,8 +97,8 @@ export default function Herosection() {
           className="rounded-2xl overflow-hidden"
         >
           {images.map((src, index) => (
-            <div key={index} className="px-4 heroImage ">
-              <div className="relative h-80 sm:h-[75vh] transition-all duration-300 hero-image">
+            <div key={index} className="px-2 sm:px-4 heroImage ">
+              <div className="relative h-80 sm:h-[75vh] transition-all duration-300 hero-image mt-4">
                 <Image
                   src={src}
                   alt="city"
@@ -109,7 +109,7 @@ export default function Herosection() {
             </div>
           ))}
         </Slider>
-        <div className="pointer-events-none px-4 absolute bottom-10 left-4 sm:top-[40vh] sm:left-10 text-white flex flex-col gap-4">
+        <div className="pointer-events-none px-4 absolute bottom-10 left-4 sm:top-[55vh] sm:left-10 text-white flex flex-col gap-4">
           <h1 className="font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl hero-text">
             Discover the World with Us.
           </h1>

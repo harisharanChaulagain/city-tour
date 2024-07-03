@@ -26,7 +26,7 @@ export default function Navbar() {
         pointerEvents: "auto",
         transformOrigin: "top",
       });
-      body.style.overflow = "hidden"; // Disable scrolling
+      body.style.overflow = "hidden";
     } else {
       gsap.to(navSectionRef.current, {
         height: 0,
@@ -35,10 +35,10 @@ export default function Navbar() {
         ease: "power3.inOut",
         pointerEvents: "none",
       });
-      body.style.overflow = ""; // Enable scrolling
+      body.style.overflow = "";
     }
     return () => {
-      body.style.overflow = ""; // Clean up on unmount
+      body.style.overflow = "";
     };
   }, [showNavItem]);
 
@@ -107,7 +107,9 @@ export default function Navbar() {
           Ghumfir Nepal.
         </Link>
         <div className="flex gap-8 items-center ">
-          <button
+          <a
+            href="https://wa.me/984"
+            target="_blank"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             className="overflow-hidden relative rounded-3xl flex justify-center items-center w-32 h-10 border border-[#1d1d1b]/50 hover:border-[#1d1d1b] transition-all duration-300"
@@ -125,7 +127,7 @@ export default function Navbar() {
               {" "}
               Get in touch
             </span>
-          </button>
+          </a>
           <div
             className="flex flex-col items-center gap-1 cursor-pointer w-10 h-10 justify-center"
             onClick={toggleNavItem}

@@ -41,6 +41,10 @@ export default function RootLayout({
     };
   }, []);
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   return (
     <html lang="en">
       <body className={inter.className}>

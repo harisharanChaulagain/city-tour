@@ -51,7 +51,7 @@ function TeamCard({ image, name, location, description }: any) {
       <Image
         src={image}
         alt={name}
-        className="w-full h-60 object-cover rounded-2xl"
+        className="w-full h-[30vh] object-cover rounded-2xl object-top"
       />
       <div>
         <h3 className="mt-4 text-lg sm:text-xl font-semibold">{name}</h3>
@@ -98,8 +98,8 @@ export default function OurTeamSection() {
   });
 
   return (
-    <main className="h-full bg-[#DFDDD8] py-20 px-4 sm:px-4 md:px-16">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 h-full">
+    <main className="h-full bg-[#DFDDD8] py-20 ">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 h-full px-4 w-full md:w-11/12 mx-auto">
         <div className="md:col-span-1 p-4 ">
           <div className="md:sticky top-20 flex flex-col gap-4">
             <h1 className="text-sm font-normal">Our team</h1>

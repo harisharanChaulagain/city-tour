@@ -14,9 +14,12 @@ export default function Page() {
   return (
     <>
       {filteredDestinations.map((item, index) => (
-        <main key={index} className="px-4 sm:px-8 md:px-16 py-20">
-          <section className="relative w-full h-96 rounded-2xl">
-            <div className="h-96 px-4 rounded-2xl overflow-hidden transition-all duration-300">
+        <main
+          key={index}
+          className="px-4 sm:px-8 w-full md:w-11/12 mx-auto py-20"
+        >
+          <section className="relative w-full h-[65vh] rounded-2xl mt-4">
+            <div className="h-[65vh] px-4 rounded-2xl overflow-hidden transition-all duration-300">
               <Image
                 src={item?.image}
                 alt="city"
@@ -57,7 +60,7 @@ export default function Page() {
               <h2 className="text-lg sm:text-xl md:text-2xl">
                 Recommended Activities
               </h2>
-              <div className="h-96 w-full overflow-hidden rounded-2xl">
+              <div className="h-[50vh] w-full overflow-hidden rounded-2xl">
                 <Image
                   src={item?.image}
                   alt="pokharaCity"
@@ -79,11 +82,11 @@ export default function Page() {
               <h2 className="text-lg sm:text-xl md:text-2xl mt-8">
                 Must-try Food
               </h2>
-              <div className="h-96 w-full overflow-hidden rounded-2xl">
+              <div className="h-[50vh] w-full overflow-hidden rounded-2xl">
                 <Image
                   src={thakalikhana}
                   alt="thakalikhana"
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover object-center"
                 />
               </div>
               <div>

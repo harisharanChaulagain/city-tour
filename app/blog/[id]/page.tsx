@@ -28,7 +28,7 @@ export default function BlogDetails() {
       {loading ? (
         <Skeleton height={400} />
       ) : (
-        <div className="w-full h-96 relative rounded-2xl overflow-hidden">
+        <div className="w-full h-[65vh] relative rounded-2xl overflow-hidden">
           <Image
             src={blog.image}
             alt={blog.title}
@@ -57,12 +57,12 @@ export default function BlogDetails() {
             .slice(0, 3)
             .map((relatedBlog: any) => (
               <Link key={relatedBlog.id} href={`/blog/${relatedBlog.id}`}>
-                <div className="max-w-sm bg-[#DEDDD7] border border-gray-200 rounded-lg shadow hover:shadow-md group">
+                <div className=" bg-[#DEDDD7] border border-gray-200 rounded-lg shadow hover:shadow-md group">
                   <div className="overflow-hidden rounded-t-lg">
                     {loading ? (
                       <Skeleton height={200} />
                     ) : (
-                      <div className="h-60 w-full">
+                      <div className="h-[40vh] w-full">
                         <Image
                           className="rounded-t-lg group-hover:scale-110 duration-300 transition-all object-cover h-full w-full"
                           src={relatedBlog.image}

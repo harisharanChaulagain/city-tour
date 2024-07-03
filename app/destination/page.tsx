@@ -753,7 +753,7 @@ export default function Page() {
 const TripCard = ({ trip }: any) => (
   <Link
     href={`/destination/${trip.id}`}
-    className="h-80 relative overflow-hidden rounded-2xl shadow-xl"
+    className="h-[40vh] relative overflow-hidden rounded-2xl shadow-xl"
   >
     <Image
       src={trip.image}

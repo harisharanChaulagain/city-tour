@@ -9,9 +9,9 @@ export default function page() {
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4  px-4 sm:px-8 pb-20 pt-28 w-full md:w-11/12 mx-auto place-items-center">
       {blogPosts.map((post, index) => (
         <Link key={index} href={`/blog/${post?.id}`}>
-          <div className="max-w-sm bg-[#DEDDD7] border border-gray-200 rounded-lg shadow hover:shadow-md group">
+          <div className=" bg-[#DEDDD7] border border-gray-200 rounded-lg shadow hover:shadow-md group">
             <div className="overflow-hidden rounded-t-lg">
-              <div className="h-60 w-full">
+              <div className="h-[40vh] w-full">
                 <Image
                   className="rounded-t-lg group-hover:scale-110 duration-300 transition-all object-cover h-full w-full"
                   src={post.image}

@@ -53,7 +53,7 @@ export default function Page() {
         <h1 className="text-3xl sm:text-5xl md:text-6xl lg:tex-7xl xl:text-8xl font-bold flex justify-center items-center py-8">
           What Is Ghumfir Nepal?
         </h1>
-        <div className="w-full h-96 rounded-2xl overflow-hidden">
+        <div className="w-full h-[65vh] rounded-2xl overflow-hidden">
           <Image
             src={aboutImage}
             alt="pokheraImage"
@@ -156,11 +156,11 @@ const AboutCard = ({ title, image, details }: any) => {
     >
       <h1 className="text-xl sm:text-2xl font-bold">{title}</h1>
       <h2 className="text-base sm:text-lg">{details}</h2>
-      <div className="h-80 w-full rounded-2xl overflow-hidden">
+      <div className="h-[50vh] w-full rounded-2xl overflow-hidden">
         <Image
           src={image}
           alt="pokhara image"
-          className="h-full w-full object-cover hover:scale-105 transition-all duration-300"
+          className="h-full w-full object-cover object-top hover:scale-105 transition-all duration-300"
         />
       </div>
     </div>

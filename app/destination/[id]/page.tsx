@@ -35,11 +35,12 @@ export default function Page() {
             </div>
             <div className="absolute top-52 left-20 text-white flex flex-col gap-4">
               <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
-                Work from anywhere.
+              Discover the World with Us.
               </h1>
               <p className="text-sm sm:text-lg md:text-xl">
-                Work remotely, explore various destinations, <br /> and make
-                lasting memories with a community of digital Ghumfir Nepals.
+              Travel to breathtaking destinations, immerse yourself in diverse
+            cultures, <br /> and create unforgettable experiences with Ghumfir
+            Nepal.
               </p>
             </div>
           </section>

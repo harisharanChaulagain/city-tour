@@ -107,7 +107,7 @@ export default function NewsLetter() {
     <main className="px-4 sm:px-8 w-full md:w-11/12 mx-auto py-10">
       <section
         ref={sectionRef}
-        className="relative bg-[#DEDDD7] py-20 rounded-2xl mx-auto px-4 md:px-8 text-[#1D1D1B]"
+        className="relative bg-[#DEDDD7] py-20  rounded-2xl mx-auto px-4 md:px-8 text-[#1D1D1B]"
       >
         <div className="flex flex-col gap-4 text-center max-w-2xl mx-auto">
           <h1 className="text-sm font-semibold">Community</h1>
@@ -148,8 +148,8 @@ export default function NewsLetter() {
                 height: circle.size,
               }}
             >
-              <span className="text-3xl font-semibold">{circle.title}</span>
-              <span className="text-sm">{circle.content}</span>
+              <span className="text-2xl font-semibold">{circle.title}</span>
+              <span className="text-sm px-4 text-center">{circle.content}</span>
             </div>
           ))}
         </div>

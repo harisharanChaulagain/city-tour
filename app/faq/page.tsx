@@ -78,7 +78,7 @@ export default function Page() {
   });
 
   return (
-    <main className="py-20 px-4 sm:px-8 w-full md:w-11/12 mx-auto">
+    <main className="py-20  px-4 sm:px-8 w-full md:w-11/12 mx-auto">
       <section className="bg-[#DEDDD7] rounded-2xl flex flex-col gap-6 p-8 my-10">
         <h1 className="text-[#1D1D1B] font-bold  text-2xl sm:text-3xl md:text-4xl lg:text-5xl pt-20">
           Frequently Asked <br /> Questions
@@ -88,7 +88,7 @@ export default function Page() {
       <section>
         {faqDatas.map((item: any, index: number) => (
           <div key={index}>
-            <div  onClick={() => handleItemClick(index)} className="py-4">
+            <div onClick={() => handleItemClick(index)} className="py-4">
               <div className="cursor-pointer flex justify-between items-center">
                 <p className="text-xl xl:text-2xl text-secondary-500/90 font-medium ">
                   {item.question}

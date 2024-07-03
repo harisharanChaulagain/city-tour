@@ -34,7 +34,7 @@ export default function RootLayout({
 
     setTimeout(() => {
       setLoading(false);
-    }, 200);
+    }, 2000);
 
     return () => {
       window.removeEventListener("resize", resize);

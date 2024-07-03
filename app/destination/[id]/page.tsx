@@ -16,7 +16,7 @@ export default function Page() {
       {filteredDestinations.map((item, index) => (
         <main
           key={index}
-          className="px-4 sm:px-8 w-full md:w-11/12 mx-auto py-20"
+          className="px-4 sm:px-8 w-full md:w-11/12 mx-auto py-20 "
         >
           <section className="relative w-full h-[65vh] rounded-2xl mt-4">
             <div className="h-[65vh] px-4 rounded-2xl overflow-hidden transition-all duration-300">

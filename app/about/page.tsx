@@ -48,7 +48,7 @@ export default function Page() {
   });
 
   return (
-    <div className=" py-20 text-[#1d1d1b]">
+    <div className=" py-20  text-[#1d1d1b]">
       <div className="px-4 sm:px-8 w-full md:w-11/12 mx-auto">
         <h1 className="text-3xl sm:text-5xl md:text-6xl lg:tex-7xl xl:text-8xl font-bold flex justify-center items-center py-8">
           What Is Ghumfir Nepal?
@@ -62,11 +62,11 @@ export default function Page() {
         </div>
         <div className="flex justify-end">
           <p className="max-w-2xl py-10 text-base sm:text-xl md:text-2xl font-normal text-">
-           Ghumfir Nepal is a travel company dedicated to providing personalized
-            urban exploration experiences. Whether you are a solo traveler, a
-            couple, a family, or a group of friends, we tailor our tours to suit
-            your interests, ensuring that you see the city through a
-            local&apos;s eyes.
+            Ghumfir Nepal is a travel company dedicated to providing
+            personalized urban exploration experiences. Whether you are a solo
+            traveler, a couple, a family, or a group of friends, we tailor our
+            tours to suit your interests, ensuring that you see the city through
+            a local&apos;s eyes.
           </p>
         </div>
         <div className="text-2xl sm:text-4xl md:text-5xl font-bold py-16 mt-8">

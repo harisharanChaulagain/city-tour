@@ -98,7 +98,7 @@ export default function OurTeamSection() {
   });
 
   return (
-    <main className="h-full bg-[#DFDDD8] py-20 ">
+    <main className="h-full bg-[#DFDDD8] py-20  ">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 h-full px-4 w-full md:w-11/12 mx-auto">
         <div className="md:col-span-1 p-4 ">
           <div className="md:sticky top-20 flex flex-col gap-4">

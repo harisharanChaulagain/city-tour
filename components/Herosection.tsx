@@ -86,7 +86,7 @@ export default function Herosection() {
 
   return (
     <main
-      className=" w-full md:w-11/12 mx-auto py-20"
+      className=" w-full md:w-11/12 mx-auto py-20 "
       style={{ overflowX: "hidden" }}
       ref={container}
     >

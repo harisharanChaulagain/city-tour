@@ -6,16 +6,18 @@ import React from "react";
 
 export default function page() {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4  px-4 sm:px-8 md:px-16 pb-20 pt-28">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4  px-4 sm:px-8 pb-20 pt-28 w-full md:w-11/12 mx-auto place-items-center">
       {blogPosts.map((post, index) => (
-        <Link key={index} href={`/blog/${index}`}>
-          <div className="max-w-sm bg-[#DEDDD7] border border-gray-200 rounded-lg shadow hover:shadow-md group">
+        <Link key={index} href={`/blog/${post?.id}`}>
+          <div className=" bg-[#DEDDD7] border border-gray-200 rounded-lg shadow hover:shadow-md group">
             <div className="overflow-hidden rounded-t-lg">
-              <Image
-                className="rounded-t-lg group-hover:scale-110 duration-300 transition-all"
-                src={post.image}
-                alt="blog card"
-              />
+              <div className="h-[40vh] w-full">
+                <Image
+                  className="rounded-t-lg group-hover:scale-110 duration-300 transition-all object-cover h-full w-full"
+                  src={post.image}
+                  alt="blog card"
+                />
+              </div>
             </div>
             <div className="p-5">
               <h5 className="mb-2 text-2xl font-bold tracking-tight">

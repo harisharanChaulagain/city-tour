@@ -1,10 +1,13 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { Icon } from "@iconify/react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import Herosection from "@/components/Herosection";
 import localImage from "../assets/local-experience.jpg";
-import smallGroup from "../assets/small-group.png"
+import smallGroup from "../assets/small-group.png";
 import customised from "../assets/customised.png";
 import Testimonial from "@/components/Testimonial";
 import DestinationSection from "@/components/DestinationSection";
@@ -12,68 +15,163 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Link from "next/link";
 import BlogSection from "@/components/BlogSection";
 
+gsap.registerPlugin(ScrollTrigger);
+
 const includeItems = [
   {
     title: "Customized Packages",
-    description: "Tailored city and food tours that cater to individual preferences and interests.",
+    description:
+      "Tailored city and food tours that cater to individual preferences and interests.",
     icon: "mi:home",
     image: customised,
   },
   {
     title: "Small Group Atmosphere",
-    description: "Intimate tours that allow for personalized attention and a more immersive experience.",
+    description:
+      "Intimate tours that allow for personalized attention and a more immersive experience.",
     icon: "ri:computer-line",
     image: smallGroup,
   },
   {
     title: "Multi-lingual Guides",
-    description: "Guides fluent in multiple languages to accommodate diverse travelers.",
+    description:
+      "Guides fluent in multiple languages to accommodate diverse travelers.",
     icon: "lucide:users",
     image: localImage,
   },
-  // {
-  //   title: "Local Experiences",
-  //   description: "Make memories with inclusive local experiences.",
-  //   icon: "icon-park-outline:local-two",
-  //   image: localImage,
-  // },
 ];
 
 export default function Page() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const iconRef1 = useRef(null);
+  const iconRef2 = useRef(null);
+  const titlteRef1 = useRef(null);
+  const subTitleRef1 = useRef(null);
+  const swiperRef = useRef<any>(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveIndex((prevIndex) => (prevIndex + 1) % includeItems.length);
+      setActiveIndex((prevIndex) => {
+        const newIndex = (prevIndex + 1) % includeItems.length;
+        swiperRef.current.swiper.slideTo(newIndex);
+        return newIndex;
+      });
     }, 3000);
 
     return () => clearInterval(interval);
   }, []);
 
   const handleTabClick = (index: number) => {
-    setActiveIndex(index);
+    if (index !== activeIndex) {
+      setActiveIndex(index);
+      swiperRef.current.swiper.slideTo(index);
+    }
   };
+
+  const handleSlideChange = (swiper: any) => {
+    const newIndex = swiper.activeIndex;
+    if (newIndex !== activeIndex) {
+      setActiveIndex(newIndex);
+    }
+  };
+
+  const handleMouseEnter = () => {
+    gsap.to(iconRef1.current, {
+      x: "32px",
+      duration: 0.5,
+      ease: "power2.out",
+    });
+    gsap.to(iconRef2.current, {
+      x: "32px",
+      duration: 0.5,
+      ease: "power2.out",
+    });
+  };
+
+  const handleMouseLeave = () => {
+    gsap.to(iconRef1.current, {
+      x: "0px",
+      duration: 0.5,
+      ease: "power2.in",
+    });
+    gsap.to(iconRef2.current, {
+      x: "0px",
+      duration: 0.5,
+      ease: "power2.in",
+    });
+  };
+
+  useGSAP(() => {
+    // Timeline for title animation
+    const tlTitle = gsap.timeline({
+      scrollTrigger: {
+        trigger: titlteRef1.current,
+        start: "top bottom",
+        end: "top 60%",
+        scrub: 1,
+        // markers: true,
+      },
+    });
+
+    tlTitle.from(titlteRef1.current, {
+      opacity: 0,
+      x: "-50px",
+    });
+
+    // Timeline for subtitle animation
+    const tlSubtitle = gsap.timeline({
+      scrollTrigger: {
+        trigger: subTitleRef1.current,
+        start: "top bottom",
+        end: "top 60%",
+        scrub: 1,
+        // markers: true,
+      },
+    });
+
+    tlSubtitle.from(subTitleRef1.current, {
+      opacity: 0,
+    });
+  });
 
   return (
     <main className="overflow-x-hidden">
       <Herosection />
-      <section className="px-4 sm:px-8 md:px-16 flex flex-col gap-4 py-10">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
-        What Sets Up Apart
-        </h2>
-        <Link
-          href="/about"
-          className="flex items-center gap-2 w-fit text-sm hover:cursor-pointer text-[#1D1D1b] hover:underline transition-all duration-300"
+      <section className="px-4 sm:px-8 w-full md:w-11/12 mx-auto flex flex-col gap-4 py-10">
+        <h2
+          ref={titlteRef1}
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold"
         >
-          <button className="text-white bg-[#1D1D1B] p-2 rounded-full">
-            <Icon icon="grommet-icons:form-next-link" className="text-2xl" />
-          </button>
-          Learn how it works
-        </Link>
+          What Sets Us Apart
+        </h2>
+        <div ref={subTitleRef1}>
+          <Link
+            href="/about"
+            className="flex items-center gap-2 w-fit text-sm hover:cursor-pointer text-[#1D1D1b] hover:underline transition-all duration-300"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            <button className="relative text-white bg-[#1D1D1B] h-10 w-10 rounded-full overflow-hidden">
+              <span className="absolute top-2 -left-6" ref={iconRef1}>
+                <Icon
+                  icon="grommet-icons:form-next-link"
+                  className="text-2xl"
+                />
+              </span>
+              <span className="absolute top-2 left-2" ref={iconRef2}>
+                <Icon
+                  icon="grommet-icons:form-next-link"
+                  className="text-2xl"
+                />
+              </span>
+            </button>
+            Learn how it works
+          </Link>
+        </div>
       </section>
-      <section className="pb-20 px-4 sm:px-8 md:px-16">
+      <section className="pb-20 px-4 sm:px-8 w-full md:w-11/12 mx-auto ">
         <div className="relative">
-          <div className="h-96 rounded-2xl overflow-hidden transition-all duration-300">
+          <div className="h-[50vh] w-full rounded-2xl overflow-hidden transition-all duration-300">
             <Image
               src={includeItems[activeIndex].image}
               alt={includeItems[activeIndex].title}
@@ -82,6 +180,7 @@ export default function Page() {
           </div>
           <div className="absolute bottom-8 left-8 right-8 px-8">
             <Swiper
+              ref={swiperRef}
               spaceBetween={20}
               slidesPerView={1}
               loop
@@ -99,9 +198,7 @@ export default function Page() {
                   spaceBetween: 50,
                 },
               }}
-              onSlideChange={(swiper: any) =>
-                handleTabClick(swiper.activeIndex)
-              }
+              onSlideChange={handleSlideChange}
             >
               {includeItems.map((item, index) => (
                 <SwiperSlide key={index}>
@@ -113,9 +210,6 @@ export default function Page() {
                         : "bg-gray-200 text-black"
                     }`}
                   >
-                    {/* <div>
-                      <Icon icon={item.icon} className="text-2xl" />
-                    </div> */}
                     <div className="flex flex-col gap-2 pr-8">
                       <h1 className="text-base sm:text-lg md:text-2xl font-bold">
                         {item.title}

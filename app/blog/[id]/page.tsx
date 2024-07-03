@@ -24,11 +24,11 @@ export default function BlogDetails() {
   }
 
   return (
-    <div className="px-4 sm:px-8 md:px-16 pt-28 pb-20">
+    <div className="px-4 sm:px-8 w-full md:w-11/12 mx-auto pt-28 pb-20">
       {loading ? (
         <Skeleton height={400} />
       ) : (
-        <div className="w-full h-96 relative rounded-2xl overflow-hidden">
+        <div className="w-full h-[65vh] relative rounded-2xl overflow-hidden">
           <Image
             src={blog.image}
             alt={blog.title}
@@ -37,7 +37,7 @@ export default function BlogDetails() {
           />
         </div>
       )}
-      <div className=" py-8 max-w-5xl mx-auto">
+      <div className=" py-8 mx-auto">
         {loading ? (
           <Skeleton count={1} height={40} />
         ) : (
@@ -49,7 +49,7 @@ export default function BlogDetails() {
           <p className="text-lg">{blog.description}</p>
         )}
       </div>
-      <div className="py-8  max-w-5xl mx-auto">
+      <div className="py-8  mx-auto">
         <h2 className="text-2xl font-bold mb-4">Related Blogs</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {blogPosts
@@ -57,19 +57,18 @@ export default function BlogDetails() {
             .slice(0, 3)
             .map((relatedBlog: any) => (
               <Link key={relatedBlog.id} href={`/blog/${relatedBlog.id}`}>
-                <div className="max-w-sm bg-[#DEDDD7] border border-gray-200 rounded-lg shadow hover:shadow-md group">
+                <div className=" bg-[#DEDDD7] border border-gray-200 rounded-lg shadow hover:shadow-md group">
                   <div className="overflow-hidden rounded-t-lg">
                     {loading ? (
                       <Skeleton height={200} />
                     ) : (
-                      <Image
-                        className="rounded-t-lg group-hover:scale-110 duration-300 transition-all"
-                        src={relatedBlog.image}
-                        alt={relatedBlog.title}
-                        layout="responsive"
-                        width={400}
-                        height={200}
-                      />
+                      <div className="h-[40vh] w-full">
+                        <Image
+                          className="rounded-t-lg group-hover:scale-110 duration-300 transition-all object-cover h-full w-full"
+                          src={relatedBlog.image}
+                          alt={relatedBlog.title}
+                        />
+                      </div>
                     )}
                   </div>
                   <div className="p-5">

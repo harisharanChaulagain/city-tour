@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Page() {
   return (
-    <main className="py-20 px-4 sm:px-8 md:px-16">
+    <main className="py-20  px-4 sm:px-8 w-full md:w-11/12 mx-auto">
       <section className="bg-[#DEDDD7]  rounded-2xl flex flex-col gap-4 p-8 my-10">
         <h1 className="text-[#1D1D1B] font-bold  text-2xl sm:text-3xl md:text-4xl lg:text-5xl pt-20">
           Contact us

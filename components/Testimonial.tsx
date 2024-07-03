@@ -9,10 +9,43 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 
+const testimonialDetails = [
+  {
+    name: "Hari Sharan Chaulagain",
+    description:
+      "Ghumfir Nepal's city tour was a perfect blend of history and culture. The food tour was equally delightful, with authentic local dishes that left us craving more!",
+    position: "founder ",
+  },
+  {
+    name: "Kiran Nepali",
+    description:
+      "Our guide from Ghumfir Nepal made our city tour both informative and entertaining. The food tour was a highlight, introducing us to flavors we never would have found on our own.",
+    position: "founder ",
+  },
+  {
+    name: "Loki Chaulagain",
+    description:
+      "Highly recommend Ghumfir Nepal for their expertly guided city tour and delectable food tour. They made our visit memorable with their local insights and delicious recommendations.",
+    position: "founder ",
+  },
+  {
+    name: "Dawa Sherpa",
+    description:
+      "We had an amazing time with Ghumfir Nepal exploring the city's landmarks and enjoying the food tour. Their attention to detail and passion for local culture truly stood out.",
+    position: "abc",
+  },
+  {
+    name: "Yogi Roy",
+    description:
+      "We loved every moment of our city tour with Ghumfir Nepal. The food tour was a highlight, offering a delicious introduction to the city's culinary scene.",
+    position: "abc",
+  },
+];
+
 export default function Testimonial() {
   return (
     <section className="py-24 bg-[#DFDDD8]">
-      <div className="max-w-screen-xl mx-auto px-4 md:px-8">
+      <div className="mx-auto px-4 w-full md:w-11/12">
         <Swiper
           dir="rtl"
           pagination={{
@@ -20,7 +53,7 @@ export default function Testimonial() {
           }}
           loop
           modules={[Pagination]}
-          className="mySwiper "
+          className="mySwiper"
         >
           {testimonialDetails.map((item, index) => (
             <SwiperSlide key={index} className="pb-20">
@@ -49,11 +82,11 @@ export default function Testimonial() {
                 </div>
                 <figure>
                   <p className="text-[#1d1d1b] text-xl font-semibold sm:text-2xl">
-                    {item?.descriptioin}
+                    {item?.description}
                   </p>
-                  <div className=" flex gap-2 justify-center items-center w-full py-4">
+                  <div className="flex gap-2 justify-center items-center w-full py-4">
                     <div className="flex flex-col justify-start">
-                      <span className=" text-[#1d1d1b] font-semibold flex justify-end">
+                      <span className="text-[#1d1d1b] font-semibold flex justify-end">
                         {item?.name}
                       </span>
                       <span className="block text-[#1d1d1b]/90 text-sm mt-0.5">
@@ -77,24 +110,4 @@ export default function Testimonial() {
     </section>
   );
 }
-
-const testimonialDetails = [
-  {
-    name: "Hari",
-    descriptioin:
-      "  As a freelancer, finding the right work-life balance can be  challenging. Ghumfir Nepal has made it so much easier for me to explore new places while staying productive.”",
-    position: "founder ",
-  },
-  {
-    name: "Hari",
-    descriptioin:
-      "  As a freelancer, finding the right work-life balance can be  challenging. Ghumfir Nepal has made it so much easier for me to explore new places while staying productive.”",
-    position: "founder ",
-  },
-  {
-    name: "Hari",
-    descriptioin:
-      "  As a freelancer, finding the right work-life balance can be  challenging. Ghumfir Nepal has made it so much easier for me to explore new places while staying productive.”",
-    position: "founder ",
-  },
-];
+  

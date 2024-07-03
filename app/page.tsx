@@ -47,17 +47,32 @@ export default function Page() {
   const iconRef2 = useRef(null);
   const titlteRef1 = useRef(null);
   const subTitleRef1 = useRef(null);
+  const swiperRef = useRef<any>(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveIndex((prevIndex) => (prevIndex + 1) % includeItems.length);
+      setActiveIndex((prevIndex) => {
+        const newIndex = (prevIndex + 1) % includeItems.length;
+        swiperRef.current.swiper.slideTo(newIndex);
+        return newIndex;
+      });
     }, 3000);
 
     return () => clearInterval(interval);
   }, []);
 
   const handleTabClick = (index: number) => {
-    setActiveIndex(index);
+    if (index !== activeIndex) {
+      setActiveIndex(index);
+      swiperRef.current.swiper.slideTo(index);
+    }
+  };
+
+  const handleSlideChange = (swiper: any) => {
+    const newIndex = swiper.activeIndex;
+    if (newIndex !== activeIndex) {
+      setActiveIndex(newIndex);
+    }
   };
 
   const handleMouseEnter = () => {
@@ -165,6 +180,7 @@ export default function Page() {
           </div>
           <div className="absolute bottom-8 left-8 right-8 px-8">
             <Swiper
+              ref={swiperRef}
               spaceBetween={20}
               slidesPerView={1}
               loop
@@ -182,9 +198,7 @@ export default function Page() {
                   spaceBetween: 50,
                 },
               }}
-              onSlideChange={(swiper: any) =>
-                handleTabClick(swiper.activeIndex)
-              }
+              onSlideChange={handleSlideChange}
             >
               {includeItems.map((item, index) => (
                 <SwiperSlide key={index}>

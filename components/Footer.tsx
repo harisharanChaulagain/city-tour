@@ -88,19 +88,19 @@ const footerNavs = [
     items: [
       {
         href: "/destination",
-        name: "Nepal",
+        name: "Kathmandu",
       },
       {
         href: "/destination",
-        name: "Japan",
+        name: "Pokhera",
       },
       {
         href: "/destination",
-        name: "India",
+        name: "Chitwan",
       },
       {
         href: "/destination",
-        name: "China",
+        name: "Lumbini",
       },
     ],
   },

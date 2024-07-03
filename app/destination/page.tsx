@@ -12,7 +12,7 @@ import bhaktapur from "../../assets/destination/bhaktapur.png";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
 
-export const allDestinations = [
+ const allDestinations = [
   // Popular Destinations
   {
     id: "p1",

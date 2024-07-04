@@ -41,16 +41,16 @@ export default function BlogDetails() {
         {loading ? (
           <Skeleton count={1} height={40} />
         ) : (
-          <h1 className="text-3xl font-bold mb-4">{blog.title}</h1>
+          <h1 className="text-3xl 2xl:text-4xl font-bold mb-4">{blog.title}</h1>
         )}
         {loading ? (
           <Skeleton count={5} />
         ) : (
-          <p className="text-lg">{blog.description}</p>
+          <p className="text-lg 2xl:text-xl">{blog.description}</p>
         )}
       </div>
       <div className="py-8  mx-auto">
-        <h2 className="text-2xl font-bold mb-4">Related Blogs</h2>
+        <h2 className="text-2xl 2xl:text-3xl font-bold mb-4">Related Blogs</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {blogPosts
             .filter((post: any) => post.id !== Number(id))
@@ -75,20 +75,20 @@ export default function BlogDetails() {
                     {loading ? (
                       <Skeleton count={1} height={30} />
                     ) : (
-                      <h5 className="mb-2 text-xl font-bold tracking-tight">
+                      <h5 className="mb-2 text-xl 2xl:text-2xl font-bold tracking-tight">
                         {relatedBlog.title}
                       </h5>
                     )}
                     {loading ? (
                       <Skeleton count={2} />
                     ) : (
-                      <p className="mb-3 font-normal">
+                      <p className="mb-3 font-normal 2xl:text-lg">
                         {relatedBlog.description.length > 100
                           ? `${relatedBlog.description.slice(0, 100)}...`
                           : relatedBlog.description}
                       </p>
                     )}
-                    <div className="inline-flex items-center px-3 py-2 text-sm font-medium text-center bg-[#1d1d1b] hover:bg-[#1d1d1b]/90 transition-all duration-300 text-white rounded-lg focus:ring-4 focus:outline-none">
+                    <div className="2xl:text-lg inline-flex items-center px-3 py-2 text-sm font-medium text-center bg-[#1d1d1b] hover:bg-[#1d1d1b]/90 transition-all duration-300 text-white rounded-lg focus:ring-4 focus:outline-none">
                       Read more
                       <svg
                         className="rtl:rotate-180 w-3.5 h-3.5 ms-2"

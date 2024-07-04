@@ -140,14 +140,14 @@ export default function Page() {
       <section className="px-4 sm:px-8 w-full md:w-11/12 mx-auto flex flex-col gap-4 py-10">
         <h2
           ref={titlteRef1}
-          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl font-bold"
         >
           What Sets Us Apart
         </h2>
         <div ref={subTitleRef1}>
           <Link
             href="/about"
-            className="flex items-center gap-2 w-fit text-sm hover:cursor-pointer text-[#1D1D1b] hover:underline transition-all duration-300"
+            className="flex items-center gap-2 w-fit text-sm 2xl:text-base hover:cursor-pointer text-[#1D1D1b] hover:underline transition-all duration-300"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
@@ -211,10 +211,10 @@ export default function Page() {
                     }`}
                   >
                     <div className="flex flex-col gap-2 pr-8">
-                      <h1 className="text-base sm:text-lg md:text-2xl font-bold">
+                      <h1 className="text-base sm:text-lg md:text-2xl 2xl:text-3xl font-bold">
                         {item.title}
                       </h1>
-                      <p className="text-sm sm:text-base ">
+                      <p className="text-sm sm:text-base 2xl:text-lg ">
                         {item.description}
                       </p>
                     </div>

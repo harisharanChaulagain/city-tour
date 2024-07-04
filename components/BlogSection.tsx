@@ -120,17 +120,17 @@ export default function BlogSection() {
   return (
     <div className="py-10 px-4 sm:px-8 w-full md:w-11/12 mx-auto">
       <section className="flex flex-col gap-4">
-        <h1 className="text-sm">Blog</h1>
+        <h1 className="text-sm 2xl:text-base">Blog</h1>
         <h2
           ref={titlteRef1}
-          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl font-bold"
         >
           Our most recent blog posts
         </h2>
         <div ref={subTitleRef1}>
           <Link
             href="/blog"
-            className="flex items-center gap-2 w-fit text-sm hover:cursor-pointer text-[#1D1D1b] hover:underline transition-all duration-300"
+            className="flex items-center gap-2 w-fit text-sm 2xl:text-base  hover:cursor-pointer text-[#1D1D1b] hover:underline transition-all duration-300"
             onMouseEnter={handleMouseEnters}
             onMouseLeave={handleMouseLeaves}
           >
@@ -171,16 +171,16 @@ export default function BlogSection() {
                     </div>
                   </div>
                   <div className="p-5">
-                    <h5 className="mb-2 text-2xl font-bold tracking-tight">
+                    <h5 className="mb-2 text-2xl 2xl:text-3xl font-bold tracking-tight">
                       {post.title}
                     </h5>
-                    <p className="mb-3 font-normal">
+                    <p className="mb-3 font-normal 2xl:text-lg">
                       {post.description.length > 100
                         ? `${post.description.slice(0, 100)}...`
                         : post.description}
                     </p>
 
-                    <div className="inline-flex items-center px-3 py-2 text-sm font-medium text-center bg-[#1d1d1b] hover:bg-[#1d1d1b]/90 transition-all duration-300 text-white rounded-lg focus:ring-4 focus:outline-none">
+                    <div className="inline-flex items-center px-3 py-2 text-sm 2xl:text-base font-medium text-center bg-[#1d1d1b] hover:bg-[#1d1d1b]/90 transition-all duration-300 text-white rounded-lg focus:ring-4 focus:outline-none">
                       Read more
                       <svg
                         className="rtl:rotate-180 w-3.5 h-3.5 ms-2"

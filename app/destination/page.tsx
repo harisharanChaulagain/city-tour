@@ -12,7 +12,7 @@ import bhaktapur from "../../assets/destination/bhaktapur.png";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
 
- const allDestinations = [
+const allDestinations = [
   // Popular Destinations
   {
     id: "p1",
@@ -702,15 +702,15 @@ export default function Page() {
     <main className="py-20  text-[#1D1D1B] ">
       <div className="px-4 sm:px-8 w-full md:w-11/12 mx-auto">
         <section className="bg-[#DEDDD7] rounded-2xl flex flex-col gap-4 p-8 my-10">
-          <h1 className="text-[#1D1D1B] font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl pt-20">
+          <h1 className="text-[#1D1D1B] font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl pt-20">
             Destinations
           </h1>
-          <p className="text-sm sm:text-base">
+          <p className="text-sm sm:text-base 2xl:text-lg">
             Roam Freely and Discover Your Ultimate Destination
           </p>
         </section>
         <div className="flex items-center whitespace-nowrap gap-4 py-4 ">
-          <span className="text-base sm:text-xl font-bold">
+          <span className="text-base sm:text-xl 2xl:text-2xl font-bold">
             Popular Destinations
           </span>
           <span className="bg-[#DEDDD7] h-0.5 w-full"></span>
@@ -722,7 +722,7 @@ export default function Page() {
           ))}
         </section>
         <div className="flex items-center whitespace-nowrap gap-4 py-4">
-          <span className="text-base sm:text-xl font-bold">
+          <span className="text-base sm:text-xl 2xl:text-2xl font-bold">
             Trending Destinations
           </span>
           <span className="bg-[#DEDDD7] h-0.5 w-full"></span>
@@ -734,7 +734,7 @@ export default function Page() {
           ))}
         </section>
         <div className="flex items-center whitespace-nowrap gap-4 py-4">
-          <span className="text-base sm:text-xl font-bold">
+          <span className="text-base sm:text-xl 2xl:text-2xl font-bold">
             Seasonal Destinations
           </span>
           <span className="bg-[#DEDDD7] h-0.5 w-full"></span>
@@ -761,13 +761,13 @@ const TripCard = ({ trip }: any) => (
       className="h-full w-full object-cover hover:scale-125 transition-all duration-300"
     />
     <div className="flex flex-col gap-2 absolute bottom-4 px-4 text-white w-full">
-      <h1 className="text-2xl pb-2">{trip.city}</h1>
+      <h1 className="text-2xl 2xl:text-3xl pb-2">{trip.city}</h1>
       <div className="flex justify-between w-full">
-        <span className="flex items-center gap-2 text-sm">
-          <Icon icon="ph:calendar" className="text-2xl" />
+        <span className="flex items-center gap-2 text-sm 2xl:text-base">
+          <Icon icon="ph:calendar" className="text-2xl 2xl:text-3xl" />
           {trip.dates}
         </span>
-        <span className="text-sm">{trip.price}</span>
+        <span className="text-sm 2xl:text-base">{trip.price}</span>
       </div>
     </div>
   </Link>

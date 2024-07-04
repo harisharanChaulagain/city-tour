@@ -80,17 +80,17 @@ export default function Page() {
   return (
     <main className="py-20  px-4 sm:px-8 w-full md:w-11/12 mx-auto">
       <section className="bg-[#DEDDD7] rounded-2xl flex flex-col gap-6 p-8 my-10">
-        <h1 className="text-[#1D1D1B] font-bold  text-2xl sm:text-3xl md:text-4xl lg:text-5xl pt-20">
+        <h1 className="text-[#1D1D1B] font-bold  text-2xl sm:text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl pt-20">
           Frequently Asked <br /> Questions
         </h1>
-        <p>Got questions? Find your answers here.</p>
+        <p className="2xl:text-lg">Got questions? Find your answers here.</p>
       </section>
       <section>
         {faqDatas.map((item: any, index: number) => (
           <div key={index}>
             <div onClick={() => handleItemClick(index)} className="py-4">
               <div className="cursor-pointer flex justify-between items-center">
-                <p className="text-xl xl:text-2xl text-secondary-500/90 font-medium ">
+                <p className="text-xl xl:text-2xl 2xl:text-3xl text-secondary-500/90 font-medium ">
                   {item.question}
                 </p>
                 <div className="text-primary-350 ">
@@ -112,7 +112,7 @@ export default function Page() {
                 </div>
               </div>
               <Collapse isOpened={openItemIndex === index}>
-                <div className="text-secondary-400 text-md font-normal py-2">
+                <div className="text-secondary-400 text-md 2xl:text-lg font-normal py-2">
                   {item.answer}
                 </div>
               </Collapse>
@@ -122,16 +122,16 @@ export default function Page() {
         ))}
       </section>
       <section className="flex flex-col gap-4 pt-10">
-        <h1 ref={titlteRef1} className="text-2xl font-bold">
+        <h1 ref={titlteRef1} className="text-2xl xl:2xl:text-3xl font-bold">
           Have more questions?
         </h1>
         <div className="flex flex-col gap-4" ref={subTitleRef1}>
-          <h2 className="text-xl ">
+          <h2 className="text-xl 2xl:text-2xl">
             Feel free to contact us or leave us a message.
           </h2>
           <Link
             href="/contact"
-            className="flex items-center gap-2 w-fit text-sm hover:cursor-pointer text-[#1D1D1b] hover:underline transition-all duration-300"
+            className="flex items-center gap-2 w-fit text-sm 2xl:text-base hover:cursor-pointer text-[#1D1D1b] hover:underline transition-all duration-300"
             onMouseEnter={handleMouseEnters}
             onMouseLeave={handleMouseLeaves}
           >

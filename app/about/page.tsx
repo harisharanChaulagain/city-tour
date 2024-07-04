@@ -61,7 +61,7 @@ export default function Page() {
           />
         </div>
         <div className="flex justify-end">
-          <p className="max-w-2xl py-10 text-base sm:text-xl md:text-2xl font-normal text-">
+          <p className="max-w-2xl 2xl:max-w-3xl py-10 text-base sm:text-xl md:text-2xl 2xl:text-3xl font-normal text-">
             Ghumfir Nepal is a travel company dedicated to providing
             personalized urban exploration experiences. Whether you are a solo
             traveler, a couple, a family, or a group of friends, we tailor our
@@ -69,7 +69,7 @@ export default function Page() {
             a local&apos;s eyes.
           </p>
         </div>
-        <div className="text-2xl sm:text-4xl md:text-5xl font-bold py-16 mt-8">
+        <div className="text-2xl sm:text-4xl md:text-5xl 2xl:text-6xl font-bold py-16 mt-8">
           What to expect after <br /> booking...
         </div>
         <div className="py-10">
@@ -154,8 +154,8 @@ const AboutCard = ({ title, image, details }: any) => {
       ref={cardRef}
       className="about-card p-8 rounded-2xl bg-[#DFDDD8] shadow-sm flex flex-col gap-6"
     >
-      <h1 className="text-xl sm:text-2xl font-bold">{title}</h1>
-      <h2 className="text-base sm:text-lg">{details}</h2>
+      <h1 className="text-xl sm:text-2xl 2xl:text-3xl font-bold">{title}</h1>
+      <h2 className="text-base sm:text-lg 2xl:text-xl">{details}</h2>
       <div className="h-[50vh] w-full rounded-2xl overflow-hidden">
         <Image
           src={image}

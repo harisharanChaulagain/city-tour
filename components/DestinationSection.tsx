@@ -121,17 +121,17 @@ export default function DestinationSection() {
   return (
     <div className="relative text-[#1d1d1b]">
       <section className="px-4 sm:px-8 w-full md:w-11/12 mx-auto flex flex-col gap-4">
-        <h1 className="text-sm">Destinations</h1>
+        <h1 className="text-sm 2xl:text-base">Destinations</h1>
         <h2
           ref={titlteRef1}
-          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl font-bold"
         >
           Our most popular destinations
         </h2>
         <div ref={subTitleRef1}>
           <Link
             href="/destination"
-            className="flex items-center gap-2 w-fit text-sm hover:cursor-pointer text-[#1D1D1b] hover:underline transition-all duration-300"
+            className="flex items-center gap-2 w-fit text-sm 2xl:text-base hover:cursor-pointer text-[#1D1D1b] hover:underline transition-all duration-300"
             onMouseEnter={handleMouseEnters}
             onMouseLeave={handleMouseLeaves}
           >
@@ -161,7 +161,7 @@ export default function DestinationSection() {
             onMouseEnter={() => handleMouseEnter(index)}
             onMouseLeave={() => handleMouseLeave(index)}
           >
-            <div className="absolute text-sm sm:text-base top-3 -left-2">
+            <div className="absolute text-sm sm:text-base 2xl:text-lg top-3 -left-2">
               0{index + 1}
             </div>
             <span>{item.title}</span>

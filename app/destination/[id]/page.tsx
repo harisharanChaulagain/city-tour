@@ -33,14 +33,14 @@ export default function Page() {
                 className="h-full w-full object-cover object-center rounded-2xl"
               />
             </div>
-            <div className="absolute top-52 left-20 text-white flex flex-col gap-4">
-              <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
-              Discover the World with Us.
+            <div className="absolute top-[40vh] left-20 text-white flex flex-col gap-4">
+              <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl">
+                Discover the World with Us.
               </h1>
-              <p className="text-sm sm:text-lg md:text-xl">
-              Travel to breathtaking destinations, immerse yourself in diverse
-            cultures, <br /> and create unforgettable experiences with Ghumfir
-            Nepal.
+              <p className="text-sm sm:text-lg md:text-xl 2xl:text-2xl">
+                Travel to breathtaking destinations, immerse yourself in diverse
+                cultures, <br /> and create unforgettable experiences with
+                Ghumfir Nepal.
               </p>
             </div>
           </section>
@@ -50,9 +50,11 @@ export default function Page() {
                 key={index}
                 className="flex flex-col gap-4 items-center justify-center bg-[#DFDDD8] rounded-2xl p-8"
               >
-                <Icon icon={item?.icon} className="text-2xl" />
-                <span>{item?.title}</span>
-                <span>{item?.desc}</span>
+                <Icon icon={item?.icon} className="text-2xl 2xl:text-3xl" />
+                <span className="text-base 2xl:text-lg">{item?.title}</span>
+                <span className="text-lg font-semibold 2xl:text-xl">
+                  {item?.desc}
+                </span>
               </div>
             ))}
           </section>
@@ -110,7 +112,7 @@ export default function Page() {
               </div>
 
               <h2 className="text-lg sm:text-xl md:text-2xl mt-8">
-                Itinerary for Kathmandu Package
+                Itinerary for {item?.city} Package
               </h2>
               {item?.itinerary?.map((itenary, index) => (
                 <div key={index} className="text-base sm:text-lg">
@@ -125,7 +127,7 @@ export default function Page() {
               </h2>
               <div className="text-base sm:text-lg">
                 <ul className="list-disc pl-4">
-                  {item?.constIncluded?.map((costIncluded, index) => (
+                  {item?.costIncluded?.map((costIncluded, index) => (
                     <li key={index}>{costIncluded}</li>
                   ))}
                 </ul>
@@ -353,7 +355,7 @@ const allDestinations = [
           "Take a morning trip to Nagarkot for panoramic views of the Himalayas and a peaceful retreat. Return to Bhaktapur for a farewell lunch featuring Juju Dhau and other local specialties before departing. ",
       },
     ],
-    constIncluded: [
+    costIncluded: [
       "Transportation within Pokhara city",
       "Guide services",
       "Entrance fees to ",
@@ -511,7 +513,7 @@ const allDestinations = [
           "Explore Bhaktapur Durbar Square's medieval temples and pottery workshops. Optionally, visit Nagarkot for Himalayan views. End with a farewell dinner featuring Nepali cuisine and cultural performances.",
       },
     ],
-    constIncluded: [
+    costIncluded: [
       " Transportation within Kathmandu city",
       "Guide services",
       "Entrance fees to sites",

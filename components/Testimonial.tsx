@@ -81,15 +81,15 @@ export default function Testimonial() {
                   />
                 </div>
                 <figure>
-                  <p className="text-[#1d1d1b] text-xl font-semibold sm:text-2xl">
+                  <p className="text-[#1d1d1b] text-xl font-semibold sm:text-2xl 2xl:text-3xl">
                     {item?.description}
                   </p>
                   <div className="flex gap-2 justify-center items-center w-full py-4">
                     <div className="flex flex-col justify-start">
-                      <span className="text-[#1d1d1b] font-semibold flex justify-end">
+                      <span className="text-[#1d1d1b] font-semibold flex justify-end 2xl:text-lg">
                         {item?.name}
                       </span>
-                      <span className="block text-[#1d1d1b]/90 text-sm mt-0.5">
+                      <span className="block text-[#1d1d1b]/90 text-sm mt-0.5 2xl:text-base">
                         {item?.position}
                       </span>
                     </div>

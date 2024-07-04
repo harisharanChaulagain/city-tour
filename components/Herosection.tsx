@@ -110,10 +110,10 @@ export default function Herosection() {
           ))}
         </Slider>
         <div className="pointer-events-none px-4 absolute bottom-10 left-4 sm:top-[55vh] sm:left-10 text-white flex flex-col gap-4">
-          <h1 className="font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl hero-text">
+          <h1 className="font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:6xl hero-text">
             Discover the World with Us.
           </h1>
-          <p className="text-xs sm:text-sm md:text-lg text-gray-200 hero-subtext">
+          <p className="text-xs sm:text-sm md:text-lg 2xl:text-xl text-gray-200 hero-subtext">
             Travel to breathtaking destinations, immerse yourself in diverse
             cultures, <br /> and create unforgettable experiences with Ghumfir
             Nepal.

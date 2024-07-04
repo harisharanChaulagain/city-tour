@@ -12,8 +12,8 @@ export default function Footer() {
         <div className="gap-6 justify-between md:flex">
           <div className="flex-1">
             <div className="max-w-md">
-              <h1 className="py-4 text-2xl font-semibold">Ghumfir Nepal.</h1>
-              <p className="leading-relaxed mt-2 text-[15px]">
+              <h1 className="py-4 text-2xl 2xl:text-3xl font-semibold">Ghumfir Nepal.</h1>
+              <p className="leading-relaxed mt-2 text-[15px] 2xl:text-lg">
                 Work remotely, explore various destinations, and make lasting
                 memories with a community of digital Ghumfir Nepals.
               </p>
@@ -22,13 +22,13 @@ export default function Footer() {
           <div className="flex-1 mt-10 space-y-6 items-center justify-between sm:flex md:space-y-0 md:mt-0">
             {footerNavs.map((item, idx) => (
               <ul className="space-y-4" key={idx}>
-                <h4 className="text-white font-medium">{item.label}</h4>
+                <h4 className="text-white font-medium text-xl 2xl:text-2xl">{item.label}</h4>
                 {item.items.map((el, idx) => (
                   <li key={idx}>
                     <Link
                       href={el.href}
                       target="_blank"
-                      className="text-gray-300 hover:text-white transition-all duration-300"
+                      className="text-gray-300 hover:text-white transition-all duration-300 2xl:text-lg"
                     >
                       {el.name}
                     </Link>

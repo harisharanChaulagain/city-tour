@@ -89,7 +89,7 @@ export default function Testimonial() {
                       <span className="text-[#1d1d1b] font-semibold flex justify-end 2xl:text-lg">
                         {item?.name}
                       </span>
-                      <span className="block text-[#1d1d1b]/90 text-sm mt-0.5 2xl:text-base">
+                      <span className="text-left text-[#1d1d1b]/90 text-sm mt-0.5 2xl:text-base">
                         {item?.position}
                       </span>
                     </div>

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@gsap/react": "^2.1.1",
+    "@hookform/resolvers": "^3.7.0",
     "@iconify/react": "^5.0.1",
     "framer-motion": "^11.2.11",
     "gsap": "^3.12.5",
@@ -18,11 +19,14 @@
     "react": "^18",
     "react-collapse": "^5.1.1",
     "react-dom": "^18",
+    "react-hook-form": "^7.52.1",
+    "react-hot-toast": "^2.4.1",
     "react-loading-skeleton": "^3.4.0",
     "react-slick": "^0.30.2",
     "sharp": "^0.33.4",
     "slick-carousel": "^1.8.1",
-    "swiper": "^11.1.4"
+    "swiper": "^11.1.4",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@types/node": "^20",

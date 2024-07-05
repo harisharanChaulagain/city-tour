@@ -14,8 +14,9 @@ export default function Footer() {
             <div className="max-w-md">
               <h1 className="py-4 text-2xl 2xl:text-3xl font-semibold">Ghumfir Nepal.</h1>
               <p className="leading-relaxed mt-2 text-[15px] 2xl:text-lg">
-                Work remotely, explore various destinations, and make lasting
-                memories with a community of digital Ghumfir Nepals.
+              Travel to breathtaking destinations, immerse yourself in diverse
+            cultures, and create unforgettable experiences with Ghumfir
+            Nepal.
               </p>
             </div>
           </div>

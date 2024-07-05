@@ -4,6 +4,10 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Draggable } from "gsap/Draggable";
 import { useGSAP } from "@gsap/react";
+import { useForm, FieldErrors, FieldValues } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { toast } from "react-hot-toast";
 
 gsap.registerPlugin(ScrollTrigger, Draggable);
 
@@ -49,6 +53,12 @@ const circles = [
     size: 100,
   },
 ];
+
+const schema = z.object({
+  email: z.string().email("Invalid email format").nonempty("Email is required"),
+});
+
+type FormData = z.infer<typeof schema>;
 
 export default function NewsLetter() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -103,6 +113,29 @@ export default function NewsLetter() {
     });
   });
 
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, dirtyFields },
+    reset,
+  } = useForm<FormData>({
+    resolver: zodResolver(schema),
+  });
+
+  const onSubmit = (data: FormData) => {
+    console.log(data);
+    // toast.success("Message sent successfully!");
+    toast("Subscribe Successfully", {
+      icon: "✅",
+      style: {
+        borderRadius: "10px",
+        background: "#202428",
+        color: "#fff",
+      },
+    });
+    reset();
+  };
+
   return (
     <main className="px-4 sm:px-8 w-full md:w-11/12 mx-auto py-10">
       <section
@@ -122,14 +155,24 @@ export default function NewsLetter() {
         </div>
         <div className="mt-6 max-w-2xl mx-auto">
           <form
-            onSubmit={(e) => e.preventDefault()}
-            className="items-center justify-center sm:flex max-w-lg mx-auto"
+            onSubmit={handleSubmit(onSubmit)}
+            className="relative items-center justify-center sm:flex max-w-lg mx-auto"
           >
             <input
-              type="email"
+              type="text"
               placeholder="Enter your email"
               className="placeholder-[#1d1d1b] text-sm 2xl:text-base w-full p-4 rounded-md outline-none bg-[#D1CFC7]"
+              {...register("email")}
             />
+            <div className="absolute left-4 -bottom-6">
+              {errors.email && (
+                <span className="text-red-500 text-sm">
+                  {dirtyFields.email
+                    ? errors.email.message
+                    : "Email is required"}
+                </span>
+              )}
+            </div>
             <button className="w-full mt-3 px-5 py-3 rounded-md 2xl:text-lg text-white bg-[#1D1D1B] hover:bg-[#1D1D1B]/90 duration-150 outline-none shadow-md sm:mt-0 sm:ml-3 sm:w-auto">
               Subscribe
             </button>

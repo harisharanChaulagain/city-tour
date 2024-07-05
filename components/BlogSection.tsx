@@ -160,7 +160,7 @@ export default function BlogSection() {
           >
             {blogPosts.slice(0, 3).map((post, index) => (
               <Link key={index} href={`/blog/${post?.id}`}>
-                <div className=" bg-[#DEDDD7] border border-gray-200 rounded-lg shadow hover:shadow-md group">
+                <div className=" bg-[#DEDDD7] rounded-lg hover:shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] transition-all duration-300 group">
                   <div className="overflow-hidden rounded-t-lg">
                     <div className="h-[40vh] w-full">
                       <Image

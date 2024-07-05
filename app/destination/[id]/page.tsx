@@ -148,7 +148,7 @@ export default function Page() {
             <div className="h-full">
               <div className="lg:sticky top-20 p-8 flex flex-col justify-between rounded-2xl overflow-hidden shadow-lg bg-[#1d1d1b] text-white">
                 <div className="">
-                  <div className="mb-4 font-medium text-xl">
+                  <div className="mb-4 font-medium text-xl flex flex-col gap-2">
                     <p className="flex justify-between">
                       <strong>Accommodations:</strong> <span>$650</span>
                     </p>
@@ -164,14 +164,14 @@ export default function Page() {
                   </div>
                 </div>
                 <hr />
-                <div className="py-4">
+                <div className="py-4 flex justify-between">
                   <strong className="text-2xl font-bold">Total Due:</strong>{" "}
-                  $1,200
+                  <span> $1,200</span>
                 </div>
                 <div className="flex flex-col gap-1">
                   <div className="py-4 flex gap-2 items-center">
-                    <div className="p-2 bg-[#494947] rounded-md w-fit">
-                      <Icon icon="mingcute:time-fill" className="text-xl" />
+                    <div className="p-4 bg-[#202428] rounded-md w-fit">
+                      <Icon icon="mingcute:time-fill" className="text-2xl" />
                     </div>
                     <div>
                       <div>Free cancellation</div>
@@ -179,8 +179,8 @@ export default function Page() {
                     </div>
                   </div>
                   <div className="py-4 flex gap-2 items-center">
-                    <div className="p-2  bg-[#494947]  rounded-md w-fit">
-                      <Icon icon="tabler:arrows-cross" className="text-xl" />
+                    <div className="p-4 bg-[#202428]  rounded-md w-fit">
+                      <Icon icon="tabler:arrows-cross" className="text-2xl" />
                     </div>
                     <div>
                       <div>No Change Fees</div>
@@ -188,8 +188,8 @@ export default function Page() {
                     </div>
                   </div>
                   <div className="py-4 flex gap-2 items-center">
-                    <div className="p-2  bg-[#494947]  rounded-md w-fit">
-                      <Icon icon="ic:baseline-payment" className="text-xl" />
+                    <div className="p-4 bg-[#202428]  rounded-md w-fit">
+                      <Icon icon="ic:baseline-payment" className="text-2xl" />
                     </div>
                     <div>
                       <div>Payment plan</div>

@@ -7,6 +7,8 @@ import { useEffect, useState } from "react";
 import "./globals.css";
 import Lenis from "lenis";
 import Preloader from "@/components/Preloader";
+import { Toaster } from "react-hot-toast";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -56,6 +58,7 @@ export default function RootLayout({
             {children}
             <NewsLetter />
             <Footer />
+            <Toaster/>
           </div>
         )}
       </body>
